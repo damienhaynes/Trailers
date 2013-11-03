@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.0</Version>
+  <Groups>
+    <Items>
+      <GroupItem Name="Default">
+        <ParentGroup />
+        <DisplayName>Default</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Default</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\bin\Release\Trailers.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{225c2cc4-9e38-4589-8c8b-7b9438bec0a0}-Trailers.dll</ZipFileName>
+              <DestinationFilename>%Plugins%\Windows\Trailers.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\bg.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{705e992d-738c-42da-b22f-f189c68acf72}-bg.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\bg.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\ca.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{fd556734-4e37-406a-b2ba-f07f76960db7}-ca.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\ca.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\cs.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{20760791-e357-4595-b520-aaaa33c0201b}-cs.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\cs.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\da.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6eb07c39-624a-4d37-b673-bb8273668e15}-da.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\da.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\de.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{88dcc4c1-97ee-4b34-b69c-4aa1e9501293}-de.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\de.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\el.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f7f4872e-d808-4bc4-a99d-653f2df8d723}-el.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\el.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\en-US.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f183a50d-6f39-4328-837a-c1bf18336064}-en-US.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\en-US.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\es.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{19e4e15f-b919-495a-9400-298ddd042448}-es.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\es.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\et.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{feedc4df-71b7-43cd-a041-b2e363f2cc4b}-et.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\et.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\fi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{52b9771f-685b-432d-bd67-ce82cead2480}-fi.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\fi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\fr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8bdf9b61-9894-45bf-9b5d-916f975cc9d4}-fr.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\fr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\he.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{24457444-e005-40db-b992-548a31a0b5ec}-he.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\he.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\hi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{acaddb49-c4d2-464e-8cb6-0f357f364c4a}-hi.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\hi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\hr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8c0722b2-9567-48dc-ab3d-718ef92c8a51}-hr.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\hr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\hu.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4574cb08-17e1-4dde-9ae6-ab2f9d6d4ce0}-hu.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\hu.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\id.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3f99650c-a6c7-409f-9c99-a42dee3945ce}-id.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\id.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\is.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b22bd00b-4905-43eb-ac00-a53a4fc4c10b}-is.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\is.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\it.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{ec264fc9-a023-4e83-bdbc-b1e214301b65}-it.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\it.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\ko.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d9f33f1b-b1c5-42a5-9de8-1da68df1e3af}-ko.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\ko.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\ku.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0adccac1-3b4f-4b51-900b-de4f5344d496}-ku.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\ku.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\lt.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b4fd283f-52cb-402c-92c3-e860e255c582}-lt.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\lt.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\nb.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{8b4df62b-e314-4e65-9f93-bbd6284ea5c2}-nb.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\nb.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\nl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{16266840-430c-4cbf-b274-dfa6dd4e70f8}-nl.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\nl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\no.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{eda41039-fa42-43d1-980b-7899f09d3bc7}-no.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\no.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\pl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{927638ed-5a81-47c7-94d6-3016c10e7bd8}-pl.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\pl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\pt-BR.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{7ce266d1-ee20-4fd5-a4e3-47a48662337e}-pt-BR.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\pt-BR.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\pt.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5a49decb-d815-47f4-8a8b-0f5e7bbc5095}-pt.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\pt.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\ru.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{ce94a7e3-ba9f-4f9e-834f-22b17e3b8406}-ru.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\ru.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\sk.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{50292ab5-6025-4a0b-a096-d1b848ca4067}-sk.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\sk.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\sl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{69b254ee-77db-4317-9889-763d7c6ee4d6}-sl.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\sl.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\sr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{51671725-eed0-43ab-97fa-4ba35f752355}-sr.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\sr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\sv.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{59b3ffe0-7ad3-43d4-a473-e461389c48aa}-sv.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\sv.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\tr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5f601a94-61ce-4883-a7f3-acb548a93bd0}-tr.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\tr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\uk.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c127ee75-5370-469b-88f9-3288ff342e01}-uk.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\uk.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\vi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{22f23e33-43d4-4769-9d19-8511f4fe42d4}-vi.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\vi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\zh.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0c4af843-3767-4748-8e2b-4dacdfd24659}-zh.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\zh.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+    </Items>
+  </Groups>
+  <Sections>
+    <Items>
+      <SectionItem Guid="543a8daf-ef76-4e31-bca2-35db63fc7963" Name="Welcome Screen" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>Welcome to the Extension Installer for [Name]</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Description">
+              <Value>This will install [Name] v[Version] on your computer.
+
+
+It is recommended that you close all other applications before continuing. 
+
+
+Click Next to continue or Cancel to exit Setup.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Welcome Screen</PanelName>
+        <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="9c168780-a53f-43a9-b8c7-d4545751e927" Name="Install Section" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items>
+            <ActionItem Name="InstallFiles" ActionType="InstallFiles" ConditionGroup="">
+              <Params>
+                <Items />
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+          </Items>
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Install Section</PanelName>
+        <WizardButtonsEnum>Next</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="2e6b2638-6ce2-4f40-88e7-5a736475e3ff" Name="Setup Complete" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>The Extension Installer Wizard has successfully installed [Name].</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Show radio buttons">
+              <Value />
+              <ValueType>Bool</ValueType>
+              <Description>Use radiobutton in place of combobox</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Setup Complete</PanelName>
+        <WizardButtonsEnum>Finish</WizardButtonsEnum>
+      </SectionItem>
+    </Items>
+  </Sections>
+  <Dependencies>
+    <Items>
+      <DependencyItem>
+        <Type>MediaPortal</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MaxVersion>
+        <WarnOnly>false</WarnOnly>
+        <Message>Trailers requires MediaPortal version 1.3 or higher.</Message>
+        <Name>MediaPortal</Name>
+      </DependencyItem>
+    </Items>
+  </Dependencies>
+  <PluginDependencies>
+    <Items>
+      <PluginDependencyItem AssemblyName="Trailers.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items />
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
+  </PluginDependencies>
+  <GeneralInfo>
+    <Name>Trailers</Name>
+    <Id>b4293f64-9e83-4f1f-b2e3-8bdea2a37425</Id>
+    <Author>Damien Haynes (ltfearme)</Author>
+    <HomePage>https://github.com/damienhaynes/Trailers</HomePage>
+    <ForumPage />
+    <UpdateUrl>https://raw.github.com/damienhaynes/Trailers/master/Installer/Update.xml</UpdateUrl>
+    <Version>
+      <Major>1</Major>
+      <Minor>0</Minor>
+      <Build>0</Build>
+      <Revision>0</Revision>
+    </Version>
+    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
+
+It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
+    <VersionDescription>First Release</VersionDescription>
+    <DevelopmentStatus>Stable</DevelopmentStatus>
+    <OnlineLocation />
+    <ReleaseDate>2013-11-03T21:11:07.6853504+11:00</ReleaseDate>
+    <Tags>trailers</Tags>
+    <Location>C:\Development\Trailers\Installer\Trailers.mpe1</Location>
+    <Params>
+      <Items>
+        <SectionParam Name="Icon">
+          <Value>Resources\Trailers.png</Value>
+          <ValueType>File</ValueType>
+          <Description>The icon file of the package (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Online Icon">
+          <Value>https://raw.github.com/damienhaynes/Trailers/master/Installer/Resources/Trailers.png</Value>
+          <ValueType>String</ValueType>
+          <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Configuration file">
+          <Value />
+          <ValueType>Template</ValueType>
+          <Description>The file used to configure the extension.
+ If it has .exe extension the will be executed.
+ If it has .dll extension it's started like MP plugin configuration.</Description>
+        </SectionParam>
+        <SectionParam Name="Online Screenshots">
+          <Value>https://raw.github.com/damienhaynes/Trailers/master/Installer/Resources/TrailersScreenshot1.jpg;https://raw.github.com/damienhaynes/Trailers/master/Installer/Resources/TrailersScreenshot2.jpg;https://raw.github.com/damienhaynes/Trailers/master/Installer/Resources/TrailersScreenshot3.jpg</Value>
+          <ValueType>String</ValueType>
+          <Description>Online stored screenshot urls separated by ; </Description>
+        </SectionParam>
+        <SectionParam Name="Force to uninstall on update">
+          <Value>YES</Value>
+          <ValueType>Bool</ValueType>
+          <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+        </SectionParam>
+      </Items>
+    </Params>
+  </GeneralInfo>
+  <UniqueFileList>
+    <Items>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\bin\Release\Trailers.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{225c2cc4-9e38-4589-8c8b-7b9438bec0a0}-Trailers.dll</ZipFileName>
+        <DestinationFilename>%Plugins%\Windows\Trailers.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\bg.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{705e992d-738c-42da-b22f-f189c68acf72}-bg.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\bg.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\ca.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{fd556734-4e37-406a-b2ba-f07f76960db7}-ca.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\ca.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\cs.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{20760791-e357-4595-b520-aaaa33c0201b}-cs.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\cs.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\da.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6eb07c39-624a-4d37-b673-bb8273668e15}-da.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\da.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\de.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{88dcc4c1-97ee-4b34-b69c-4aa1e9501293}-de.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\de.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\el.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f7f4872e-d808-4bc4-a99d-653f2df8d723}-el.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\el.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\en-US.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f183a50d-6f39-4328-837a-c1bf18336064}-en-US.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\en-US.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\es.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{19e4e15f-b919-495a-9400-298ddd042448}-es.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\es.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\et.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{feedc4df-71b7-43cd-a041-b2e363f2cc4b}-et.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\et.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\fi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{52b9771f-685b-432d-bd67-ce82cead2480}-fi.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\fi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\fr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8bdf9b61-9894-45bf-9b5d-916f975cc9d4}-fr.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\fr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\he.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{24457444-e005-40db-b992-548a31a0b5ec}-he.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\he.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\hi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{acaddb49-c4d2-464e-8cb6-0f357f364c4a}-hi.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\hi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\hr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8c0722b2-9567-48dc-ab3d-718ef92c8a51}-hr.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\hr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\hu.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{4574cb08-17e1-4dde-9ae6-ab2f9d6d4ce0}-hu.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\hu.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\id.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{3f99650c-a6c7-409f-9c99-a42dee3945ce}-id.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\id.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\is.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b22bd00b-4905-43eb-ac00-a53a4fc4c10b}-is.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\is.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\it.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{ec264fc9-a023-4e83-bdbc-b1e214301b65}-it.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\it.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\ko.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d9f33f1b-b1c5-42a5-9de8-1da68df1e3af}-ko.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\ko.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\ku.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0adccac1-3b4f-4b51-900b-de4f5344d496}-ku.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\ku.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\lt.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b4fd283f-52cb-402c-92c3-e860e255c582}-lt.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\lt.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\nb.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{8b4df62b-e314-4e65-9f93-bbd6284ea5c2}-nb.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\nb.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\nl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{16266840-430c-4cbf-b274-dfa6dd4e70f8}-nl.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\nl.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\no.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{eda41039-fa42-43d1-980b-7899f09d3bc7}-no.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\no.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\pl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{927638ed-5a81-47c7-94d6-3016c10e7bd8}-pl.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\pl.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\pt-BR.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{7ce266d1-ee20-4fd5-a4e3-47a48662337e}-pt-BR.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\pt-BR.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\pt.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{5a49decb-d815-47f4-8a8b-0f5e7bbc5095}-pt.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\pt.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\ru.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{ce94a7e3-ba9f-4f9e-834f-22b17e3b8406}-ru.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\ru.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\sk.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{50292ab5-6025-4a0b-a096-d1b848ca4067}-sk.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\sk.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\sl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{69b254ee-77db-4317-9889-763d7c6ee4d6}-sl.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\sl.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\sr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{51671725-eed0-43ab-97fa-4ba35f752355}-sr.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\sr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\sv.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{59b3ffe0-7ad3-43d4-a473-e461389c48aa}-sv.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\sv.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\tr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{5f601a94-61ce-4883-a7f3-acb548a93bd0}-tr.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\tr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\uk.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c127ee75-5370-469b-88f9-3288ff342e01}-uk.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\uk.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\vi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{22f23e33-43d4-4769-9d19-8511f4fe42d4}-vi.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\vi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\zh.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0c4af843-3767-4748-8e2b-4dacdfd24659}-zh.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\zh.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>Resources\Trailers.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6bd75de1-de58-4870-ac9c-70ff916ad9c1}-Trailers.png</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
+    </Items>
+  </UniqueFileList>
+  <ProjectSettings>
+    <FolderGroups>
+      <FolderGroup InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName />
+        <ZipFileName>Installer{CopyFile}\{55765c1d-89b1-460c-8ed6-efe53b83c0d9}-</ZipFileName>
+        <DestinationFilename>%Language%\Trailers</DestinationFilename>
+        <Folder>..\Trailers\Localisation\XML</Folder>
+        <Group>Default</Group>
+        <Recursive>false</Recursive>
+      </FolderGroup>
+    </FolderGroups>
+    <ProjectFilename>Trailers.xmp2</ProjectFilename>
+  </ProjectSettings>
+  <IsSkin>false</IsSkin>
+</PackageClass>
