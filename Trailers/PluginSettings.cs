@@ -36,7 +36,7 @@ namespace Trailers
         private const string cSearchLocalDedicatedSubDirectories = "SearchLocalDedicatedSubDirectories";
         private const string cSearchLocalDedicatedDirectorySearchPatterns = "SearchLocalDedicatedDirectorySearchPatterns";
         private const string cSearchLocalInCurrentMediaFolder = "SearchLocalInCurrentMediaFolder";
-        private const string cSearchLocalCurrentMediaFolderSearchPatterns = "SearchLocalCurrentvFolderSearchPatterns";
+        private const string cSearchLocalCurrentMediaFolderSearchPatterns = "SearchLocalCurrentFolderSearchPatterns";
         private const string cSearchLocalAggressiveSearch = "SearchLocalAggressiveSearch";
         private const string cSkipOnlineProvidersIfLocalFound = "SkipOnlineProvidersIfLocalFound";
         private const string cAutoPlayOnSingleLocalOrOnlineTrailer = "AutoPlayOnSingleLocalOrOnlineTrailer";
