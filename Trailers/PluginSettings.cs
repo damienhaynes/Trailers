@@ -132,7 +132,7 @@ namespace Trailers
                 OnlineVideosIMDbEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosIMDbEnabled, true);
                 OnlineVideosITunesEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosITunesEnabled, true);
                 SearchLocalInSubFolder = xmlreader.GetValueAsBool(cTrailers, cSearchLocalInSubFolder, true);
-                SearchLocalAdditionalSubFolders = xmlreader.GetValueAsString(cTrailers, cSearchLocalAdditionalSubFolders, "Extras|Shorts|Featurette|Featurettes");
+                SearchLocalAdditionalSubFolders = xmlreader.GetValueAsString(cTrailers, cSearchLocalAdditionalSubFolders, "Teaser|Extras|Shorts|Featurette|Featurettes");
                 SearchLocalInDedicatedDirectory = xmlreader.GetValueAsBool(cTrailers, cSearchLocalInDedicatedDirectory, true);
                 SearchLocalDedicatedDirectories = xmlreader.GetValueAsString(cTrailers, cSearchLocalDedicatedDirectories, string.Empty);
                 SearchLocalDedicatedSubDirectories = xmlreader.GetValueAsString(cTrailers, cSearchLocalDedicatedSubDirectories, "%title% (%year%)|%title%");
