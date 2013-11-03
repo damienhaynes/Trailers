@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Buffering Trailer</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <string name="Error">Trailers Error</string>
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailers">Getting Trailers</string>
+  <string name="GettingTrailerUrls">Getting Trailer Urls</string>
+  <!--H-->
+  <!--I-->
+  <string name="IMDbTrailers">IMDb Trailers</string>
+  <string name="ITunesTrailers">iTunes Trailers</string>
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Local</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Multi-Select Dialog</string>
+  <!--N-->
+  <string name="NoTrailersFound">No Trailers Found!</string>
+  <!--O-->
+  <string name="Off">Off</string>
+  <string name="OK">OK</string>
+  <string name="On">On</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">OnlineVideos plugin is required to play trailers, ensure that you have the plugin installed and it's enabled.</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Search</string>
+  <!--T-->
+  <string name="Timeout">Timeout</string>
+  <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailers</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Unable to play trailer.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="YouTubeTrailers">YouTube Trailers</string>
+</resources>

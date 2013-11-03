@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49D3717B-F870-4B22-923D-9550991F3911}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trailers</RootNamespace>
+    <AssemblyName>Trailers</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Utils">
+      <HintPath>..\Externals\Common.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Core">
+      <HintPath>..\Externals\Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cornerstone">
+      <HintPath>..\Externals\Cornerstone.dll</HintPath>
+    </Reference>
+    <Reference Include="Dialogs">
+      <HintPath>..\Externals\Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="MovingPictures">
+      <HintPath>..\Externals\MovingPictures.dll</HintPath>
+    </Reference>
+    <Reference Include="MyFilms">
+      <HintPath>..\Externals\MyFilms.dll</HintPath>
+    </Reference>
+    <Reference Include="OnlineVideos">
+      <HintPath>..\Externals\OnlineVideos.dll</HintPath>
+    </Reference>
+    <Reference Include="OnlineVideos.MediaPortal1">
+      <HintPath>..\Externals\OnlineVideos.MediaPortal1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utils">
+      <HintPath>..\Externals\Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="FileLog.cs" />
+    <Compile Include="GUI\GUIBackgroundTask.cs" />
+    <Compile Include="GUI\GUIDialogMultiSelect.cs" />
+    <Compile Include="GUI\GUITrailerListItem.cs" />
+    <Compile Include="GUI\GUIUtils.cs" />
+    <Compile Include="Player\LocalPlayer.cs" />
+    <Compile Include="Player\OnlinePlayer.cs" />
+    <Compile Include="PluginHandlers\MovingPicturesHandler.cs" />
+    <Compile Include="PluginHandlers\MyFilmsHandler.cs" />
+    <Compile Include="PluginHandlers\OnlineVideosHandler.cs" />
+    <Compile Include="PluginHandlers\VideoInfoHandler.cs" />
+    <Compile Include="PluginSettings.cs" />
+    <Compile Include="Providers\IProvider.cs" />
+    <Compile Include="Providers\Local\LocalTrailerProvider.cs" />
+    <Compile Include="Providers\MediaItem.cs" />
+    <Compile Include="Providers\OnlineSearch\OnlineVideoSearchProvider.cs" />
+    <Compile Include="Providers\TMDb\DataStructures\TMDbTrailers.cs" />
+    <Compile Include="Providers\TMDb\API\TMDbAPI.cs" />
+    <Compile Include="Providers\TMDb\DataStructures\TMDbYouTubeTrailer.cs" />
+    <Compile Include="Providers\TMDb\TMDbMovieTrailerProvider.cs" />
+    <Compile Include="Trailers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Localisation\Translations.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Web\WebGrabber.cs" />
+    <Compile Include="Web\WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Localisation\XML\en-US.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
