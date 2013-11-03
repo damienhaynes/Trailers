@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Buferuojamas anonsas</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailerUrls">Gaunamos anonsų nuorodos</string>
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Vietinis</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Daugkartinio pasirinkimo dialogas</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Išjungta</string>
+  <string name="OK">OK</string>
+  <string name="On">Įjungta</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Ieškoti</string>
+  <!--T-->
+  <string name="Timeout">Pertrauka</string>
+  <string name="Trailer">Anonsas</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Negalima groti anonso.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

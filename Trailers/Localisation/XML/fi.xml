@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Ladataan traileria</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Paikallinen</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Monivalinta Ikkuna</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Pois päältä</string>
+  <string name="OK">OK</string>
+  <string name="On">Päällä</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Haku</string>
+  <!--T-->
+  <string name="Timeout">Aikakatkaisu</string>
+  <string name="Trailer">Traileri</string>
+  <!--U-->
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Dostupné</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Dialog více voleb</string>
+  <!--N-->
+  <!--O-->
+  <string name="OK">OK</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Vyhledat</string>
+  <!--T-->
+  <string name="Timeout">Časový limit vypršel</string>
+  <string name="Trailer">Trailer</string>
+  <!--U-->
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

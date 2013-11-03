@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Staðbundið</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Multi-Select Dialog</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Af</string>
+  <string name="OK">Í lagi</string>
+  <string name="On">Á</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Leita</string>
+  <!--T-->
+  <!--U-->
+  <string name="UnableToPlayTrailer">Get ekki spilað stiklu.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

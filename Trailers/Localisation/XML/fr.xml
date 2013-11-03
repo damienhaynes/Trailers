@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Mise en mémoire de la bande-annonce</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailerUrls">Récupérer les Urls des bandes annonces</string>
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Présent</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Boite de dialogue à sélection multiple</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Off</string>
+  <string name="OK">OK</string>
+  <string name="On">On</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Recherche</string>
+  <!--T-->
+  <string name="Timeout">Temps expiré</string>
+  <string name="Trailer">Trailer</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Impossible de lire la bande annonce.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

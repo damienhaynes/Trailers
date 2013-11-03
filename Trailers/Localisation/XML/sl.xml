@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Medpomnjenje trailerja</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailerUrls">Pridobivanje Url-jev trailerjev</string>
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Lokalno</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Multi-Izbira</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Izklopljen</string>
+  <string name="OK">V redu</string>
+  <string name="On">Vklopljen</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Iskanje</string>
+  <!--T-->
+  <string name="Timeout">Čas preteka</string>
+  <string name="Trailer">Reklamni film</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Ni mogoče predvajati reklamnega filma.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

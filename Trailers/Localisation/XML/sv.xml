@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Buffrar trailer</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailerUrls">Hämtar adresser till trailers</string>
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Tillgänglig lokalt</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Flervalsdialog</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Av</string>
+  <string name="OK">OK</string>
+  <string name="On">På</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Sök</string>
+  <!--T-->
+  <string name="Timeout">Timeout</string>
+  <string name="Trailer">Trailer</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Kunde inte spela trailer.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>

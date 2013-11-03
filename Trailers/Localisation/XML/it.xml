@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Buffering Trailer</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailerUrls">Ricezione URLs Trailer</string>
+  <!--H-->
+  <!--I-->
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Local">Locale</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Finestra di Selezione Multipla</string>
+  <!--N-->
+  <!--O-->
+  <string name="Off">Off</string>
+  <string name="OK">OK</string>
+  <string name="On">On</string>
+  <!--P-->
+  <!--R-->
+  <!--S-->
+  <string name="Search">Cerca</string>
+  <!--T-->
+  <string name="Timeout">Scaduto</string>
+  <string name="Trailer">Trailer</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Impossibile riprodurre trailer.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+</resources>
