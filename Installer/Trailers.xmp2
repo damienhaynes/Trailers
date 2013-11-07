@@ -427,21 +427,22 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Id>b4293f64-9e83-4f1f-b2e3-8bdea2a37425</Id>
     <Author>Damien Haynes (ltfearme)</Author>
     <HomePage>https://github.com/damienhaynes/Trailers</HomePage>
-    <ForumPage />
-    <UpdateUrl>https://raw.github.com/damienhaynes/Trailers/master/Installer/Update.xml</UpdateUrl>
+    <ForumPage>http://forum.team-mediaportal.com/threads/new-trailers-plugin.122644/</ForumPage>
+    <UpdateUrl>https://raw.github.com/damienhaynes/Trailers/master/Installer/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
       <Minor>0</Minor>
-      <Build>0</Build>
+      <Build>1</Build>
       <Revision>0</Revision>
     </Version>
-    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
-
+    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
+
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>First Release</VersionDescription>
+    <VersionDescription>* Fixed error seen when searching for local trailers if there is no filename in the current local media database e.g. DVD Media in MyFilms.
+* Updated translations from Transifex.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
-    <OnlineLocation />
-    <ReleaseDate>2013-11-03T21:11:07.6853504+11:00</ReleaseDate>
+    <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=296&amp;cf_id=24</OnlineLocation>
+    <ReleaseDate>2013-11-08T21:11:07</ReleaseDate>
     <Tags>trailers</Tags>
     <Location>C:\Development\Trailers\Installer\Trailers.mpe1</Location>
     <Params>
@@ -741,7 +742,7 @@ It searches local trailers and online sources, it also has the capability to str
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\Trailers.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6bd75de1-de58-4870-ac9c-70ff916ad9c1}-Trailers.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{5f98d677-19b1-4cfa-af05-1d255b696024}-Trailers.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
@@ -760,6 +761,9 @@ It searches local trailers and online sources, it also has the capability to str
       </FolderGroup>
     </FolderGroups>
     <ProjectFilename>Trailers.xmp2</ProjectFilename>
+    <UpdatePath1>C:\Development\Trailers\Installer\update.xml</UpdatePath1>
+    <UpdatePath2 />
+    <UpdatePath3 />
   </ProjectSettings>
   <IsSkin>false</IsSkin>
 </PackageClass>
