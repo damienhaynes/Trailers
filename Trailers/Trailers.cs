@@ -329,7 +329,7 @@ namespace Trailers
 
             if (currentMediaItem != null)
             {
-                FileLog.Info("Searching for trailers on: Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}', Filename='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension);
+                FileLog.Info("Searching for trailers on: Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}', Filename='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
                 SearchForTrailers(currentMediaItem);
             }
         }

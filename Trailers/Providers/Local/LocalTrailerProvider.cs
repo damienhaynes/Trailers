@@ -49,12 +49,15 @@ namespace Trailers.Providers
             TrailerFiles.Clear();
 
             // Search for Trailer(s) in Sub-Folder of current media
-            listItems.AddRange(GetTrailersFromCurrentMediaSubFolder(searchItem));
-
-            // Search for Trailer(s) in the current media directory
-            if (listItems.Count == 0 || PluginSettings.SearchLocalAggressiveSearch)
+            if (!string.IsNullOrEmpty(searchItem.Directory))
             {
-                listItems.AddRange(GetTrailersFromLocalMediaFolder(searchItem));
+                listItems.AddRange(GetTrailersFromCurrentMediaSubFolder(searchItem));
+
+                // Search for Trailer(s) in the current media directory
+                if (listItems.Count == 0 || PluginSettings.SearchLocalAggressiveSearch)
+                {
+                    listItems.AddRange(GetTrailersFromLocalMediaFolder(searchItem));
+                }
             }
 
             // Search for Trailer(s) in dedicated directories
@@ -74,8 +77,8 @@ namespace Trailers.Providers
         {
             searchPattern = searchPattern.Replace("%title%", searchItem.Title.ToCleanFileName());
             searchPattern = searchPattern.Replace("%year%", searchItem.Year.ToString());
-            searchPattern = searchPattern.Replace("%imdb%", searchItem.IMDb);
-            searchPattern = searchPattern.Replace("%filename%", searchItem.FilenameWOExtension);
+            searchPattern = searchPattern.Replace("%imdb%", searchItem.IMDb ?? string.Empty);
+            searchPattern = searchPattern.Replace("%filename%", searchItem.FilenameWOExtension ?? "null");
 
             return searchPattern;
         }
