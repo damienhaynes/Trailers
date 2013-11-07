@@ -6,11 +6,15 @@
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Anonsų klaida</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Gaunami anonsai</string>
   <string name="GettingTrailerUrls">Gaunamos anonsų nuorodos</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDb anonsai</string>
+  <string name="ITunesTrailers">iTunes anonsai</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -18,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Daugkartinio pasirinkimo dialogas</string>
   <!--N-->
+  <string name="NoTrailersFound">Anonsų nerasta!</string>
   <!--O-->
   <string name="Off">Išjungta</string>
   <string name="OK">OK</string>
   <string name="On">Įjungta</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">Norint groti anonsus reikalingas OnlineVideos įskiepis. Įsitikinkite, kad šį įskiepį įdiegėte ir įjungėte.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -29,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Pertrauka</string>
   <string name="Trailer">Anonsas</string>
+  <string name="Trailers">Anonsai</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Negalima groti anonso.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube anonsai</string>
 </resources>

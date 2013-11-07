@@ -6,11 +6,15 @@
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Trailers fel</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Hämtar trailers</string>
   <string name="GettingTrailerUrls">Hämtar adresser till trailers</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDb trailers</string>
+  <string name="ITunesTrailers">iTunes trailers</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -18,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Flervalsdialog</string>
   <!--N-->
+  <string name="NoTrailersFound">Hittade inga trailers</string>
   <!--O-->
   <string name="Off">Av</string>
   <string name="OK">OK</string>
   <string name="On">På</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">OnlineVideos plugin krävs för att spela trailers, kontrollera att pluginen är installerad och aktiverad.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -29,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailers</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Kunde inte spela trailer.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube trailers</string>
 </resources>

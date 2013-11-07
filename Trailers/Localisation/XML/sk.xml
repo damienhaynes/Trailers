@@ -2,13 +2,19 @@
 <resources>
   <!--A-->
   <!--B-->
+  <string name="BufferingTrailer">Prednačítanie traileru</string>
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Chyba trailerov</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Získavam trailery</string>
+  <string name="GettingTrailerUrls">Načítam URL traileru</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDB Trailery</string>
+  <string name="ITunesTrailers">iTunes Trailery</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -16,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Dialóg s multi-výberom</string>
   <!--N-->
+  <string name="NoTrailersFound">Trailery sa nenašli.</string>
   <!--O-->
   <string name="Off">Vyp.</string>
   <string name="OK">OK</string>
   <string name="On">Zap.</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">Na prehratie trailerov je nutný doplnok OnlineVideos. Zaistite že je inštalovaný a je povolený.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -27,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailery</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Nie je možné prehrať trailer.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube Trailery</string>
 </resources>
