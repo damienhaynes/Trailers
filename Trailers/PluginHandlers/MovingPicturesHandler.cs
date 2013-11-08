@@ -21,7 +21,7 @@ namespace Trailers.PluginHandlers
             
             currentMediaItem = new MediaItem();
             browser = MovingPicturesCore.Browser;
-            isDetailsView = browser.CurrentView == BrowserViewMode.DETAILS;
+            isDetailsView = browser.CurrentView.ToString().Equals("DETAILS");
             
             selectedMovie = browser.SelectedMovie;
             
