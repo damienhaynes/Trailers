@@ -72,6 +72,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\MainConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\MainConfig.Designer.cs">
+      <DependentUpon>MainConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\Popups\AddPathPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\Popups\AddPathPopup.designer.cs">
+      <DependentUpon>AddPathPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\JsonExtensions.cs" />
     <Compile Include="FileLog.cs" />
@@ -86,6 +98,11 @@
     <Compile Include="PluginHandlers\OnlineVideosHandler.cs" />
     <Compile Include="PluginHandlers\VideoInfoHandler.cs" />
     <Compile Include="PluginSettings.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Providers\IProvider.cs" />
     <Compile Include="Providers\Local\LocalTrailerProvider.cs" />
     <Compile Include="Providers\MediaItem.cs" />
@@ -102,11 +119,23 @@
     <Compile Include="Web\WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Configuration\MainConfig.resx">
+      <DependentUpon>MainConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\Popups\AddPathPopup.resx">
+      <DependentUpon>AddPathPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\icon_faded.png" />
     <EmbeddedResource Include="Images\icon_normal.png" />
+    <None Include="Images\list-add.png" />
+    <None Include="Images\list-remove.png" />
     <Content Include="Localisation\XML\en-US.xml">
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

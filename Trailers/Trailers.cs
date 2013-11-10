@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
+using Trailers.Configuration;
 using Trailers.GUI;
 using Trailers.Localisation;
 using Trailers.Player;
@@ -135,7 +136,7 @@ namespace Trailers
 
         public bool HasSetup()
         {
-            return false;
+            return true;
         }
 
         public string PluginName()
@@ -145,7 +146,8 @@ namespace Trailers
 
         public void ShowPlugin()
         {
-            throw new NotImplementedException();
+            Configuration.MainConfig config = new Configuration.MainConfig();
+            config.ShowDialog();
         }
 
         #endregion
