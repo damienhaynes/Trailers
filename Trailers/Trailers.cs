@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using Trailers.GUI;
 using Trailers.Localisation;
@@ -12,6 +13,7 @@ using Trailers.PluginHandlers;
 
 namespace Trailers
 {
+    [PluginIcons("Trailers.Images.icon_normal.png", "Trailers.Images.icon_faded.png")]
     public class Trailers : GUIInternalWindow, ISetupForm
     {
         #region Public Variables
