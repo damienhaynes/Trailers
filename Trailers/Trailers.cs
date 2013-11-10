@@ -14,9 +14,9 @@ namespace Trailers
 {
     public class Trailers : GUIInternalWindow, ISetupForm
     {
-        #region Private Variables
+        #region Public Variables
 
-        List<IProvider> TrailerProviders = new List<IProvider>();
+        internal static List<IProvider> TrailerProviders = new List<IProvider>();
 
         #endregion
 
@@ -193,7 +193,75 @@ namespace Trailers
             }
         }
 
-        private void SearchForTrailers(MediaItem searchItem)
+        #endregion
+
+        #region MediaPortal Hooks
+
+        void GUIWindowManager_OnDeActivateWindow(int windowID)
+        {
+            // Settings/General window
+            // this is where a user can change skins\languages from GUI
+            if (windowID == (int)ExternalPluginWindows.MPSkinSettings)
+            {
+                //did language change?
+                if (Translation.CurrentLanguage != Translation.PreviousLanguage)
+                {
+                    FileLog.Info("Language Changed to '{0}' from GUI, initializing translations.", Translation.CurrentLanguage);
+                    Translation.Init();
+                }
+            }
+        }
+
+        void GUIWindowManager_OnActivateWindow(int windowID)
+        {
+
+        }
+
+        void GUIWindowManager_Receivers(GUIMessage message)
+        {
+            if (message.SenderControlId != 11899) return;
+
+            MediaItem currentMediaItem = null;
+
+            switch (message.Message)
+            {
+                case GUIMessage.MessageType.GUI_MSG_CLICKED:
+                    switch (GUIWindowManager.ActiveWindow)
+                    {
+                        case (int)ExternalPluginWindows.VideoInfo:
+                            VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
+                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoInfo, 2);
+                            break;
+
+                        case (int)ExternalPluginWindows.MovingPictures:
+                            bool isDetailsView = true;
+                            MovingPicturesHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
+                            GUIControl.FocusControl((int)ExternalPluginWindows.MovingPictures, isDetailsView ? 6 : 50);
+                            break;
+
+                        case (int)ExternalPluginWindows.MyFilmsDetails:
+                            MyFilmsHandler.GetCurrentMediaItem(out currentMediaItem);
+                            GUIControl.FocusControl((int)ExternalPluginWindows.MyFilmsDetails, 10000);
+                            break;
+
+                        case (int)ExternalPluginWindows.TVSeries:
+                            break;
+                    }
+                    break;
+            }
+
+            if (currentMediaItem != null)
+            {
+                FileLog.Info("Searching for trailers on: Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}', Filename='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
+                SearchForTrailers(currentMediaItem);
+            }
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public static void SearchForTrailers(MediaItem searchItem)
         {
             GUIBackgroundTask.Instance.ExecuteInBackgroundAndCallback(() =>
             {
@@ -268,70 +336,6 @@ namespace Trailers
                     }
                 }
             }, Translation.GettingTrailers, true);
-        }
-
-        #endregion
-
-        #region MediaPortal Hooks
-
-        void GUIWindowManager_OnDeActivateWindow(int windowID)
-        {
-            // Settings/General window
-            // this is where a user can change skins\languages from GUI
-            if (windowID == (int)ExternalPluginWindows.MPSkinSettings)
-            {
-                //did language change?
-                if (Translation.CurrentLanguage != Translation.PreviousLanguage)
-                {
-                    FileLog.Info("Language Changed to '{0}' from GUI, initializing translations.", Translation.CurrentLanguage);
-                    Translation.Init();
-                }
-            }
-        }
-
-        void GUIWindowManager_OnActivateWindow(int windowID)
-        {
-
-        }
-
-        void GUIWindowManager_Receivers(GUIMessage message)
-        {
-            if (message.SenderControlId != 11899) return;
-
-            MediaItem currentMediaItem = null;
-
-            switch (message.Message)
-            {
-                case GUIMessage.MessageType.GUI_MSG_CLICKED:
-                    switch (GUIWindowManager.ActiveWindow)
-                    {
-                        case (int)ExternalPluginWindows.VideoInfo:
-                            VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoInfo, 2);
-                            break;
-
-                        case (int)ExternalPluginWindows.MovingPictures:
-                            bool isDetailsView = true;
-                            MovingPicturesHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.MovingPictures, isDetailsView ? 6 : 50);
-                            break;
-
-                        case (int)ExternalPluginWindows.MyFilmsDetails:
-                            MyFilmsHandler.GetCurrentMediaItem(out currentMediaItem);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.MyFilmsDetails, 10000);
-                            break;
-
-                        case (int)ExternalPluginWindows.TVSeries:
-                            break;
-                    }
-                    break;
-            }
-
-            if (currentMediaItem != null)
-            {
-                FileLog.Info("Searching for trailers on: Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}', Filename='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
-                SearchForTrailers(currentMediaItem);
-            }
         }
 
         #endregion

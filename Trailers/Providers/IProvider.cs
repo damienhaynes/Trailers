@@ -6,7 +6,7 @@ using Trailers.GUI;
 
 namespace Trailers.Providers
 {
-    interface IProvider
+    public interface IProvider
     {
         /// <summary>
         /// Wether or not provider is enabled for lookup
