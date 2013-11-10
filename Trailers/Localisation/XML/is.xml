@@ -2,13 +2,19 @@
 <resources>
   <!--A-->
   <!--B-->
+  <string name="BufferingTrailer">Stiklur í biðminni</string>
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Stikluvilla</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Sæki stiklur</string>
+  <string name="GettingTrailerUrls">Sæki vefslóð stiklu</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDb stiklur</string>
+  <string name="ITunesTrailers">iTunes stiklur</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -16,18 +22,25 @@
   <!--M-->
   <string name="MultiSelectDialog">Multi-Select Dialog</string>
   <!--N-->
+  <string name="NoTrailersFound">Fundust engar stiklur</string>
   <!--O-->
   <string name="Off">Af</string>
   <string name="OK">Í lagi</string>
   <string name="On">Á</string>
+  <string name="Online">Tengdur internetinu</string>
+  <string name="OnlineVideosNotInstalled">Viðbótarforritið OnlineVideos þarf að vera uppsett til að spila stiklur, fullvissaðu þig um að viðbótarforritið sé uppsett og sé virkt.</string>
   <!--P-->
   <!--R-->
   <!--S-->
   <string name="Search">Leita</string>
   <!--T-->
+  <string name="Timeout">Tímatakmörk</string>
+  <string name="Trailer">Stikla</string>
+  <string name="Trailers">Stiklur</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Get ekki spilað stiklu.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube stiklur</string>
 </resources>
