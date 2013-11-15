@@ -269,10 +269,10 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(460, 26);
+            this.label2.Size = new System.Drawing.Size(453, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Enter any search patterns that will help identify trailers in the current media f" +
-    "older. Dynamic fields \r\navailable: %title%, %year%, %imdb%, %filename%  (separat" +
+    "older. Dynamic \r\nfields available: %title%, %year%, %imdb%, %filename%  (separat" +
     "e each folder by a \'|\' character):";
             // 
             // chkBoxSearchLocalInCurrentMediaFolder
