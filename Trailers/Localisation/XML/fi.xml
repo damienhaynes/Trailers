@@ -6,10 +6,15 @@
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Trailerin virhe</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Haetaan trailereita</string>
+  <string name="GettingTrailerUrls">Haetaan trailereiden osoitteita</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDB trailerit</string>
+  <string name="ITunesTrailers">iTunes trailerit</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -17,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Monivalinta Ikkuna</string>
   <!--N-->
+  <string name="NoTrailersFound">Trailereita ei löytynyt!</string>
   <!--O-->
   <string name="Off">Pois päältä</string>
   <string name="OK">OK</string>
   <string name="On">Päällä</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">OnlineVideos -lisäosa vaaditaan trailereiden toistoon, varmista että sinulla on lisäosa asennettu ja käytössä.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -28,8 +36,11 @@
   <!--T-->
   <string name="Timeout">Aikakatkaisu</string>
   <string name="Trailer">Traileri</string>
+  <string name="Trailers">Trailerit</string>
   <!--U-->
+  <string name="UnableToPlayTrailer">Ei voi toistaa traileria.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube trailerit</string>
 </resources>

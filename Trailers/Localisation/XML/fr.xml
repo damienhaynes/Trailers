@@ -6,11 +6,15 @@
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Erreur lors de la récupération des bandes annonces</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Récupérer des bandes annonces</string>
   <string name="GettingTrailerUrls">Récupérer les Urls des bandes annonces</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">Bandes annonces chez IMDb</string>
+  <string name="ITunesTrailers">Bandes annonces chez Itunes</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -18,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Boite de dialogue à sélection multiple</string>
   <!--N-->
+  <string name="NoTrailersFound">Aucune bande annonce trouvée</string>
   <!--O-->
   <string name="Off">Off</string>
   <string name="OK">OK</string>
   <string name="On">On</string>
+  <string name="Online">En ligne</string>
+  <string name="OnlineVideosNotInstalled">Le plugin OnlineVideos est requis afin de lire les bandes annonces, vérifiez que  le plugin est  installé et activé.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -29,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Temps expiré</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Bandes annonces</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Impossible de lire la bande annonce.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">Bandes annonces chez YouTube</string>
 </resources>

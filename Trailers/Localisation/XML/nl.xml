@@ -6,11 +6,15 @@
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Trailers fout</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Trailers ophalen</string>
   <string name="GettingTrailerUrls">Ophalen trailer url\'s</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDb Trailers</string>
+  <string name="ITunesTrailers">iTunes Trailers</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -18,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Multi-Select dialoog</string>
   <!--N-->
+  <string name="NoTrailersFound">Geen Trailers gevonden!</string>
   <!--O-->
   <string name="Off">Uit</string>
   <string name="OK">OK</string>
   <string name="On">Aan</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">OnlineVideos plugin is nodig om trailers af te spelen, zorg dat de plugin geinstalleerd en ingeschakeld is.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -29,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Time-out</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailers</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Afspelen trailer niet mogelijk</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube Trailers</string>
 </resources>
