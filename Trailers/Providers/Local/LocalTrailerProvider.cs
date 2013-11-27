@@ -97,10 +97,10 @@ namespace Trailers.Providers
                     if (!MediaPortal.Util.Utils.IsVideo(file)) continue;
 
                     // check it's not a sample
-                    if (Path.GetFileName(file).ToLower().StartsWith("sample")) continue;
+                    if (Path.GetFileName(file).ToLowerInvariant().StartsWith("sample")) continue;
 
                     // check it's not the same file as the source
-                    if (file.Equals(searchItem.FullPath)) continue;
+                    if (file.Equals(searchItem.FullPath, StringComparison.InvariantCultureIgnoreCase)) continue;
 
                     // check we have not already got this trailer matched
                     if (TrailerFiles.Contains(file)) continue;
