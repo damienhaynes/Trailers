@@ -80,6 +80,9 @@ namespace Trailers.Providers
             searchPattern = searchPattern.Replace("%imdb%", searchItem.IMDb ?? string.Empty);
             searchPattern = searchPattern.Replace("%filename%", searchItem.FilenameWOExtension ?? "null");
 
+            if (string.IsNullOrEmpty(searchPattern)) 
+                searchPattern = "null";
+
             return searchPattern;
         }
 
@@ -88,6 +91,10 @@ namespace Trailers.Providers
             var listItems = new List<GUITrailerListItem>();
 
             FileLog.Debug("Searching for local trailers in directory: '{0}', with search pattern: '{1}'", directory, searchPattern);
+
+            // check if string replacements produced a bad search pattern
+            if (searchPattern.Contains("**") || searchPattern.Contains("null"))
+                return listItems;
 
             try
             {

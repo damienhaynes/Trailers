@@ -232,6 +232,16 @@ namespace Trailers
                 case GUIMessage.MessageType.GUI_MSG_CLICKED:
                     switch (GUIWindowManager.ActiveWindow)
                     {
+                        case (int)ExternalPluginWindows.VideoFile:
+                            VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
+                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoFile, 50);
+                            break;
+
+                        case (int)ExternalPluginWindows.VideoTitle:
+                            VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
+                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoTitle, 50);
+                            break;
+
                         case (int)ExternalPluginWindows.VideoInfo:
                             VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
                             GUIControl.FocusControl((int)ExternalPluginWindows.VideoInfo, 2);

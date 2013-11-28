@@ -33,7 +33,45 @@ namespace Trailers.PluginHandlers
             // Get Local File Info
             currentMediaItem.FullPath = GUIPropertyManager.GetProperty("#file").Trim();
 
+            // At the very least we should have a file
+            if (string.IsNullOrEmpty(currentMediaItem.FullPath))
+            {
+                // try get the selected item on the facade
+                if (SelectedItem != null && !SelectedItem.IsFolder)
+                {
+                    currentMediaItem.FullPath = SelectedItem.Path;
+                }
+                else
+                {
+                    currentMediaItem = null;
+                }
+            }
+
             return true;
+        }
+
+        static GUIFacadeControl Facade
+        {
+            get
+            {
+                // Get the current window
+                var window = GUIWindowManager.GetWindow(GUIWindowManager.ActiveWindow);
+                if (window == null) return null;
+
+                // Get the Facade control
+                return window.GetControl(50) as GUIFacadeControl;
+            }
+        }
+
+        static GUIListItem SelectedItem
+        {
+            get
+            {
+                if (Facade == null) return null;
+
+                // Get the Selected Item
+                return Facade.SelectedListItem;
+            }
         }
     }
 }

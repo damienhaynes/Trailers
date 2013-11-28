@@ -41,7 +41,7 @@ namespace Trailers.Providers
             // Youtube, iTunes and IMDb Trailers
             var listItem = new GUITrailerListItem();
 
-            if (PluginSettings.OnlineVideosYouTubeEnabled)
+            if (PluginSettings.OnlineVideosYouTubeEnabled && !string.IsNullOrEmpty(searchItem.Title))
             {
                 listItem.Label = Translation.YouTubeTrailers;
                 listItem.Label2 = Translation.Search;
@@ -51,7 +51,7 @@ namespace Trailers.Providers
                 listItems.Add(listItem);
             }
 
-            if (PluginSettings.OnlineVideosITunesEnabled)
+            if (PluginSettings.OnlineVideosITunesEnabled && !string.IsNullOrEmpty(searchItem.Title))
             {
                 listItem = new GUITrailerListItem();
                 listItem.Label = Translation.ITunesTrailers;
@@ -62,7 +62,7 @@ namespace Trailers.Providers
                 listItems.Add(listItem);
             }
 
-            if (PluginSettings.OnlineVideosIMDbEnabled)
+            if (PluginSettings.OnlineVideosIMDbEnabled && !string.IsNullOrEmpty(searchItem.Title))
             {
                 listItem = new GUITrailerListItem();
                 listItem.Label = Translation.IMDbTrailers;

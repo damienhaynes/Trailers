@@ -12,6 +12,8 @@ namespace Trailers.GUI
     enum ExternalPluginWindows
     {
         VideoInfo = 2003,
+        VideoTitle = 25,
+        VideoFile = 6,
         OnlineVideos = 4755,
         MyFilmsDetails = 7987,
         TVSeries = 9811,
