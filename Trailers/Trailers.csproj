@@ -62,6 +62,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -107,6 +108,9 @@
     <Compile Include="Providers\Local\LocalTrailerProvider.cs" />
     <Compile Include="Providers\MediaItem.cs" />
     <Compile Include="Providers\OnlineSearch\OnlineVideoSearchProvider.cs" />
+    <Compile Include="Providers\TMDb\DataStructures\TMDbMovieSearch.cs" />
+    <Compile Include="Providers\TMDb\DataStructures\TMDbPage.cs" />
+    <Compile Include="Providers\TMDb\DataStructures\TMDbSearchResult.cs" />
     <Compile Include="Providers\TMDb\DataStructures\TMDbTrailers.cs" />
     <Compile Include="Providers\TMDb\API\TMDbAPI.cs" />
     <Compile Include="Providers\TMDb\DataStructures\TMDbYouTubeTrailer.cs" />

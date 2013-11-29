@@ -46,13 +46,37 @@ namespace Trailers.Providers
             {
                 searchTerm = searchItem.IMDb;
             }
+            else if (!string.IsNullOrEmpty(searchItem.Title))
+            {
+                // we do the best we can with out any proper movie id's
+                FileLog.Debug("Searching themoviedb.org for movie: Title: '{0}', Year: '{1}'", searchItem.Title, searchItem.Year);
+
+                var searchResults = TMDbAPI.SearchMovies(searchItem.Title, language: "en", year: searchItem.Year <= 1900 ? null : searchItem.Year.ToString());
+                if (searchResults == null || searchResults.TotalResults == 0)
+                {
+                    FileLog.Warning("No movies found, skipping search from the themoviedb.org.");
+                    return listItems;
+                }
+                else
+                {
+                    foreach(var movie in searchResults.Results)
+                    {
+                        FileLog.Debug("Found movie: Title: '{0}', Original Title: '{1}', Release Date: '{2}', TMDb: '{3}', Popularity: '{4}'", movie.Title, movie.OriginalTitle, movie.ReleaseDate, movie.Id, movie.Popularity);
+                    }
+                }
+
+                // get the movie id of the first result, this would be the most likely match (based on popularity)
+                // we can think about provided a menu of choices as well based on demand
+                searchTerm = searchResults.Results.First().Id.ToString();
+                searchItem.TMDb = searchTerm;
+            }
             else
             {
-                FileLog.Warning("Not enough information to search for trailers from themoviedb.org, require IMDb or TMDb ID.");
+                FileLog.Warning("Not enough information to search for trailers from themoviedb.org, require IMDb ID, TMDb ID or Title+Year.");
                 return listItems;
             }
 
-            FileLog.Debug("Searching for trailers from themoviedb.org...");
+            FileLog.Debug("Searching for trailers using search term '{0}' from themoviedb.org...", searchTerm);
             var trailers = TMDbAPI.GetMovieTrailers(searchTerm);
             if (trailers == null || trailers.YouTubeTrailers == null)
             {
