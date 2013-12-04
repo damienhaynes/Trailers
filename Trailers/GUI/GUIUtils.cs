@@ -18,6 +18,7 @@ namespace Trailers.GUI
         MyFilmsDetails = 7987,
         TVSeries = 9811,
         MovingPictures = 96742,
+        ShowTimes = 7111992,
         MPSkinSettings = 705
     }
 

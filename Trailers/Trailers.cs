@@ -223,8 +223,10 @@ namespace Trailers
 
         void GUIWindowManager_Receivers(GUIMessage message)
         {
-            if (message.SenderControlId != 11899) return;
+            // check event was fired from a trailer button
+            if (message.SenderControlId != 11899 && message.SenderControlId != 11900) return;
 
+            bool isDetailsView = true;
             MediaItem currentMediaItem = null;
 
             switch (message.Message)
@@ -233,13 +235,9 @@ namespace Trailers
                     switch (GUIWindowManager.ActiveWindow)
                     {
                         case (int)ExternalPluginWindows.VideoFile:
-                            VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoFile, 50);
-                            break;
-
                         case (int)ExternalPluginWindows.VideoTitle:
                             VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoTitle, 50);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
                         case (int)ExternalPluginWindows.VideoInfo:
@@ -248,7 +246,6 @@ namespace Trailers
                             break;
 
                         case (int)ExternalPluginWindows.MovingPictures:
-                            bool isDetailsView = true;
                             MovingPicturesHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
                             GUIControl.FocusControl((int)ExternalPluginWindows.MovingPictures, isDetailsView ? 6 : 50);
                             break;
@@ -256,6 +253,11 @@ namespace Trailers
                         case (int)ExternalPluginWindows.MyFilmsDetails:
                             MyFilmsHandler.GetCurrentMediaItem(out currentMediaItem);
                             GUIControl.FocusControl((int)ExternalPluginWindows.MyFilmsDetails, 10000);
+                            break;
+
+                        case (int)ExternalPluginWindows.ShowTimes:
+                            ShowTimesHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
+                            GUIControl.FocusControl((int)ExternalPluginWindows.ShowTimes, isDetailsView ? 42 : 50);
                             break;
 
                         case (int)ExternalPluginWindows.TVSeries:

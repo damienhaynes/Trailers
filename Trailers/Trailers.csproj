@@ -97,6 +97,7 @@
     <Compile Include="PluginHandlers\MovingPicturesHandler.cs" />
     <Compile Include="PluginHandlers\MyFilmsHandler.cs" />
     <Compile Include="PluginHandlers\OnlineVideosHandler.cs" />
+    <Compile Include="PluginHandlers\ShowTimesHandler.cs" />
     <Compile Include="PluginHandlers\VideoInfoHandler.cs" />
     <Compile Include="PluginSettings.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
