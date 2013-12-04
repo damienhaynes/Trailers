@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Xml;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Profile;
@@ -19,7 +20,9 @@ namespace Trailers
 
         private const string cTrailers = "Trailers";
         private const string cOnlineVideos = "onlinevideos";
+        private const string cShowTimes = "ShowTimes Grabber";
         private const string cOnlineVideosDownloadDir = "downloadDir";
+        private const string cShowTimesConfigFile = "grabberCfgXml";
         private const string cSettingsVersion = "SettingsVersion";
         private const string cWebTimeoutIncrement = "WebTimeoutIncrement";
         private const string cWebTimeout = "WebTimeout";
@@ -136,7 +139,7 @@ namespace Trailers
                 SearchLocalInSubFolder = xmlreader.GetValueAsBool(cTrailers, cSearchLocalInSubFolder, true);
                 SearchLocalAdditionalSubFolders = xmlreader.GetValueAsString(cTrailers, cSearchLocalAdditionalSubFolders, "Teaser|Extras|Shorts|Featurette|Featurettes");
                 SearchLocalInDedicatedDirectory = xmlreader.GetValueAsBool(cTrailers, cSearchLocalInDedicatedDirectory, true);
-                SearchLocalDedicatedDirectories = xmlreader.GetValueAsString(cTrailers, cSearchLocalDedicatedDirectories, GetOnlineVideosDownloadDir());
+                SearchLocalDedicatedDirectories = xmlreader.GetValueAsString(cTrailers, cSearchLocalDedicatedDirectories, GetExternalDownloadDirs());
                 SearchLocalDedicatedSubDirectories = xmlreader.GetValueAsString(cTrailers, cSearchLocalDedicatedSubDirectories, "%title% (%year%)|%title%");
                 SearchLocalDedicatedDirectorySearchPatterns = xmlreader.GetValueAsString(cTrailers, cSearchLocalDedicatedDirectorySearchPatterns, "%filename%*|*%title%*%year%*|*%title%*");
                 SearchLocalInCurrentMediaFolder = xmlreader.GetValueAsBool(cTrailers, cSearchLocalInCurrentMediaFolder, true);
@@ -209,10 +212,61 @@ namespace Trailers
             Settings.SaveCache();
         }
 
+        static string GetExternalDownloadDirs()
+        {
+            string trailerDirs = string.Empty;
+            
+            trailerDirs =  GetOnlineVideosDownloadDirs();
+            trailerDirs += string.IsNullOrEmpty(trailerDirs) ? string.Empty : "|";
+            trailerDirs += GetShowTimesTrailerDir();
+
+            return trailerDirs;
+        }
+
+        /// <summary>
+        /// Get ShowTimes Trailer download directory
+        /// </summary>
+        /// <returns></returns>
+        static string GetShowTimesTrailerDir()
+        {
+            string showTimesConfigFile = string.Empty;
+            string trailerDir = string.Empty;
+
+            FileLog.Debug("Getting ShowTimes Config location");
+
+            using (Settings xmlreader = new MPSettings())
+            {
+                showTimesConfigFile = xmlreader.GetValueAsString(cShowTimes, cShowTimesConfigFile, string.Empty);
+            }
+
+            if (!string.IsNullOrEmpty(showTimesConfigFile))
+            {
+                FileLog.Debug("Getting ShowTimes Trailer folder");
+
+                try
+                {
+                    if (File.Exists(showTimesConfigFile))
+                    {
+                        var xmlDoc = new XmlDocument();
+                        xmlDoc.Load(showTimesConfigFile);
+
+                        var node = xmlDoc.SelectSingleNode("/ConfigurationSettings/TrailerFolder");
+                        if (node != null) trailerDir = node.InnerText;
+                    }
+                }
+                catch(Exception e)
+                {
+                    FileLog.Error("Unable to get trailer directory for ShowTimes plugin!: {0}", e.Message);
+                }
+            }
+
+            return trailerDir;
+        }
+
         /// <summary>
         /// Get OnlineVideos download directories for possible source of Trailers
         /// </summary>
-        static string GetOnlineVideosDownloadDir()
+        static string GetOnlineVideosDownloadDirs()
         {
             string trailerDirs = string.Empty;
             string downloadDir = string.Empty;
@@ -226,7 +280,7 @@ namespace Trailers
             if (!string.IsNullOrEmpty(downloadDir))
             {
                 // add iTunes, IMDb and YouTube as possible trailer directories
-                trailerDirs = string.Format("{0}", Path.Combine(downloadDir, "YouTube"));
+                trailerDirs =  string.Format("{0}",  Path.Combine(downloadDir, "YouTube"));
                 trailerDirs += string.Format("|{0}", Path.Combine(downloadDir, "iTunes Movie Trailers"));
                 trailerDirs += string.Format("|{0}", Path.Combine(downloadDir, "IMDb Movie Trailers"));
             }
