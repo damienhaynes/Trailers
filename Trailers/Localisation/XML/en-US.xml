@@ -22,6 +22,7 @@
   <!--M-->
   <string name="MultiSelectDialog">Multi-Select Dialog</string>
   <!--N-->
+  <string name="No">No</string>
   <string name="NoTrailersFound">No Trailers Found!</string>
   <!--O-->
   <string name="Off">Off</string>
@@ -33,6 +34,38 @@
   <!--R-->
   <!--S-->
   <string name="Search">Search</string>
+  <string name="SettingPluginEnabledName">Plugin Enabled</string>
+  <string name="SettingPluginEnabledDescription">Enable / Disable this setting to control if the Trailers plugin is loaded with MediaPortal.</string>
+  <string name="SettingListedHomeName">Listed in Home</string>
+  <string name="SettingListedHomeDescription">Enable this setting for the Trailers plugin to appear in the main Home screen menu items.</string>
+  <string name="SettingListedPluginsName">Listed in My Plugins</string>
+  <string name="SettingListedPluginsDescription">Enable this setting for the Trailers plugin to appear in the My Plugins screen menu items.</string>
+  <string name="SettingWebMaxRetriesName">Max Retries for Web Requests</string>
+  <string name="SettingWebMaxRetriesDescription">The maximum number of retries to perform a repeated web request if an attempt fails e.g. times-out.</string>
+  <string name="SettingWebTimeoutIncrementName">Web Request Timeout Increment</string>
+  <string name="SettingWebTimeoutIncrementDescription">The amount of time to wait after a failed web-request before retrying.</string>
+  <string name="SettingProviderLocalSearchName">Enable Local Trailer Provider</string>
+  <string name="SettingProviderLocalSearchDescription">The Local Trailer Provider will search your local drives for trailers, trailers can be stored either with your current media or from a dedicated directory / directories.</string>
+  <string name="SettingProviderTMDbMoviesName">Enable TheMovieDb Trailer Provider</string>
+  <string name="SettingProviderTMDbMoviesDescription">TheMovieDb Trailer Provider will return a list of trailers, featurettes, clips and teasers for the specified movie. It\'s the preferred source for online search of trailers.</string>
+  <string name="SettingProviderOnlineVideoSearchName">Enable OnlineVideos Trailer Search Provider</string>
+  <string name="SettingProviderOnlineVideoSearchDescription">The OnlineVideos Trailer Search Provider acts as a backup so that a manual search can be triggered if no online or local trailers were found.</string>
+  <string name="SettingSearchLocalInCurrentMediaFolderName">Search Local Trailers in Current Folder</string>
+  <string name="SettingSearchLocalInCurrentMediaFolderDescription">Enable to search for trailers in the current media\'s folder, typically files be be-side the current media with \'trailer\' in the filename.</string>
+  <string name="SettingSearchLocalInSubFolderName">Search Local Trailers in Current SubFolder</string>
+  <string name="SettingSearchLocalInSubFolderDescription">Enable to search for trailers in a list of specified sub-directories of the current menu e.g. in a \'Trailer\' sub-directory.</string>
+  <string name="SettingSearchLocalInDedicatedDirectoryName">Search Local Trailers in Dedicated Directories</string>
+  <string name="SettingSearchLocalInDedicatedDirectoryDescription">Enable to search for trailers in a list of specified dedicated directories, these would be outside of the current media path. By default the OnlineVideos and ShowTimes download directories are used for search.</string>
+  <string name="SettingOnlineVideosYouTubeEnabledName">Enable YouTube Site for Manual Search</string>
+  <string name="SettingOnlineVideosYouTubeEnabledDescription">The YouTube site is probably the best site in OnlineVideos to perform a manual search, there is a large range of movies trailers available at good quality.</string>
+  <string name="SettingOnlineVideosITunesEnabledName">Enable iTunes Site for Manual Search</string>
+  <string name="SettingOnlineVideosITunesEnabledDescription">The iTunes Movie Trailer site is a dedicated trailer site, this is a good choice for more recent movies.</string>
+  <string name="SettingOnlineVideosIMDbEnabledName">Enable IMDb Site for Manual Search</string>
+  <string name="SettingOnlineVideosIMDbEnabledDescription">The IMDb Movie Trailer site is a dedicated trailer site, this is a good choice for more recent movies and also allows for exact trailer searches using the IMDb ID.</string>
+  <string name="SettingSearchLocalAggressiveSearchName">Enable Aggressive Search for Local Trailers</string>
+  <string name="SettingSearchLocalAggressiveSearchDescription">Aggressive search will continue to find trailers from the various enabled local search methods even when there has already been match(es) found. This setting is not needed unless you have trailers for the same movie scattered in more than one place.</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundName">Skip Online Providers if Local Trailers Found</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundDescription">If there are local trailers found in search, then immediately show/play result or continue to search for online trailers and present both results.</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
@@ -42,5 +75,6 @@
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Yes</string>
   <string name="YouTubeTrailers">YouTube Trailers</string>
 </resources>

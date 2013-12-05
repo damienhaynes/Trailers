@@ -237,8 +237,9 @@ namespace Trailers.Localisation
         public static string MultiSelectDialog = "Multi-Select Dialog";
 
         // N
+        public static string No = "No";
         public static string NoTrailersFound = "No Trailers Found!";
-
+        
         // O
         public static string Off = "Off";
         public static string OK = "OK";
@@ -252,6 +253,40 @@ namespace Trailers.Localisation
 
         // S
         public static string Search = "Search";
+        public static string SettingPluginEnabledName = "Plugin Enabled";
+        public static string SettingPluginEnabledDescription = "Enable / Disable this setting to control if the Trailers plugin is loaded with MediaPortal.";
+        public static string SettingListedHomeName = "Listed in Home";
+        public static string SettingListedHomeDescription = "Enable this setting for the Trailers plugin to appear in the main Home screen menu items.";
+        public static string SettingListedPluginsName = "Listed in My Plugins";
+        public static string SettingListedPluginsDescription = "Enable this setting for the Trailers plugin to appear in the My Plugins screen menu items.";
+        public static string SettingWebMaxRetriesName = "Max Retries for Web Requests";
+        public static string SettingWebMaxRetriesDescription = "The maximum number of retries to perform a repeated web request if an attempt fails e.g. times-out.";
+        public static string SettingWebTimeoutName = "Web Request Timeout";
+        public static string SettingWebTimeoutDescription = "The amount of time to wait for a response from a web-request.";
+        public static string SettingWebTimeoutIncrementName = "Web Request Timeout Increment";
+        public static string SettingWebTimeoutIncrementDescription = "The amount of time to wait after a failed web-request before retrying.";
+        public static string SettingProviderLocalSearchName = "Enable Local Trailer Provider";
+        public static string SettingProviderLocalSearchDescription = "The Local Trailer Provider will search your local drives for trailers, trailers can be stored either with your current media or from a dedicated directory / directories.";
+        public static string SettingProviderTMDbMoviesName = "Enable TheMovieDb Trailer Provider";
+        public static string SettingProviderTMDbMoviesDescription = "TheMovieDb Trailer Provider will return a list of trailers, featurettes, clips and teasers for the specified movie. It's the preferred source for online search of trailers.";
+        public static string SettingProviderOnlineVideoSearchName = "Enable OnlineVideos Trailer Search Provider";
+        public static string SettingProviderOnlineVideoSearchDescription = "The OnlineVideos Trailer Search Provider acts as a backup so that a manual search can be triggered if no online or local trailers were found.";
+        public static string SettingSearchLocalInCurrentMediaFolderName = "Search Local Trailers in Current Folder";
+        public static string SettingSearchLocalInCurrentMediaFolderDescription = "Enable to search for trailers in the current media's folder, typically files be be-side the current media with 'trailer' in the filename.";
+        public static string SettingSearchLocalInSubFolderName = "Search Local Trailers in Current SubFolder";
+        public static string SettingSearchLocalInSubFolderDescription = "Enable to search for trailers in a list of specified sub-directories of the current menu e.g. in a 'Trailer' sub-directory.";
+        public static string SettingSearchLocalInDedicatedDirectoryName = "Search Local Trailers in Dedicated Directories";
+        public static string SettingSearchLocalInDedicatedDirectoryDescription = "Enable to search for trailers in a list of specified dedicated directories, these would be outside of the current media path. By default the OnlineVideos and ShowTimes download directories are used for search.";
+        public static string SettingOnlineVideosYouTubeEnabledName = "Enable YouTube Site for Manual Search";
+        public static string SettingOnlineVideosYouTubeEnabledDescription = "The YouTube site is probably the best site in OnlineVideos to perform a manual search, there is a large range of movies trailers available at good quality.";
+        public static string SettingOnlineVideosITunesEnabledName = "Enable iTunes Site for Manual Search";
+        public static string SettingOnlineVideosITunesEnabledDescription = "The iTunes Movie Trailer site is a dedicated trailer site, this is a good choice for more recent movies.";
+        public static string SettingOnlineVideosIMDbEnabledName = "Enable IMDb Site for Manual Search";
+        public static string SettingOnlineVideosIMDbEnabledDescription = "The IMDb Movie Trailer site is a dedicated trailer site, this is a good choice for more recent movies and also allows for exact trailer searches using the IMDb ID.";
+        public static string SettingSearchLocalAggressiveSearchName = "Enable Aggressive Search for Local Trailers";
+        public static string SettingSearchLocalAggressiveSearchDescription = "Aggressive search will continue to find trailers from the various enabled local search methods even when there has already been match(es) found. This setting is not needed unless you have trailers for the same movie scattered in more than one place.";
+        public static string SettingSkipOnlineProvidersIfLocalFoundName = "Skip Online Providers if Local Trailers Found";
+        public static string SettingSkipOnlineProvidersIfLocalFoundDescription = "If there are local trailers found in search, then immediately show/play result or continue to search for online trailers and present both results.";
 
         // T
         public static string Timeout = "Timeout";
@@ -267,6 +302,7 @@ namespace Trailers.Localisation
 
         // Y
         public static string YouTubeTrailers = "YouTube Trailers";
+        public static string Yes = "Yes";
 
         #endregion
     }

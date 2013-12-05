@@ -124,6 +124,35 @@
     <Compile Include="Web\WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Localisation\XML\es.xml" />
+    <Content Include="Localisation\XML\et.xml" />
+    <Content Include="Localisation\XML\fi.xml" />
+    <Content Include="Localisation\XML\fr.xml" />
+    <Content Include="Localisation\XML\he.xml" />
+    <Content Include="Localisation\XML\hi.xml" />
+    <Content Include="Localisation\XML\hr.xml" />
+    <Content Include="Localisation\XML\hu.xml" />
+    <Content Include="Localisation\XML\id.xml" />
+    <Content Include="Localisation\XML\is.xml" />
+    <Content Include="Localisation\XML\it.xml" />
+    <Content Include="Localisation\XML\ko.xml" />
+    <Content Include="Localisation\XML\ku.xml" />
+    <Content Include="Localisation\XML\lt.xml" />
+    <Content Include="Localisation\XML\nb.xml" />
+    <Content Include="Localisation\XML\nl.xml" />
+    <Content Include="Localisation\XML\no.xml" />
+    <Content Include="Localisation\XML\pl.xml" />
+    <Content Include="Localisation\XML\pt-BR.xml" />
+    <Content Include="Localisation\XML\pt.xml" />
+    <Content Include="Localisation\XML\ru.xml" />
+    <Content Include="Localisation\XML\sk.xml" />
+    <Content Include="Localisation\XML\sl.xml" />
+    <Content Include="Localisation\XML\sr.xml" />
+    <Content Include="Localisation\XML\sv.xml" />
+    <Content Include="Localisation\XML\tr.xml" />
+    <Content Include="Localisation\XML\uk.xml" />
+    <Content Include="Localisation\XML\vi.xml" />
+    <Content Include="Localisation\XML\zh.xml" />
     <EmbeddedResource Include="Configuration\MainConfig.resx">
       <DependentUpon>MainConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +163,12 @@
     <EmbeddedResource Include="Images\icon_normal.png" />
     <None Include="Images\list-add.png" />
     <None Include="Images\list-remove.png" />
+    <Content Include="Localisation\XML\bg.xml" />
+    <Content Include="Localisation\XML\ca.xml" />
+    <Content Include="Localisation\XML\cs.xml" />
+    <Content Include="Localisation\XML\da.xml" />
+    <Content Include="Localisation\XML\de.xml" />
+    <Content Include="Localisation\XML\el.xml" />
     <Content Include="Localisation\XML\en-US.xml">
       <SubType>Designer</SubType>
     </Content>
