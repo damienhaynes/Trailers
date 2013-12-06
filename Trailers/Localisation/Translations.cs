@@ -248,7 +248,8 @@ namespace Trailers.Localisation
         public static string OnlineVideosNotInstalled = "OnlineVideos plugin is required to play trailers, ensure that you have the plugin installed and it's enabled.";
 
         // P
-        
+        public static string Play = "Play";
+
         // R
 
         // S
