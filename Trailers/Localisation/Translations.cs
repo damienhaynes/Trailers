@@ -287,6 +287,9 @@ namespace Trailers.Localisation
         public static string SettingSearchLocalAggressiveSearchDescription = "Aggressive search will continue to find trailers from the various enabled local search methods even when there has already been match(es) found. This setting is not needed unless you have trailers for the same movie scattered in more than one place.";
         public static string SettingSkipOnlineProvidersIfLocalFoundName = "Skip Online Providers if Local Trailers Found";
         public static string SettingSkipOnlineProvidersIfLocalFoundDescription = "If there are local trailers found in search, then immediately show/play result or continue to search for online trailers and present both results.";
+        public static string SettingAutoPlayOnSingleLocalOrOnlineTrailerName = "Auto Play on Single Local or Online Trailer";
+        public static string SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription = "If there is only a single local or online trailer found, then automatically play trailer. When disabled (default) a menu of results will be shown including manual search providers.";
+        public static string Settings = "Settings";
 
         // T
         public static string Timeout = "Timeout";

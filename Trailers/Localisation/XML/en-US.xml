@@ -66,6 +66,9 @@
   <string name="SettingSearchLocalAggressiveSearchDescription">Aggressive search will continue to find trailers from the various enabled local search methods even when there has already been match(es) found. This setting is not needed unless you have trailers for the same movie scattered in more than one place.</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundName">Skip Online Providers if Local Trailers Found</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundDescription">If there are local trailers found in search, then immediately show/play result or continue to search for online trailers and present both results.</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerName">Auto Play on Single Local or Online Trailer</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription">If there is only a single local or online trailer found, then automatically play trailer. When disabled (default) a menu of results will be shown including manual search providers.</string>
+  <string name="Settings">Settings</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
