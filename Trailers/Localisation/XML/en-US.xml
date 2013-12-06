@@ -42,6 +42,8 @@
   <string name="SettingListedPluginsDescription">Enable this setting for the Trailers plugin to appear in the My Plugins screen menu items.</string>
   <string name="SettingWebMaxRetriesName">Max Retries for Web Requests</string>
   <string name="SettingWebMaxRetriesDescription">The maximum number of retries to perform a repeated web request if an attempt fails e.g. times-out.</string>
+  <string name="SettingWebTimeoutName">Web Request Timeout</string>
+  <string name="SettingWebTimeoutDescription">The amount of time to wait for a response from a web-request.</string>
   <string name="SettingWebTimeoutIncrementName">Web Request Timeout Increment</string>
   <string name="SettingWebTimeoutIncrementDescription">The amount of time to wait after a failed web-request before retrying.</string>
   <string name="SettingProviderLocalSearchName">Enable Local Trailer Provider</string>

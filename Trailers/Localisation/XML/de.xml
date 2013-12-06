@@ -6,11 +6,15 @@
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Trailer Fehler</string>
   <!--F-->
   <!--G-->
+  <string name="GettingTrailers">Trailer werden geholt</string>
   <string name="GettingTrailerUrls">Trailer-URLs abrufen</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDB Trailer</string>
+  <string name="ITunesTrailers">iTunes Trailer</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -18,10 +22,13 @@
   <!--M-->
   <string name="MultiSelectDialog">Multi-Auswahl-Dialog</string>
   <!--N-->
+  <string name="NoTrailersFound">Keine Trailer gefunden</string>
   <!--O-->
   <string name="Off">Aus</string>
   <string name="OK">OK</string>
   <string name="On">An</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">Das OnlineVideos Plugin wir benötigt. Stellen Sie sicher dass es installiert und aktiviert ist.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -29,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Zeitüberschreitung</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailer</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Trailer kann nicht abgespielt werden.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">YouTube Trailer</string>
 </resources>

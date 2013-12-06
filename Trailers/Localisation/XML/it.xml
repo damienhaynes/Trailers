@@ -2,26 +2,33 @@
 <resources>
   <!--A-->
   <!--B-->
-  <string name="BufferingTrailer">Buffering Trailer</string>
+  <string name="BufferingTrailer">Bufferizzazione trailer...</string>
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Errore trailers</string>
   <!--F-->
   <!--G-->
-  <string name="GettingTrailerUrls">Ricezione URLs Trailer</string>
+  <string name="GettingTrailers">Ricezione trailers</string>
+  <string name="GettingTrailerUrls">Ricezione URLs trailer</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">Trailers da IMDb</string>
+  <string name="ITunesTrailers">Trailers da iTunes</string>
   <!--J-->
   <!--K-->
   <!--L-->
   <string name="Local">Locale</string>
   <!--M-->
-  <string name="MultiSelectDialog">Finestra di Selezione Multipla</string>
+  <string name="MultiSelectDialog">Finestra di selezione multipla</string>
   <!--N-->
+  <string name="NoTrailersFound">Nessun trailer trovato!</string>
   <!--O-->
   <string name="Off">Off</string>
   <string name="OK">OK</string>
   <string name="On">On</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">Il pluing Online Videos è necessario per la riproduzione dei trailers.\nAssicurati che sia installato ed abilitato.</string>
   <!--P-->
   <!--R-->
   <!--S-->
@@ -29,9 +36,11 @@
   <!--T-->
   <string name="Timeout">Scaduto</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailers</string>
   <!--U-->
-  <string name="UnableToPlayTrailer">Impossibile riprodurre trailer.</string>
+  <string name="UnableToPlayTrailer">Impossibile riprodurre il trailer.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="YouTubeTrailers">Trailers da YouTube</string>
 </resources>

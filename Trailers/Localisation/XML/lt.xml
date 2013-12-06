@@ -22,6 +22,7 @@
   <!--M-->
   <string name="MultiSelectDialog">Daugkartinio pasirinkimo dialogas</string>
   <!--N-->
+  <string name="No">Ne</string>
   <string name="NoTrailersFound">Anonsų nerasta!</string>
   <!--O-->
   <string name="Off">Išjungta</string>
@@ -33,6 +34,38 @@
   <!--R-->
   <!--S-->
   <string name="Search">Ieškoti</string>
+  <string name="SettingPluginEnabledName">Įskiepis įjungtas</string>
+  <string name="SettingPluginEnabledDescription">Įjungti / išjungti šį nustatymą jei norite kontroliuoti Anonsų įskiepį užkraunant MediaPortal</string>
+  <string name="SettingListedHomeName">Pagrindiniame ekrane</string>
+  <string name="SettingListedHomeDescription">Įjungti šį nustatymą, kad Anonsų įskiepis būtų rodomas pagrindiniame meniu lange.</string>
+  <string name="SettingListedPluginsName">Rodomi Mano Įskiepiuose</string>
+  <string name="SettingListedPluginsDescription">Įjungti šį nustatymą, kad Anonsų įskiepis būtų rodomas įskiepių meniu lange.</string>
+  <string name="SettingWebMaxRetriesName">Maksimalus Web užklausų bandymų kiekis</string>
+  <string name="SettingWebMaxRetriesDescription">Maksimalus bandymų skaičius, kad, pvz. nesant pasiekiamumui, būtų kartojama web užklausa.</string>
+  <string name="SettingWebTimeoutIncrementName">Web užklausos pertraukos periodas</string>
+  <string name="SettingWebTimeoutIncrementDescription">Web užklausos pakartotinio bandymo laukimo tarpas.</string>
+  <string name="SettingProviderLocalSearchName">Įjungti Vidinį Anonsų tiekėją</string>
+  <string name="SettingProviderLocalSearchDescription">Vidinis Anonsų tiekėjas ieškos anonsų vidiniuose diskuose, anonsai gali būti kartu su esama media arba dedikuotuose aplankuose.</string>
+  <string name="SettingProviderTMDbMoviesName">Įjungti TheMovieDb Anonsų tiekėją</string>
+  <string name="SettingProviderTMDbMoviesDescription">TheMovieDb Anonsų tiekėjas surinks sąrašą anonsų, trumpmetražius filmus, klipus nurodytam filmui. Tai numatytasis online anonsų paieškos šaltinis.</string>
+  <string name="SettingProviderOnlineVideoSearchName">Įjungti OnlineVideos Anonsų paieškos tiekėją</string>
+  <string name="SettingProviderOnlineVideoSearchDescription">OnlineVideos anonsų paieškos tiekėjas veikia kaip atsarginė kopija taip, kad nesant online ar vidinio anonso paieškos rezultatų būtų galima ją inicijuoti rankiniu būdu.</string>
+  <string name="SettingSearchLocalInCurrentMediaFolderName">Ieškoti vidinių anonsų šiame aplanke</string>
+  <string name="SettingSearchLocalInCurrentMediaFolderDescription">Įjungti norint ieškoti anonsų šiame media aplanke, dažniausiai failai yra kartu su media su \"anonsas\" ždožiu pavadinime.</string>
+  <string name="SettingSearchLocalInSubFolderName">Ieškoti vidinių anonsų šiame subaplanke</string>
+  <string name="SettingSearchLocalInSubFolderDescription">Įjungti anonsų paiešką numatytų meniu subaplankų sąraše, pvz. subaplanke \"Anonsas\".</string>
+  <string name="SettingSearchLocalInDedicatedDirectoryName">Ieškoti vidinių anonsų dedikuotame aplanke.</string>
+  <string name="SettingSearchLocalInDedicatedDirectoryDescription">Įjungti anonsų paiešką numatytuose aplankuose, kurie yra kitoje vietoje nei dabartinis media kelias.  Pagal nutylėjimą bus naudojami OnlineVideos ir ShowTimes aplankai.</string>
+  <string name="SettingOnlineVideosYouTubeEnabledName">Įjungti YouTube puslapį rankinei paieškai.</string>
+  <string name="SettingOnlineVideosYouTubeEnabledDescription">YouTube yra bene geriausias OnlienVideos puslapis rankinei paieškai, ten yra didelė ir geros kokybės anonsų biblioteka.</string>
+  <string name="SettingOnlineVideosITunesEnabledName">Įjungti iTunes puslapį rankinei paieškai</string>
+  <string name="SettingOnlineVideosITunesEnabledDescription">iTunes filmų anonsų puslapis yra dedikuotas anonsams, jis labai tinkamas vėliausiems filmams.</string>
+  <string name="SettingOnlineVideosIMDbEnabledName">Įjungti IMDb puslapį rankinei paieškai</string>
+  <string name="SettingOnlineVideosIMDbEnabledDescription">IMDb filmų anonsų puslapis yra dedikuotas anonsams, tai geras pasirinkimas vėliausiems filmams ir taip pat leidžia ieškoti tikslų anonsą pagal IMDb ID.</string>
+  <string name="SettingSearchLocalAggressiveSearchName">Įjungti agresyvią vidinių anonsų paiešką.</string>
+  <string name="SettingSearchLocalAggressiveSearchDescription">Agresyvi paieška tęs paiešką įvairiais įjungtai vidinės paieškos būdais net jei jau rastas rezultatas(ai). Šis nustatymas nebūtinas, nebent turite išbarstytus filmus skirtingose vietose.</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundName">Praleisti online tiekėjus jei rasti vidiniai anonsai.</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundDescription">Jei rasti vidiniai anonsai, tuomet iškart rodyti/groti rezultatus arba tęsti paiešką online anonsų ir parodyti abejus rezultatus.</string>
   <!--T-->
   <string name="Timeout">Pertrauka</string>
   <string name="Trailer">Anonsas</string>
@@ -42,5 +75,6 @@
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Taip</string>
   <string name="YouTubeTrailers">YouTube anonsai</string>
 </resources>
