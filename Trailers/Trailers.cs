@@ -262,6 +262,18 @@ namespace Trailers
 
                         case (int)ExternalPluginWindows.TVSeries:
                             break;
+
+                        case (int)ExternalPluginWindows.TraktRecentAddedMovies:
+                        case (int)ExternalPluginWindows.TraktRecentWatchedMovies:
+                        case (int)ExternalPluginWindows.TraktRecommendationsMovies:
+                        case (int)ExternalPluginWindows.TraktRelatedMovies:
+                        case (int)ExternalPluginWindows.TraktSearchMovies:
+                        case (int)ExternalPluginWindows.TraktTrendingMovies:
+                        case (int)ExternalPluginWindows.TraktWatchedListMovies:
+                        case (int)ExternalPluginWindows.TraktListItems:
+                            TraktMovieHandler.GetCurrentMediaItem(out currentMediaItem);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
+                            break;
                     }
                     break;
             }

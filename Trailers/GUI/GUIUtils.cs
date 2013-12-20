@@ -19,7 +19,15 @@ namespace Trailers.GUI
         TVSeries = 9811,
         MovingPictures = 96742,
         ShowTimes = 7111992,
-        MPSkinSettings = 705
+        MPSkinSettings = 705,
+        TraktRecommendationsMovies = 87263,
+        TraktTrendingMovies = 87266,
+        TraktWatchedListMovies = 87270,
+        TraktRelatedMovies = 87277,
+        TraktRecentWatchedMovies = 87284,
+        TraktRecentAddedMovies = 87286,
+        TraktSearchMovies = 874004,
+        TraktListItems = 87276
     }
 
     public static class GUIUtils
