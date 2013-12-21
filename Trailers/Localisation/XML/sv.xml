@@ -31,6 +31,7 @@
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">OnlineVideos plugin krävs för att spela trailers, kontrollera att pluginen är installerad och aktiverad.</string>
   <!--P-->
+  <string name="Play">Spela</string>
   <!--R-->
   <!--S-->
   <string name="Search">Sök</string>
@@ -42,6 +43,8 @@
   <string name="SettingListedPluginsDescription">Aktivera den här inställningen för att styra om Trailers ska visas på MediaPortals pluginsida.</string>
   <string name="SettingWebMaxRetriesName">Max antal omförsök för kontakt med en webplats.</string>
   <string name="SettingWebMaxRetriesDescription">Maximalt antal försök som utförs om kontakt med en webplats misslyckas  t ex vid timeout.</string>
+  <string name="SettingWebTimeoutName">Timeout</string>
+  <string name="SettingWebTimeoutDescription">Väntetid på svar från web-sida.</string>
   <string name="SettingWebTimeoutIncrementName">Utökad timeout.</string>
   <string name="SettingWebTimeoutIncrementDescription">Väntetid innan ett nytt försök görs efter en timeout.</string>
   <string name="SettingProviderLocalSearchName">Aktivera lokala trailers.</string>
@@ -66,6 +69,9 @@
   <string name="SettingSearchLocalAggressiveSearchDescription">Aggressiv sökning kommer att fortsätta söka med lokala sökmetoder även efter det att trailers har hittats. Den här inställningen behövs bara om du har flera mappar där du sparar tralers.</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundName">Hoppa över sökning online om en lokal trailer hittas</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundDescription">Om lokala trailers hittas visa dem omedelbart eller sök online och visa resultaten av båda sökningarna.</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerName">Spela upp enstaka trailer automatiskt</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription">Om endast en trailer hittas, spela automatiskt upp den. Om inställningen inaktiveras (förvalt värde) så visas en meny med resultat inklusive manuell sökning. </string>
+  <string name="Settings">Inställningar</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>

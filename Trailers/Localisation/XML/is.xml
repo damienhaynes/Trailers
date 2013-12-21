@@ -22,6 +22,7 @@
   <!--M-->
   <string name="MultiSelectDialog">Multi-Select Dialog</string>
   <!--N-->
+  <string name="No">Nei</string>
   <string name="NoTrailersFound">Fundust engar stiklur</string>
   <!--O-->
   <string name="Off">Af</string>
@@ -30,9 +31,14 @@
   <string name="Online">Tengdur internetinu</string>
   <string name="OnlineVideosNotInstalled">Viðbótarforritið OnlineVideos þarf að vera uppsett til að spila stiklur, fullvissaðu þig um að viðbótarforritið sé uppsett og sé virkt.</string>
   <!--P-->
+  <string name="Play">Spila</string>
   <!--R-->
   <!--S-->
   <string name="Search">Leita</string>
+  <string name="SettingPluginEnabledName">Viðbót virk</string>
+  <string name="SettingListedHomeName">Lista í Home skjá</string>
+  <string name="SettingListedPluginsName">Lista í viðbótum</string>
+  <string name="Settings">Stillingar</string>
   <!--T-->
   <string name="Timeout">Tímatakmörk</string>
   <string name="Trailer">Stikla</string>
@@ -42,5 +48,6 @@
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Já</string>
   <string name="YouTubeTrailers">YouTube stiklur</string>
 </resources>

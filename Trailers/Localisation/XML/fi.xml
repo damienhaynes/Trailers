@@ -22,6 +22,7 @@
   <!--M-->
   <string name="MultiSelectDialog">Monivalinta Ikkuna</string>
   <!--N-->
+  <string name="No">Ei</string>
   <string name="NoTrailersFound">Trailereita ei löytynyt!</string>
   <!--O-->
   <string name="Off">Pois päältä</string>
@@ -30,9 +31,24 @@
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">OnlineVideos -lisäosa vaaditaan trailereiden toistoon, varmista että sinulla on lisäosa asennettu ja käytössä.</string>
   <!--P-->
+  <string name="Play">Toista</string>
   <!--R-->
   <!--S-->
   <string name="Search">Haku</string>
+  <string name="SettingPluginEnabledName">Lisäosa käytössä</string>
+  <string name="SettingPluginEnabledDescription">Ota käyttöön/poista käytöstä tämä asetus määrittääksesi ladataanko Trailers kun MP käynnistyy.</string>
+  <string name="SettingListedHomeName">Näkyy Kotivalikossa</string>
+  <string name="SettingListedHomeDescription">Ota käyttöön tämä asetus Trailers -lisäosan näkymiseen Kotivalikossa.</string>
+  <string name="SettingListedPluginsName">Näkyy Lisäosissa</string>
+  <string name="SettingListedPluginsDescription">Ota käyttöön tämä asetus Trailers -lisäosan näkymiseen Lisäosat-valikossa.</string>
+  <string name="SettingWebMaxRetriesName">Max määrä yrityksiä yhdistää internettiin</string>
+  <string name="SettingWebMaxRetriesDescription">Maksimi määrä yrityksiä suorittaa yhditys internettiin jos yritys epäonnistuu, esim. aika-katkaisu.</string>
+  <string name="SettingWebTimeoutName">Internet yhdistyksen aika-katkaisu</string>
+  <string name="SettingWebTimeoutIncrementName">Internet yhdistyksen aika-katkaisun lisäys</string>
+  <string name="SettingWebTimeoutIncrementDescription">Määritä aika joka pitää odottaa ennen uudelleen yhdistystä kun yhditys on epäonnistut.</string>
+  <string name="SettingOnlineVideosYouTubeEnabledName">Ota käyttöön YouTube manuaaliseen etsintään</string>
+  <string name="SettingSearchLocalAggressiveSearchName">Ota käyttöön \"Agressiivinen\" etsintä paikallisille trailereille</string>
+  <string name="Settings">Asetukset</string>
   <!--T-->
   <string name="Timeout">Aikakatkaisu</string>
   <string name="Trailer">Traileri</string>
@@ -42,5 +58,6 @@
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Kyllä</string>
   <string name="YouTubeTrailers">YouTube trailerit</string>
 </resources>
