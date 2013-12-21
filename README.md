@@ -11,6 +11,8 @@ It searches local trailers and online sources, it also has the capability to str
 * My Films
 * My Videos
 * ShowTimes
+* Trakt
+* Netflix
 
 *Trailer Providers*
 
