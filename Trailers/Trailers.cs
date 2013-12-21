@@ -242,22 +242,22 @@ namespace Trailers
 
                         case (int)ExternalPluginWindows.VideoInfo:
                             VideoInfoHandler.GetCurrentMediaItem(out currentMediaItem);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.VideoInfo, 2);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 2);
                             break;
 
                         case (int)ExternalPluginWindows.MovingPictures:
                             MovingPicturesHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.MovingPictures, isDetailsView ? 6 : 50);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, isDetailsView ? 6 : 50);
                             break;
 
                         case (int)ExternalPluginWindows.MyFilmsDetails:
                             MyFilmsHandler.GetCurrentMediaItem(out currentMediaItem);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.MyFilmsDetails, 10000);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 10000);
                             break;
 
                         case (int)ExternalPluginWindows.ShowTimes:
                             ShowTimesHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
-                            GUIControl.FocusControl((int)ExternalPluginWindows.ShowTimes, isDetailsView ? 42 : 50);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, isDetailsView ? 42 : 50);
                             break;
 
                         case (int)ExternalPluginWindows.TVSeries:
@@ -273,6 +273,11 @@ namespace Trailers
                         case (int)ExternalPluginWindows.TraktListItems:
                             TraktMovieHandler.GetCurrentMediaItem(out currentMediaItem);
                             GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
+                            break;
+
+                        case (int)ExternalPluginWindows.NetflixAlpha:
+                            NetflixHandler.GetCurrentMediaItem(out currentMediaItem, out isDetailsView);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, isDetailsView ? 6 : 50);
                             break;
                     }
                     break;

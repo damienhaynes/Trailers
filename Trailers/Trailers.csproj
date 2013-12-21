@@ -96,6 +96,7 @@
     <Compile Include="Player\OnlinePlayer.cs" />
     <Compile Include="PluginHandlers\MovingPicturesHandler.cs" />
     <Compile Include="PluginHandlers\MyFilmsHandler.cs" />
+    <Compile Include="PluginHandlers\NetflixHandler.cs" />
     <Compile Include="PluginHandlers\OnlineVideosHandler.cs" />
     <Compile Include="PluginHandlers\ShowTimesHandler.cs" />
     <Compile Include="PluginHandlers\TraktMovieHandler.cs" />

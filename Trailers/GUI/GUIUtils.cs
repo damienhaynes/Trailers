@@ -27,7 +27,8 @@ namespace Trailers.GUI
         TraktRecentWatchedMovies = 87284,
         TraktRecentAddedMovies = 87286,
         TraktSearchMovies = 874004,
-        TraktListItems = 87276
+        TraktListItems = 87276,
+        NetflixAlpha = 18764
     }
 
     public static class GUIUtils
