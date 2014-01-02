@@ -22,6 +22,7 @@
   <!--M-->
   <string name="MultiSelectDialog">Finestra di selezione multipla</string>
   <!--N-->
+  <string name="No">No</string>
   <string name="NoTrailersFound">Nessun trailer trovato!</string>
   <!--O-->
   <string name="Off">Off</string>
@@ -33,6 +34,12 @@
   <!--R-->
   <!--S-->
   <string name="Search">Cerca</string>
+  <string name="SettingPluginEnabledName">Plugin abilitato</string>
+  <string name="SettingPluginEnabledDescription">Questa voce abilita il caricamento del plugin con MediaPortal.</string>
+  <string name="SettingListedHomeName">Mostra in Home</string>
+  <string name="SettingListedHomeDescription">Questa voce abilita la visualizzazione del plugin nella schermata principale.</string>
+  <string name="SettingListedPluginsName">Mostra in My Plugins.</string>
+  <string name="SettingListedPluginsDescription">Questa voce abilita la visualizzazione del plugin nella schermata dei plugins.</string>
   <!--T-->
   <string name="Timeout">Scaduto</string>
   <string name="Trailer">Trailer</string>
