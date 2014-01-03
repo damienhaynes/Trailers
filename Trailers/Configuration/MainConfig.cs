@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Trailers.Configuration.Popups;
@@ -26,6 +27,7 @@ namespace Trailers.Configuration
             PopulateGeneralSettings();
             PopulateLocalTrailerSettings();
             PopulateManualSearchSettings();
+            PopulateAutoDownloadSettings();
 
             // Enable / Disable Controls States
             SetLocalSearchControlsEnabledState();
@@ -73,6 +75,41 @@ namespace Trailers.Configuration
 
             chkBoxOnlineVideosITunesEnabled.Checked = PluginSettings.OnlineVideosITunesEnabled;
             chkBoxOnlineVideosIMDbEnabled.Checked = PluginSettings.OnlineVideosIMDbEnabled;
+        }
+
+        private void PopulateAutoDownloadSettings()
+        {
+            chkBoxAutoDownloadMovingPictures.Checked = PluginSettings.AutoDownloadTrailersMovingPictures;
+            chkBoxAutoDownloadMyVideos.Checked = PluginSettings.AutoDownloadTrailersMyVideos;
+            chkBoxAutoDownloadMyFilms.Checked = PluginSettings.AutoDownloadTrailersMyFilms;
+
+            chkBoxAutoDownloadTrailers.Checked = PluginSettings.AutoDownloadTrailers;
+            chkBoxAutoDownloadTeasers.Checked = PluginSettings.AutoDownloadTeasers;
+            chkBoxAutoDownloadFeaturettes.Checked = PluginSettings.AutoDownloadFeaturettes;
+            chkBoxAutoDownloadClips.Checked = PluginSettings.AutoDownloadClips;
+
+            switch(PluginSettings.AutoDownloadQuality)
+            {
+                case "HD":
+                    comboBoxAutoDownloadQuality.SelectedIndex = 0;
+                    break;
+                case "HQ":
+                    comboBoxAutoDownloadQuality.SelectedIndex = 1;
+                    break;
+                case "LQ":
+                    comboBoxAutoDownloadQuality.SelectedIndex = 2;
+                    break;
+                default:
+                    comboBoxAutoDownloadQuality.SelectedIndex = 0;
+                    break;
+            }
+
+            spinBoxAutoDownloadStartDelay.Value = PluginSettings.AutoDownloadStartDelay / 1000;             // milliseconds -> seconds
+            spinBoxAutoDownloadScanInterval.Value = PluginSettings.AutoDownloadInterval / 1000 / 60 / 60;   // milliseconds -> hours
+            spinBoxAutoDownloadUpdateCheck.Value = PluginSettings.AutoDownloadUpdateInterval;
+
+            txtBoxAutoDownloadSavePath.Text = PluginSettings.AutoDownloadDirectory;
+            chkBoxAutoDownloadCleanup.Checked = PluginSettings.AutoDownloadCleanup;
         }
 
         #endregion
@@ -215,6 +252,99 @@ namespace Trailers.Configuration
         private void chkBoxOnlineVideosIMDbEnabled_Click(object sender, EventArgs e)
         {
             PluginSettings.OnlineVideosIMDbEnabled = !PluginSettings.OnlineVideosIMDbEnabled;
+        }
+        #endregion
+
+        #region Event Handlers (Auto Download Settings)
+        private void chkBoxAutoDownloadMovingPictures_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadTrailersMovingPictures = !PluginSettings.AutoDownloadTrailersMovingPictures;
+        }
+
+        private void chkBoxAutoDownloadMyVideos_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadTrailersMyVideos = !PluginSettings.AutoDownloadTrailersMyVideos;
+        }
+
+        private void chkBoxAutoDownloadMyFilms_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadTrailersMyFilms = !PluginSettings.AutoDownloadTrailersMyFilms;
+        }
+
+        private void chkBoxAutoDownloadTrailers_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadTrailers = !PluginSettings.AutoDownloadTrailers;
+        }
+
+        private void chkBoxAutoDownloadTeasers_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadTeasers = !PluginSettings.AutoDownloadTeasers;
+        }
+
+        private void chkBoxAutoDownloadFeaturettes_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadFeaturettes = !PluginSettings.AutoDownloadFeaturettes;
+        }
+
+        private void chkBoxAutoDownloadClips_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadClips = !PluginSettings.AutoDownloadClips;
+        }
+
+        private void comboBoxAutoDownloadQuality_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBoxAutoDownloadQuality.SelectedIndex)
+            {
+                case 0:
+                    PluginSettings.AutoDownloadQuality = "HD";
+                    break;
+                case 1:
+                    PluginSettings.AutoDownloadQuality = "HQ";
+                    break;
+                case 2:
+                    PluginSettings.AutoDownloadQuality = "LQ";
+                    break;
+                default:
+                    PluginSettings.AutoDownloadQuality = "HD";
+                    break;
+            }
+        }
+
+        private void spinBoxAutoDownloadStartDelay_ValueChanged(object sender, EventArgs e)
+        {
+            // from seconds -> milliseconds
+            PluginSettings.AutoDownloadStartDelay = Convert.ToInt32(spinBoxAutoDownloadStartDelay.Value * 1000);
+        }
+
+        private void spinBoxAutoDownloadScanInterval_ValueChanged(object sender, EventArgs e)
+        {
+            // from hours -> milliseconds
+            PluginSettings.AutoDownloadInterval = Convert.ToInt32(spinBoxAutoDownloadScanInterval.Value * 60 * 60 * 1000);
+        }
+
+        private void spinBoxAutoDownloadUpdateCheck_ValueChanged(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadUpdateInterval = Convert.ToInt32(spinBoxAutoDownloadUpdateCheck.Value);
+        }
+
+        private void btnFolderBrowseAutoDownloadPath_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            {
+                dialog.Description = "Select a directory for automatic trailer downloads:";
+                dialog.SelectedPath = PluginSettings.AutoDownloadDirectory;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    PluginSettings.AutoDownloadDirectory = dialog.SelectedPath;
+                    txtBoxAutoDownloadSavePath.Text = dialog.SelectedPath;
+                }
+            }
+        }
+
+        private void chkBoxAutoDownloadCleanup_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AutoDownloadCleanup = !PluginSettings.AutoDownloadCleanup;
         }
         #endregion
 

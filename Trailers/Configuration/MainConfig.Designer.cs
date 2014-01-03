@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkBoxOnlineVideos = new System.Windows.Forms.CheckBox();
             this.chkBoxTMDbTrailers = new System.Windows.Forms.CheckBox();
@@ -62,10 +63,37 @@
             this.chkBoxAutoPlayOnSingleLocalOrOnlineTrailer = new System.Windows.Forms.CheckBox();
             this.chkBoxSkipOnlineProvidersIfLocalFound = new System.Windows.Forms.CheckBox();
             this.btnApplySettings = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkBoxAutoDownloadCleanup = new System.Windows.Forms.CheckBox();
+            this.spinBoxAutoDownloadUpdateCheck = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.chkBoxAutoDownloadClips = new System.Windows.Forms.CheckBox();
+            this.chkBoxAutoDownloadFeaturettes = new System.Windows.Forms.CheckBox();
+            this.chkBoxAutoDownloadTeasers = new System.Windows.Forms.CheckBox();
+            this.chkBoxAutoDownloadTrailers = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtBoxAutoDownloadSavePath = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.spinBoxAutoDownloadScanInterval = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.spinBoxAutoDownloadStartDelay = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBoxAutoDownloadQuality = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.chkBoxAutoDownloadMyFilms = new System.Windows.Forms.CheckBox();
+            this.chkBoxAutoDownloadMyVideos = new System.Windows.Forms.CheckBox();
+            this.chkBoxAutoDownloadMovingPictures = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBoxLocalTrailerSettings.SuspendLayout();
             this.groupBoxManualSearchSettings.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinBoxAutoDownloadUpdateCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinBoxAutoDownloadScanInterval)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinBoxAutoDownloadStartDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -426,19 +454,294 @@
             // 
             // btnApplySettings
             // 
-            this.btnApplySettings.Location = new System.Drawing.Point(852, 658);
+            this.btnApplySettings.Location = new System.Drawing.Point(852, 684);
             this.btnApplySettings.Name = "btnApplySettings";
             this.btnApplySettings.Size = new System.Drawing.Size(174, 23);
-            this.btnApplySettings.TabIndex = 4;
+            this.btnApplySettings.TabIndex = 5;
             this.btnApplySettings.Text = "&Apply Changes";
             this.btnApplySettings.UseVisualStyleBackColor = true;
             this.btnApplySettings.Click += new System.EventHandler(this.btnApplySettings_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadCleanup);
+            this.groupBox2.Controls.Add(this.spinBoxAutoDownloadUpdateCheck);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadClips);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadFeaturettes);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadTeasers);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadTrailers);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.txtBoxAutoDownloadSavePath);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.spinBoxAutoDownloadScanInterval);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.spinBoxAutoDownloadStartDelay);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.comboBoxAutoDownloadQuality);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadMyFilms);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadMyVideos);
+            this.groupBox2.Controls.Add(this.chkBoxAutoDownloadMovingPictures);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Location = new System.Drawing.Point(548, 353);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(478, 325);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Automatic Download Settings";
+            // 
+            // chkBoxAutoDownloadCleanup
+            // 
+            this.chkBoxAutoDownloadCleanup.AutoSize = true;
+            this.chkBoxAutoDownloadCleanup.Location = new System.Drawing.Point(29, 292);
+            this.chkBoxAutoDownloadCleanup.Name = "chkBoxAutoDownloadCleanup";
+            this.chkBoxAutoDownloadCleanup.Size = new System.Drawing.Size(300, 17);
+            this.chkBoxAutoDownloadCleanup.TabIndex = 20;
+            this.chkBoxAutoDownloadCleanup.Text = "Cleanup trailers from disk when media removed from library";
+            this.chkBoxAutoDownloadCleanup.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadCleanup.Click += new System.EventHandler(this.chkBoxAutoDownloadCleanup_Click);
+            // 
+            // spinBoxAutoDownloadUpdateCheck
+            // 
+            this.spinBoxAutoDownloadUpdateCheck.Location = new System.Drawing.Point(374, 174);
+            this.spinBoxAutoDownloadUpdateCheck.Maximum = new decimal(new int[] {
+            365,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadUpdateCheck.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadUpdateCheck.Name = "spinBoxAutoDownloadUpdateCheck";
+            this.spinBoxAutoDownloadUpdateCheck.Size = new System.Drawing.Size(71, 20);
+            this.spinBoxAutoDownloadUpdateCheck.TabIndex = 16;
+            this.toolTip.SetToolTip(this.spinBoxAutoDownloadUpdateCheck, "This setting is only for checking movies that previously had no trailer downloads" +
+        " already i.e. movies with trailer count = 0");
+            this.spinBoxAutoDownloadUpdateCheck.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadUpdateCheck.ValueChanged += new System.EventHandler(this.spinBoxAutoDownloadUpdateCheck_ValueChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(244, 176);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(114, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Update Interval (days):";
+            // 
+            // chkBoxAutoDownloadClips
+            // 
+            this.chkBoxAutoDownloadClips.AutoSize = true;
+            this.chkBoxAutoDownloadClips.Location = new System.Drawing.Point(283, 144);
+            this.chkBoxAutoDownloadClips.Name = "chkBoxAutoDownloadClips";
+            this.chkBoxAutoDownloadClips.Size = new System.Drawing.Size(48, 17);
+            this.chkBoxAutoDownloadClips.TabIndex = 10;
+            this.chkBoxAutoDownloadClips.Text = "Clips";
+            this.chkBoxAutoDownloadClips.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadClips.Click += new System.EventHandler(this.chkBoxAutoDownloadClips_Click);
+            // 
+            // chkBoxAutoDownloadFeaturettes
+            // 
+            this.chkBoxAutoDownloadFeaturettes.AutoSize = true;
+            this.chkBoxAutoDownloadFeaturettes.Location = new System.Drawing.Point(187, 144);
+            this.chkBoxAutoDownloadFeaturettes.Name = "chkBoxAutoDownloadFeaturettes";
+            this.chkBoxAutoDownloadFeaturettes.Size = new System.Drawing.Size(79, 17);
+            this.chkBoxAutoDownloadFeaturettes.TabIndex = 9;
+            this.chkBoxAutoDownloadFeaturettes.Text = "Featurettes";
+            this.chkBoxAutoDownloadFeaturettes.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadFeaturettes.Click += new System.EventHandler(this.chkBoxAutoDownloadFeaturettes_Click);
+            // 
+            // chkBoxAutoDownloadTeasers
+            // 
+            this.chkBoxAutoDownloadTeasers.AutoSize = true;
+            this.chkBoxAutoDownloadTeasers.Location = new System.Drawing.Point(106, 144);
+            this.chkBoxAutoDownloadTeasers.Name = "chkBoxAutoDownloadTeasers";
+            this.chkBoxAutoDownloadTeasers.Size = new System.Drawing.Size(64, 17);
+            this.chkBoxAutoDownloadTeasers.TabIndex = 8;
+            this.chkBoxAutoDownloadTeasers.Text = "Teasers";
+            this.chkBoxAutoDownloadTeasers.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadTeasers.Click += new System.EventHandler(this.chkBoxAutoDownloadTeasers_Click);
+            // 
+            // chkBoxAutoDownloadTrailers
+            // 
+            this.chkBoxAutoDownloadTrailers.AutoSize = true;
+            this.chkBoxAutoDownloadTrailers.Location = new System.Drawing.Point(29, 144);
+            this.chkBoxAutoDownloadTrailers.Name = "chkBoxAutoDownloadTrailers";
+            this.chkBoxAutoDownloadTrailers.Size = new System.Drawing.Size(60, 17);
+            this.chkBoxAutoDownloadTrailers.TabIndex = 7;
+            this.chkBoxAutoDownloadTrailers.Text = "Trailers";
+            this.chkBoxAutoDownloadTrailers.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadTrailers.Click += new System.EventHandler(this.chkBoxAutoDownloadTrailers_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 123);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(184, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Select what video types to download:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(417, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnFolderBrowseAutoDownloadPath_Click);
+            // 
+            // txtBoxAutoDownloadSavePath
+            // 
+            this.txtBoxAutoDownloadSavePath.Location = new System.Drawing.Point(29, 263);
+            this.txtBoxAutoDownloadSavePath.Name = "txtBoxAutoDownloadSavePath";
+            this.txtBoxAutoDownloadSavePath.ReadOnly = true;
+            this.txtBoxAutoDownloadSavePath.Size = new System.Drawing.Size(381, 20);
+            this.txtBoxAutoDownloadSavePath.TabIndex = 18;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 236);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(307, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Download Directory, local trailer searches will also use this path.";
+            // 
+            // spinBoxAutoDownloadScanInterval
+            // 
+            this.spinBoxAutoDownloadScanInterval.Location = new System.Drawing.Point(151, 200);
+            this.spinBoxAutoDownloadScanInterval.Maximum = new decimal(new int[] {
+            168,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadScanInterval.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadScanInterval.Name = "spinBoxAutoDownloadScanInterval";
+            this.spinBoxAutoDownloadScanInterval.Size = new System.Drawing.Size(71, 20);
+            this.spinBoxAutoDownloadScanInterval.TabIndex = 14;
+            this.spinBoxAutoDownloadScanInterval.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadScanInterval.ValueChanged += new System.EventHandler(this.spinBoxAutoDownloadScanInterval_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 203);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Scan Interval (hours):";
+            // 
+            // spinBoxAutoDownloadStartDelay
+            // 
+            this.spinBoxAutoDownloadStartDelay.Location = new System.Drawing.Point(151, 174);
+            this.spinBoxAutoDownloadStartDelay.Maximum = new decimal(new int[] {
+            3600,
+            0,
+            0,
+            0});
+            this.spinBoxAutoDownloadStartDelay.Name = "spinBoxAutoDownloadStartDelay";
+            this.spinBoxAutoDownloadStartDelay.Size = new System.Drawing.Size(71, 20);
+            this.spinBoxAutoDownloadStartDelay.TabIndex = 12;
+            this.spinBoxAutoDownloadStartDelay.ValueChanged += new System.EventHandler(this.spinBoxAutoDownloadStartDelay_ValueChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(15, 177);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Startup Delay (secs):";
+            // 
+            // comboBoxAutoDownloadQuality
+            // 
+            this.comboBoxAutoDownloadQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAutoDownloadQuality.FormattingEnabled = true;
+            this.comboBoxAutoDownloadQuality.Items.AddRange(new object[] {
+            "HD - 1280x720",
+            "HQ - 640x360",
+            "LQ - 320x240"});
+            this.comboBoxAutoDownloadQuality.Location = new System.Drawing.Point(29, 92);
+            this.comboBoxAutoDownloadQuality.Name = "comboBoxAutoDownloadQuality";
+            this.comboBoxAutoDownloadQuality.Size = new System.Drawing.Size(183, 21);
+            this.comboBoxAutoDownloadQuality.TabIndex = 5;
+            this.comboBoxAutoDownloadQuality.SelectedIndexChanged += new System.EventHandler(this.comboBoxAutoDownloadQuality_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(144, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Select Video Quality Setting: ";
+            // 
+            // chkBoxAutoDownloadMyFilms
+            // 
+            this.chkBoxAutoDownloadMyFilms.AutoSize = true;
+            this.chkBoxAutoDownloadMyFilms.Location = new System.Drawing.Point(263, 44);
+            this.chkBoxAutoDownloadMyFilms.Name = "chkBoxAutoDownloadMyFilms";
+            this.chkBoxAutoDownloadMyFilms.Size = new System.Drawing.Size(66, 17);
+            this.chkBoxAutoDownloadMyFilms.TabIndex = 3;
+            this.chkBoxAutoDownloadMyFilms.Text = "My Films";
+            this.chkBoxAutoDownloadMyFilms.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadMyFilms.Click += new System.EventHandler(this.chkBoxAutoDownloadMyFilms_Click);
+            // 
+            // chkBoxAutoDownloadMyVideos
+            // 
+            this.chkBoxAutoDownloadMyVideos.AutoSize = true;
+            this.chkBoxAutoDownloadMyVideos.Location = new System.Drawing.Point(158, 44);
+            this.chkBoxAutoDownloadMyVideos.Name = "chkBoxAutoDownloadMyVideos";
+            this.chkBoxAutoDownloadMyVideos.Size = new System.Drawing.Size(75, 17);
+            this.chkBoxAutoDownloadMyVideos.TabIndex = 2;
+            this.chkBoxAutoDownloadMyVideos.Text = "My Videos";
+            this.chkBoxAutoDownloadMyVideos.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadMyVideos.Click += new System.EventHandler(this.chkBoxAutoDownloadMyVideos_Click);
+            // 
+            // chkBoxAutoDownloadMovingPictures
+            // 
+            this.chkBoxAutoDownloadMovingPictures.AutoSize = true;
+            this.chkBoxAutoDownloadMovingPictures.Location = new System.Drawing.Point(29, 44);
+            this.chkBoxAutoDownloadMovingPictures.Name = "chkBoxAutoDownloadMovingPictures";
+            this.chkBoxAutoDownloadMovingPictures.Size = new System.Drawing.Size(99, 17);
+            this.chkBoxAutoDownloadMovingPictures.TabIndex = 1;
+            this.chkBoxAutoDownloadMovingPictures.Text = "MovingPictures";
+            this.chkBoxAutoDownloadMovingPictures.UseVisualStyleBackColor = true;
+            this.chkBoxAutoDownloadMovingPictures.Click += new System.EventHandler(this.chkBoxAutoDownloadMovingPictures_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(15, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(314, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Select plugins to auto-download trailers for media in local libraries:";
             // 
             // MainConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 693);
+            this.ClientSize = new System.Drawing.Size(1038, 714);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnApplySettings);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBoxManualSearchSettings);
@@ -458,6 +761,11 @@
             this.groupBoxManualSearchSettings.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinBoxAutoDownloadUpdateCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinBoxAutoDownloadScanInterval)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinBoxAutoDownloadStartDelay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -498,5 +806,28 @@
         private System.Windows.Forms.Button btnApplySettings;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBoxAutoDownloadQuality;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadMyFilms;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadMyVideos;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadMovingPictures;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown spinBoxAutoDownloadStartDelay;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown spinBoxAutoDownloadScanInterval;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtBoxAutoDownloadSavePath;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadClips;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadFeaturettes;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadTeasers;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadTrailers;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown spinBoxAutoDownloadUpdateCheck;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.CheckBox chkBoxAutoDownloadCleanup;
     }
 }

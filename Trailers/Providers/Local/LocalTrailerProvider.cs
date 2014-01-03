@@ -48,10 +48,19 @@ namespace Trailers.Providers
             // so this can avoid duplicates in a crude way
             TrailerFiles.Clear();
 
+            // Check local auto-download directory first
+            if (AutoDownloadEnabled())
+            {
+                listItems.AddRange(GetTrailersFromAutoDownloadDirectory(searchItem));
+            }
+
             // Search for Trailer(s) in Sub-Folder of current media
             if (!string.IsNullOrEmpty(searchItem.Directory))
             {
-                listItems.AddRange(GetTrailersFromCurrentMediaSubFolder(searchItem));
+                if (listItems.Count == 0 || PluginSettings.SearchLocalAggressiveSearch)
+                {
+                    listItems.AddRange(GetTrailersFromCurrentMediaSubFolder(searchItem));
+                }
 
                 // Search for Trailer(s) in the current media directory
                 if (listItems.Count == 0 || PluginSettings.SearchLocalAggressiveSearch)
@@ -72,6 +81,13 @@ namespace Trailers.Providers
         #endregion
 
         #region Private Methods
+
+        private bool AutoDownloadEnabled()
+        {
+            return  PluginSettings.AutoDownloadTrailersMovingPictures ||
+                    PluginSettings.AutoDownloadTrailersMyVideos ||
+                    PluginSettings.AutoDownloadTrailersMyFilms;
+        }
 
         private string ReplaceVars(MediaItem searchItem, string searchPattern)
         {
@@ -231,6 +247,39 @@ namespace Trailers.Providers
             }
 
             FileLog.Info("Found {0} trailer(s) from local media sub-folders.", listItems.Count.ToString());
+
+            return listItems;
+        }
+
+        private List<GUITrailerListItem> GetTrailersFromAutoDownloadDirectory(MediaItem searchItem)
+        {
+            var listItems = new List<GUITrailerListItem>();
+
+            FileLog.Debug("Searching for trailers from local auto-download directory...");
+
+            // trailers in auto-download directory are grouped by movie folder in the form 'title% (%year%) [%imdbid%]'
+            // first check with imdbid
+            string folder = string.Format("{0} ({1}) [{2}]", searchItem.Title, searchItem.Year, searchItem.IMDb);
+            string directory = Path.Combine(PluginSettings.AutoDownloadDirectory, folder.ToCleanFileName());
+            if (Directory.Exists(directory))
+            {
+                FileLog.Debug("Searching for local trailers in directory: '{0}'", directory);
+                listItems.AddRange(SearchForLocalTrailers(searchItem, directory, "*"));
+            }
+            else
+            {
+                // check with empty imdb id.
+                folder = string.Format("{0} ({1}) []", searchItem.Title, searchItem.Year);
+                directory = Path.Combine(PluginSettings.AutoDownloadDirectory, folder.ToCleanFileName());
+
+                if (Directory.Exists(directory))
+                {
+                    FileLog.Debug("Searching for local trailers in directory: '{0}'", directory);
+                    listItems.AddRange(SearchForLocalTrailers(searchItem, directory, "*"));
+                }
+            }
+
+            FileLog.Info("Found {0} trailer(s) from local auto-download directory.", listItems.Count.ToString());
 
             return listItems;
         }

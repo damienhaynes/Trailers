@@ -66,7 +66,7 @@ namespace Trailers.Providers
                 }
 
                 // get the movie id of the first result, this would be the most likely match (based on popularity)
-                // we can think about provided a menu of choices as well based on demand
+                // we can think about providing a menu of choices as well based on demand
                 searchTerm = searchResults.Results.First().Id.ToString();
                 searchItem.TMDb = searchTerm;
             }
@@ -107,6 +107,56 @@ namespace Trailers.Providers
             FileLog.Info("Found {0} trailer(s) from themoviedb.org", trailers.YouTubeTrailers.Count.ToString());
 
             return listItems;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public static string GetSearchTerm(string imdbid, string tmdbid, string title, string year)
+        {
+            string searchTerm = null;
+
+            if (!string.IsNullOrEmpty(tmdbid))
+            {
+                searchTerm = tmdbid;
+            }
+            else if (!string.IsNullOrEmpty(imdbid))
+            {
+                searchTerm = imdbid;
+            }
+            else if (!string.IsNullOrEmpty(title))
+            {
+                // we do the best we can with out any proper movie id's
+                FileLog.Debug("Searching themoviedb.org for movie: Title: '{0}', Year: '{1}'", title, year);
+                
+                int iYear = 0;
+                int.TryParse(year, out iYear);
+
+                var searchResults = TMDbAPI.SearchMovies(title, language: "en", year: iYear <= 1900 ? null : year);
+                if (searchResults == null || searchResults.TotalResults == 0)
+                {
+                    FileLog.Warning("No movies found, skipping search from the themoviedb.org.");
+                    return searchTerm;
+                }
+                else
+                {
+                    foreach (var movie in searchResults.Results)
+                    {
+                        FileLog.Debug("Found movie: Title: '{0}', Original Title: '{1}', Release Date: '{2}', TMDb: '{3}', Popularity: '{4}'", movie.Title, movie.OriginalTitle, movie.ReleaseDate, movie.Id, movie.Popularity);
+                    }
+                }
+
+                // get the movie id of the first result, this would be the most likely match (based on popularity)
+                // we can think about providing a menu of choices as well based on demand
+                searchTerm = searchResults.Results.First().Id.ToString();
+            }
+            else
+            {
+                FileLog.Warning("Not enough information to search for trailers from themoviedb.org, require IMDb ID, TMDb ID or Title+Year.");
+            }
+
+            return searchTerm;
         }
 
         #endregion

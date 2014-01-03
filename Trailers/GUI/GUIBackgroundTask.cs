@@ -123,7 +123,7 @@ namespace Trailers.GUI
                         }, 0, 0, null);
                     })
                     {
-                        Name = "Trakt",
+                        Name = "Trailers",
                         IsBackground = true
                     };
 

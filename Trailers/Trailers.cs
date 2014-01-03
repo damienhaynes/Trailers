@@ -6,6 +6,7 @@ using System.Text;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using Trailers.Configuration;
+using Trailers.Downloader;
 using Trailers.GUI;
 using Trailers.Localisation;
 using Trailers.Player;
@@ -61,6 +62,9 @@ namespace Trailers
 
             // Initialize translations
             Translation.Init();
+
+            // Initilize plugins for auto trailer download
+            TrailerDownloader.Init();
 
             // Load main skin window
             // this is a launching pad to all other windows

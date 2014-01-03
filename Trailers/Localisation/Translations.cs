@@ -260,6 +260,7 @@ namespace Trailers.Localisation
         public static string SettingListedHomeDescription = "Enable this setting for the Trailers plugin to appear in the main Home screen menu items.";
         public static string SettingListedPluginsName = "Listed in My Plugins";
         public static string SettingListedPluginsDescription = "Enable this setting for the Trailers plugin to appear in the My Plugins screen menu items.";
+        public static string Settings = "Settings";
         public static string SettingWebMaxRetriesName = "Max Retries for Web Requests";
         public static string SettingWebMaxRetriesDescription = "The maximum number of retries to perform a repeated web request if an attempt fails e.g. times-out.";
         public static string SettingWebTimeoutName = "Web Request Timeout";
@@ -290,7 +291,30 @@ namespace Trailers.Localisation
         public static string SettingSkipOnlineProvidersIfLocalFoundDescription = "If there are local trailers found in search, then immediately show/play result or continue to search for online trailers and present both results.";
         public static string SettingAutoPlayOnSingleLocalOrOnlineTrailerName = "Auto Play on Single Local or Online Trailer";
         public static string SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription = "If there is only a single local or online trailer found, then automatically play trailer. When disabled (default) a menu of results will be shown including manual search providers.";
-        public static string Settings = "Settings";
+        public static string SettingAutoDownloadTrailersMovingPicturesName = "Enable Auto Download Trailers for MovingPictures Library";
+        public static string SettingAutoDownloadTrailersMovingPicturesDescription = "Enable to automatically download trailers for movies in your MovingPictures library.";
+        public static string SettingAutoDownloadTrailersMyFilmsName = "Enable Auto Download Trailers for My Films Library";
+        public static string SettingAutoDownloadTrailersMyFilmsDescription = "Enable to automatically download trailers for movies in your My Films library.";
+        public static string SettingAutoDownloadTrailersMyVideosName = "Enable Auto Download Trailers for My Videos Library";
+        public static string SettingAutoDownloadTrailersMyVideosDescription = "Enable to automatically download trailers for movies in your My Videos library.";
+        public static string SettingAutoDownloadStartDelayName = "Auto Download Startup Delay";
+        public static string SettingAutoDownloadStartDelayDescription = "Sets the delay on startup before checking your plugin libraries for new trailers to download.";
+        public static string SettingAutoDownloadIntervalName = "Auto Download Interval";
+        public static string SettingAutoDownloadIntervalDescription = "Sets the interval for library checks to see if new movies have been added for automatic trailer download.";
+        public static string SettingAutoDownloadUpdateIntervalName = "Auto Download Update Interval";
+        public static string SettingAutoDownloadUpdateIntervalDescription = "Sets the interval to re-check movies previously checked that have no trailers. New trailers may have been added online between this value.";
+        public static string SettingAutoDownloadQualityName = "Auto Download Video Quality";
+        public static string SettingAutoDownloadQualityDescription = "Set the quality settings for video download from youtube trailers, if the desired quality is not available then the next lowest quality will be downloaded.";
+        public static string SettingAutoDownloadTrailersName = "Enable Auto Download of Trailers";
+        public static string SettingAutoDownloadTrailersDescription = "Checks if the video type is a trailer for automatic trailer downloads.";
+        public static string SettingAutoDownloadTeasersName = "Enable Auto Download of Teasers";
+        public static string SettingAutoDownloadTeasersDescription = "Checks if the video type is a teaser for automatic trailer downloads.";
+        public static string SettingAutoDownloadFeaturettesName = "Enable Auto Download of Featurettes";
+        public static string SettingAutoDownloadFeaturettesDescription = "Checks if the video type is a featurette for automatic trailer downloads.";
+        public static string SettingAutoDownloadClipsName = "Enable Auto Download of Clips";
+        public static string SettingAutoDownloadClipsDescription = "Checks if the video type is a clip for automatic trailer downloads.";
+        public static string SettingAutoDownloadCleanupName = "Enable Auto Download Cleanup";
+        public static string SettingAutoDownloadCleanupDescription = "Enable this to remove any trailers from disk if the associated movie is no longer in your plugin libraries.";
 
         // T
         public static string Timeout = "Timeout";

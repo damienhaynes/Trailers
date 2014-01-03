@@ -25,7 +25,7 @@ namespace Trailers.Player
 
             GUIBackgroundTask.Instance.ExecuteInBackgroundAndCallback(() =>
             {
-                var ovHosterProxy = OnlineVideosAppDomain.Domain.CreateInstanceAndUnwrap(typeof(OnlineVideosHosterProxy).Assembly.FullName, typeof(OnlineVideosHosterProxy).FullName) as OnlineVideosHosterProxy;
+                var ovHosterProxy = OnlineVideosAppDomain.Domain.CreateInstanceAndUnwrap(typeof(OnlineVideosTrailersHosterProxy).Assembly.FullName, typeof(OnlineVideosTrailersHosterProxy).FullName) as OnlineVideosTrailersHosterProxy;
                 var url = ovHosterProxy.GetVideoUrls(htmlPage);
                 return url;
             },
@@ -155,9 +155,14 @@ namespace Trailers.Player
     /// and is not marked Serialiable and does not inherit from MarshalByRefObject, 
     /// so the object cannot cross appdomains
     /// </summary>
-    class OnlineVideosHosterProxy : MarshalByRefObject
+    class OnlineVideosTrailersHosterProxy : MarshalByRefObject
     {
-        public OnlineVideosHosterProxy() { }
+        public OnlineVideosTrailersHosterProxy() { }
+
+        public Dictionary<string, string> GetPlaybackOptions(string url)
+        {
+            return HosterFactory.GetHoster("Youtube").getPlaybackOptions(url);
+        }
 
         public string GetVideoUrls(string url)
         {

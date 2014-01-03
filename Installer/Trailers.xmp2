@@ -423,21 +423,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     </Items>
   </Dependencies>
   <PluginDependencies>
-    <Items>
-      <PluginDependencyItem AssemblyName="Trailers.dll">
-        <CompatibleVersion>
-          <Items>
-            <CompatibleVersionItem>
-              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
-              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
-            </CompatibleVersionItem>
-          </Items>
-        </CompatibleVersion>
-        <SubSystemsUsed>
-          <Items />
-        </SubSystemsUsed>
-      </PluginDependencyItem>
-    </Items>
+    <Items />
   </PluginDependencies>
   <GeneralInfo>
     <Name>Trailers</Name>
@@ -449,20 +435,18 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Version>
       <Major>1</Major>
       <Minor>0</Minor>
-      <Build>5</Build>
+      <Build>6</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
 
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>* Added support for trailers in the ShowTimes plugin, skinners can add a trailer button to either the details view, main movie list or both.
-* Added support to have more than one trailer button in a plugin window e.g. MovingPictures and Showtimes have different views but only one window, skinners can use either button id '11899' or '11900' to invoke trailers. This is required for skins that locate buttons differently based on the view and need proper navigation.
-* For new installs, the plugin will read in the trailer directory from ShowTimes and insert it into the list of dedicated trailer directories. This can be useful for people that auto download trailers from ShowTimes. If you're an existing user and think this will be useful then you can manually add your showtimes trailer directory in the Trailers configuration.
-* Added GUI Settings via MPEI Extensions plugin. Not all settings are exposed in GUI so users may still need to visit the configuration e.g. add a new dedicated directory or change search patterns.
+    <VersionDescription>* Added support to auto download trailers from enabled plugin libraries. See settings to enable this feature for your respective plugin.
+* Added support for trailers button in the Trakt plugin, movie windows only.
 * Updated translations from Transifex.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=296&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2013-12-06T21:11:07</ReleaseDate>
+    <ReleaseDate>2014-01-03T21:11:07</ReleaseDate>
     <Tags>trailers</Tags>
     <Location>C:\Development\Trailers\Installer\Trailers.mpe1</Location>
     <Params>

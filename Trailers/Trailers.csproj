@@ -34,27 +34,38 @@
   <ItemGroup>
     <Reference Include="Common.Utils">
       <HintPath>..\Externals\Common.Utils.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Core">
       <HintPath>..\Externals\Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Cornerstone">
       <HintPath>..\Externals\Cornerstone.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Databases">
+      <HintPath>..\Externals\Databases.dll</HintPath>
     </Reference>
     <Reference Include="Dialogs">
       <HintPath>..\Externals\Dialogs.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MovingPictures">
       <HintPath>..\Externals\MovingPictures.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MyFilms">
       <HintPath>..\Externals\MyFilms.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="OnlineVideos">
       <HintPath>..\Externals\OnlineVideos.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="OnlineVideos.MediaPortal1">
       <HintPath>..\Externals\OnlineVideos.MediaPortal1.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -70,6 +81,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utils">
       <HintPath>..\Externals\Utils.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -85,8 +97,17 @@
     <Compile Include="Configuration\Popups\AddPathPopup.designer.cs">
       <DependentUpon>AddPathPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Downloader\DataStructures\DownloadDetail.cs" />
+    <Compile Include="Downloader\DataStructures\Movie.cs" />
+    <Compile Include="Downloader\DataStructures\MovieInfo.cs" />
+    <Compile Include="Downloader\DataStructures\MovieTrailers.cs" />
+    <Compile Include="Downloader\DataStructures\Trailer.cs" />
+    <Compile Include="Downloader\Downloader.cs" />
+    <Compile Include="Downloader\IDownloader.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\XmlExtensions.cs" />
     <Compile Include="FileLog.cs" />
     <Compile Include="GUI\GUIBackgroundTask.cs" />
     <Compile Include="GUI\GUIDialogMultiSelect.cs" />
@@ -179,6 +200,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

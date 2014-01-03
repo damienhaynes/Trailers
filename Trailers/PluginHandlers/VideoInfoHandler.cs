@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using MediaPortal.Video.Database;
 using MediaPortal.GUI.Library;
+using Trailers.Downloader;
+using Trailers.Downloader.DataStructures;
 using Trailers.Providers;
 
 namespace Trailers.PluginHandlers
 {
-    class VideoInfoHandler
+    class VideoInfoHandler : IDownloader
     {
         public static bool GetCurrentMediaItem(out MediaItem currentMediaItem)
         {
@@ -73,5 +78,78 @@ namespace Trailers.PluginHandlers
                 return Facade.SelectedListItem;
             }
         }
+
+        #region IDownloader Members
+
+        public VideoInfoHandler(bool enabled)
+        {
+            FileLog.Info("Loading Auto-Downloader: '{0}', Enabled: '{1}'", MoviePluginSource.MyVideos, enabled);
+
+            this.Enabled = enabled;
+        }
+
+        public bool Enabled { get; set; }
+
+        public string Name
+        {
+            get { return MoviePluginSource.MyVideos.ToString(); }
+        }
+
+        public void Download()
+        {
+            // get all movies in database
+            ArrayList myvideos = new ArrayList();
+            VideoDatabase.GetMovies(ref myvideos);
+
+            var localMovies = (from IMDBMovie movie in myvideos select movie).ToList();
+
+            FileLog.Info("{0} movies in My Videos database", localMovies.Count);
+
+            // get locally cached trailers
+            var cache = TrailerDownloader.LoadMovieList(MoviePluginSource.MyVideos);
+
+            // process local movies
+            var movieList = new List<Movie>();
+
+            foreach (var movie in localMovies)
+            {
+                // add to cache if it doesn't already exist
+                if (!cache.Movies.Exists(m => m.IMDbID.Equals(movie.IMDBNumber) && m.Title.Equals(movie.Title) && m.Year.Equals(movie.Year.ToString())))
+                {
+                    string fanart = string.Empty;
+                    MediaPortal.Util.FanArt.GetFanArtfilename(movie.ID, 0, out fanart);
+
+                    string poster = MediaPortal.Util.Utils.GetLargeCoverArtName(MediaPortal.Util.Thumbs.MovieTitle, movie.Title + "{" + movie.ID + "}");
+
+                    movieList.Add(new Movie
+                    {
+                        File = movie.VideoFileName,
+                        IMDbID = movie.IMDBNumber,
+                        Year = movie.Year.ToString(),
+                        Title = movie.Title,
+                        Cast = Regex.Replace(movie.Cast, @"\n|\r", "|"),
+                        Directors = movie.Director,
+                        Writers = movie.WritingCredits.Replace(" / ", "|"),
+                        Genres = movie.Genre.Replace(" / ", "|"),
+                        Plot = movie.Plot,
+                        Fanart = fanart,
+                        Poster = poster
+                    });
+                }
+            }
+
+            // remove any movies from cache that are no longer in local collection
+            cache.Movies.RemoveAll(c => !localMovies.Exists(l => l.IMDBNumber.Equals(c.IMDbID) && l.Title.Equals(c.Title) && l.Year.ToString().Equals(c.Year)));
+
+            // add any new local movies to cache since last time 
+            cache.Movies.AddRange(movieList);
+
+            // process the movie cache and download trailers
+            TrailerDownloader.ProcessAndDownloadTrailers(cache, MoviePluginSource.MyVideos);
+
+            return;
+        }
+
+        #endregion
     }
 }

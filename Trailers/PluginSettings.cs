@@ -45,6 +45,19 @@ namespace Trailers
         private const string cSearchLocalAggressiveSearch = "SearchLocalAggressiveSearch";
         private const string cSkipOnlineProvidersIfLocalFound = "SkipOnlineProvidersIfLocalFound";
         private const string cAutoPlayOnSingleLocalOrOnlineTrailer = "AutoPlayOnSingleLocalOrOnlineTrailer";
+        private const string cAutoDownloadTrailersMovingPictures = "AutoDownloadTrailersMovingPictures";
+        private const string cAutoDownloadTrailersMyFilms = "AutoDownloadTrailersMyFilms";
+        private const string cAutoDownloadTrailersMyVideos = "AutoDownloadTrailersMyVideos";
+        private const string cAutoDownloadStartDelay = "AutoDownloadStartDelay";
+        private const string cAutoDownloadInterval = "AutoDownloadInterval";
+        private const string cAutoDownloadUpdateInterval = "AutoDownloadUpdateInterval";
+        private const string cAutoDownloadDirectory = "AutoDownloadDirectory";
+        private const string cAutoDownloadQuality = "AutoDownloadQuality";
+        private const string cAutoDownloadTrailers = "AutoDownloadTrailers";
+        private const string cAutoDownloadTeasers = "AutoDownloadTeasers";
+        private const string cAutoDownloadFeaturettes = "AutoDownloadFeaturettes";
+        private const string cAutoDownloadClips = "AutoDownloadClips";
+        private const string cAutoDownloadCleanup = "AutoDownloadCleanup";
 
         #endregion
 
@@ -73,7 +86,20 @@ namespace Trailers
         public static bool SearchLocalAggressiveSearch { get; set; }
         public static bool SkipOnlineProvidersIfLocalFound { get; set; }
         public static bool AutoPlayOnSingleLocalOrOnlineTrailer { get; set; }
-        
+        public static bool AutoDownloadTrailersMovingPictures { get; set; }
+        public static bool AutoDownloadTrailersMyFilms { get; set; }
+        public static bool AutoDownloadTrailersMyVideos { get; set; }
+        public static int AutoDownloadStartDelay { get; set; }
+        public static int AutoDownloadInterval { get; set; }
+        public static int AutoDownloadUpdateInterval { get; set; }
+        public static string AutoDownloadDirectory { get; set; }
+        public static string AutoDownloadQuality { get; set; }
+        public static bool AutoDownloadTrailers { get; set; }
+        public static bool AutoDownloadTeasers { get; set; }
+        public static bool AutoDownloadFeaturettes { get; set; }
+        public static bool AutoDownloadClips { get; set; }
+        public static bool AutoDownloadCleanup { get; set; }
+
         #endregion
 
         #region Properties
@@ -147,6 +173,19 @@ namespace Trailers
                 SearchLocalAggressiveSearch = xmlreader.GetValueAsBool(cTrailers, cSearchLocalAggressiveSearch, false);
                 SkipOnlineProvidersIfLocalFound = xmlreader.GetValueAsBool(cTrailers, cSkipOnlineProvidersIfLocalFound, false);
                 AutoPlayOnSingleLocalOrOnlineTrailer = xmlreader.GetValueAsBool(cTrailers, cAutoPlayOnSingleLocalOrOnlineTrailer, false);
+                AutoDownloadTrailersMovingPictures = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadTrailersMovingPictures, false);
+                AutoDownloadTrailersMyFilms = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadTrailersMyFilms, false);
+                AutoDownloadTrailersMyVideos = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadTrailersMyVideos, false);
+                AutoDownloadStartDelay = xmlreader.GetValueAsInt(cTrailers, cAutoDownloadStartDelay, 30000);
+                AutoDownloadInterval = xmlreader.GetValueAsInt(cTrailers, cAutoDownloadInterval, 86400000);
+                AutoDownloadUpdateInterval = xmlreader.GetValueAsInt(cTrailers, cAutoDownloadUpdateInterval, 7);
+                AutoDownloadDirectory = xmlreader.GetValueAsString(cTrailers, cAutoDownloadDirectory, Config.GetSubFolder(Config.Dir.Config, "Trailers"));
+                AutoDownloadQuality = xmlreader.GetValueAsString(cTrailers, cAutoDownloadQuality, "HD");
+                AutoDownloadTrailers = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadTrailers, true);
+                AutoDownloadTeasers = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadTeasers, true);
+                AutoDownloadFeaturettes = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadFeaturettes, true);
+                AutoDownloadClips = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadClips, true);
+                AutoDownloadCleanup = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadCleanup, false);
             }
         }
 
@@ -181,6 +220,19 @@ namespace Trailers
                 xmlwriter.SetValueAsBool(cTrailers, cSearchLocalAggressiveSearch, SearchLocalAggressiveSearch);
                 xmlwriter.SetValueAsBool(cTrailers, cSkipOnlineProvidersIfLocalFound, SkipOnlineProvidersIfLocalFound);
                 xmlwriter.SetValueAsBool(cTrailers, cAutoPlayOnSingleLocalOrOnlineTrailer, AutoPlayOnSingleLocalOrOnlineTrailer);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadTrailersMovingPictures, AutoDownloadTrailersMovingPictures);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadTrailersMyFilms, AutoDownloadTrailersMyFilms);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadTrailersMyVideos, AutoDownloadTrailersMyVideos);
+                xmlwriter.SetValue(cTrailers, cAutoDownloadStartDelay, AutoDownloadStartDelay);
+                xmlwriter.SetValue(cTrailers, cAutoDownloadInterval, AutoDownloadInterval);
+                xmlwriter.SetValue(cTrailers, cAutoDownloadUpdateInterval, AutoDownloadUpdateInterval);
+                xmlwriter.SetValue(cTrailers, cAutoDownloadDirectory, AutoDownloadDirectory);
+                xmlwriter.SetValue(cTrailers, cAutoDownloadQuality, AutoDownloadQuality);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadTrailers, AutoDownloadTrailers);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadTeasers, AutoDownloadTeasers);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadFeaturettes, AutoDownloadFeaturettes);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadClips, AutoDownloadClips);
+                xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadCleanup, AutoDownloadCleanup);
             }
 
             Settings.SaveCache();
