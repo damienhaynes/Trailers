@@ -80,8 +80,10 @@ namespace Trailers.PluginHandlers
             foreach (var movie in localMovies)
             {
                 // add to cache if it doesn't already exist
-                if (!cache.Movies.Exists(m => m.IMDbID.Equals(movie.IMDBNumber) && m.Title.Equals(movie.Title) && m.Year.Equals(movie.Year.ToString())))
+                if (!cache.Movies.Exists(m => m.IMDbID == movie.IMDBNumber && m.Title == movie.Title && m.Year == movie.Year.ToString()))
                 {
+                    FileLog.Info("Adding Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}' to movie trailer cache.", movie.Title, movie.Year, movie.IMDBNumber ?? "<empty>", movie.TMDBNumber ?? "<empty>");
+
                     movieList.Add(new Movie
                     {
                         File = movie.Path,
@@ -96,7 +98,7 @@ namespace Trailers.PluginHandlers
             }
 
             // remove any movies from cache that are no longer in local collection
-            cache.Movies.RemoveAll(c => !localMovies.Exists(l => l.IMDBNumber.Equals(c.IMDbID) && l.Title.Equals(c.Title) && l.Year.ToString().Equals(c.Year)));
+            cache.Movies.RemoveAll(c => !localMovies.Exists(l => l.IMDBNumber == c.IMDbID && l.Title == c.Title && l.Year.ToString() == c.Year));
 
             // add any new local movies to cache since last time 
             cache.Movies.AddRange(movieList);

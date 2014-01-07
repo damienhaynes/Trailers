@@ -373,6 +373,8 @@ namespace Trailers.Downloader
         {
             if (!File.Exists(filename)) return null;
 
+            FileLog.Info("Loading '{0}' movie trailer cache from disk.", filename);
+
             try
             {
                 return File.ReadAllText(filename);

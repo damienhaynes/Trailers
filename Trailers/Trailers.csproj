@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="Databases">
       <HintPath>..\Externals\Databases.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Dialogs">
       <HintPath>..\Externals\Dialogs.dll</HintPath>
