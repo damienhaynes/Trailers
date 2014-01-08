@@ -158,7 +158,7 @@ namespace Trailers.Downloader
 
                 // get the search term for trailer search
                 // if there is no 'id' we will get one from a movie lookup
-                FileLog.Info("Searching for trailers from themoviedb.org, Title: {0}, Year: {1}, IMDb: {2}, TMDb: {3}", movie.Title, movie.Year, movie.IMDbID ?? "<empty>", movie.TMDbID ?? "<empty>");
+                FileLog.Info("Searching for trailers from themoviedb.org, Title: '{0}', Year: '{1}', IMDb: '{2}', TMDb: '{3}'", movie.Title, movie.Year, movie.IMDbID ?? "<empty>", movie.TMDbID ?? "<empty>");
 
                 string searchTerm = TMDbMovieTrailerProvider.GetSearchTerm(movie.IMDbID, movie.TMDbID, movie.Title, movie.Year);
                 if (searchTerm == null) continue;
@@ -172,7 +172,7 @@ namespace Trailers.Downloader
                 var trailersFound = new List<Trailer>();
                 foreach (var trailer in trailers.YouTubeTrailers)
                 {
-                    FileLog.Info("Found Youtube video, Name: {0}, Quality: {1}, Source: {2}, Type: {3}", trailer.Name, trailer.Size, trailer.Source, trailer.Type);
+                    FileLog.Info("Found Youtube video, Name: '{0}', Quality: '{1}', Source: '{2}', Type: '{3}'", trailer.Name, trailer.Size, trailer.Source, trailer.Type);
 
                     trailersFound.Add(new Trailer
                     {

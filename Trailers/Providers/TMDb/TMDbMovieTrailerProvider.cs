@@ -42,7 +42,7 @@ namespace Trailers.Providers
             {
                 searchTerm = searchItem.TMDb;
             }
-            else if (!string.IsNullOrEmpty(searchItem.IMDb))
+            else if (!string.IsNullOrEmpty((searchItem.IMDb ?? string.Empty).Trim()))
             {
                 searchTerm = searchItem.IMDb;
             }
@@ -121,7 +121,7 @@ namespace Trailers.Providers
             {
                 searchTerm = tmdbid;
             }
-            else if (!string.IsNullOrEmpty(imdbid))
+            else if (!string.IsNullOrEmpty((imdbid ?? string.Empty).Trim()))
             {
                 searchTerm = imdbid;
             }
