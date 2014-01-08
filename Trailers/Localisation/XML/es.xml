@@ -2,15 +2,19 @@
 <resources>
   <!--A-->
   <!--B-->
-  <string name="BufferingTrailer">Buffering Trailer</string>
+  <string name="BufferingTrailer">Cargando Trailer</string>
   <!--C-->
   <!--D-->
   <!--E-->
+  <string name="Error">Error en el Trailer</string>
   <!--F-->
   <!--G-->
-  <string name="GettingTrailerUrls">Getting Trailer Urls</string>
+  <string name="GettingTrailers">Obteniendo Trailers\n</string>
+  <string name="GettingTrailerUrls">Obteniendo Url del trailer\n</string>
   <!--H-->
   <!--I-->
+  <string name="IMDbTrailers">IMDb Trailers</string>
+  <string name="ITunesTrailers">iTunes Trailers</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -18,19 +22,29 @@
   <!--M-->
   <string name="MultiSelectDialog">Multi-Select Dialog</string>
   <!--N-->
+  <string name="No">No</string>
+  <string name="NoTrailersFound">¡No se encontraron Trailers!</string>
   <!--O-->
   <string name="Off">Off</string>
   <string name="OK">OK</string>
   <string name="On">On</string>
+  <string name="Online">Online</string>
   <!--P-->
+  <string name="Play">Play</string>
   <!--R-->
   <!--S-->
+  <string name="Search">Buscar</string>
+  <string name="SettingPluginEnabledName">Plugin Activado</string>
+  <string name="Settings">Configuración</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailers</string>
   <!--U-->
   <string name="UnableToPlayTrailer">Unable to play trailer.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Si</string>
+  <string name="YouTubeTrailers">YouTube Trailers</string>
 </resources>
