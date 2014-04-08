@@ -25,22 +25,22 @@ namespace Trailers.Web
             return grabber;
         }
 
-        public static string GetYouTubeURL(string source)
+        public static string GetYouTubeURL(string key)
         {
             // check it's not already a youtube url
-            if (source.ToLowerInvariant().Contains("youtube.com")) 
-                return source;
+            if (key.ToLowerInvariant().Contains("youtube.com")) 
+                return key;
 
             // check if it start's with 'v=' and remove it
-            if (source.StartsWith("v="))
-                source = source.Replace("v=", string.Empty);
+            if (key.StartsWith("v="))
+                key = key.Replace("v=", string.Empty);
             
             // remove hd option as that is not needed
             // it's worked out based on OnlineVideo settings
-            if (source.EndsWith("&hd=1"))
-                source = source.Replace("&hd=1", string.Empty);
+            if (key.EndsWith("&hd=1"))
+                key = key.Replace("&hd=1", string.Empty);
 
-            return string.Format("http://www.youtube.com/watch?v={0}", source);
+            return string.Format("http://www.youtube.com/watch?v={0}", key);
         }
 
         public static bool DownloadFile(string url, string filename)

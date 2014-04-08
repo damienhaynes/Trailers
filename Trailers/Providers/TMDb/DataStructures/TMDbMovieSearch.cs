@@ -11,6 +11,6 @@ namespace Trailers.Providers.TMDb.DataStructures
     public class TMDbMovieSearch : TMDbPage
     {
         [DataMember(Name = "results")]
-        public List<TMDbSearchResult> Results { get; set; }
+        public List<TMDbSearchResultMovie> Results { get; set; }
     }
 }

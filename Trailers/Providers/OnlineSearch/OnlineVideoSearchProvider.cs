@@ -51,7 +51,8 @@ namespace Trailers.Providers
                 listItems.Add(listItem);
             }
 
-            if (PluginSettings.OnlineVideosITunesEnabled && !string.IsNullOrEmpty(searchItem.Title))
+            // iTunes only supports movies
+            if (PluginSettings.OnlineVideosITunesEnabled && !string.IsNullOrEmpty(searchItem.Title) && searchItem.MediaType == MediaItemType.Movie)
             {
                 listItem = new GUITrailerListItem();
                 listItem.Label = Translation.ITunesTrailers;
@@ -62,7 +63,8 @@ namespace Trailers.Providers
                 listItems.Add(listItem);
             }
 
-            if (PluginSettings.OnlineVideosIMDbEnabled && !string.IsNullOrEmpty(searchItem.Title))
+            // IMDb only supports movies and shows
+            if (PluginSettings.OnlineVideosIMDbEnabled && !string.IsNullOrEmpty(searchItem.Title) && (searchItem.MediaType == MediaItemType.Movie || searchItem.MediaType == MediaItemType.Show))
             {
                 listItem = new GUITrailerListItem();
                 listItem.Label = Translation.IMDbTrailers;
@@ -82,12 +84,38 @@ namespace Trailers.Providers
 
         private string GetYouTubeSearchString(MediaItem item)
         {
-            string youTubeSearchStr = PluginSettings.OnlineVideosYouTubeSearchString;
+            string youTubeSearchStr = string.Empty;
 
+            switch (item.MediaType)
+            {
+                case MediaItemType.Movie:
+                    youTubeSearchStr = PluginSettings.OnlineVideosYouTubeMovieSearchString;
+                    break;
+                case MediaItemType.Show:
+                    youTubeSearchStr = PluginSettings.OnlineVideosYouTubeShowSearchString;
+                    break;
+                case MediaItemType.Season:
+                    youTubeSearchStr = PluginSettings.OnlineVideosYouTubeSeasonSearchString;
+                    break;
+                case MediaItemType.Episode:
+                    youTubeSearchStr = PluginSettings.OnlineVideosYouTubeEpisodeSearchString;
+                    break;
+            }
+            
             // replace placeholders with actual values
-            // only title and year are useful for youtube
+            // only title and year are useful for youtube movies and shows
             youTubeSearchStr = youTubeSearchStr.Replace("%title%", item.Title);
             youTubeSearchStr = youTubeSearchStr.Replace("%year%", item.Year.ToString());
+
+            if (item.MediaType == MediaItemType.Season || item.MediaType == MediaItemType.Episode)
+            {
+                youTubeSearchStr = youTubeSearchStr.Replace("%season%", item.Season.ToString());
+            }
+            if (item.MediaType == MediaItemType.Episode)
+            {
+                youTubeSearchStr = youTubeSearchStr.Replace("%episode%", item.Episode.ToString());
+                youTubeSearchStr = youTubeSearchStr.Replace("%episodename%", item.EpisodeName.ToString());
+            }
             
             return youTubeSearchStr;
         }

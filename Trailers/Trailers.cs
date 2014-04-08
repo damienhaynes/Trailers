@@ -167,9 +167,9 @@ namespace Trailers
                 TrailerProviders.Add(new LocalTrailerProvider(PluginSettings.ProviderLocalSearch));
             }
 
-            if (!TrailerProviders.Exists(t => t.Name == "TMDb Movie Trailer Provider"))
+            if (!TrailerProviders.Exists(t => t.Name == "TMDb Trailer Provider"))
             {
-                TrailerProviders.Add(new TMDbMovieTrailerProvider(PluginSettings.ProviderTMDbMovies));
+                TrailerProviders.Add(new TMDbTrailerProvider(PluginSettings.ProviderTMDb));
             }
 
             if (!TrailerProviders.Exists(t => t.Name == "OnlineVideos Trailer Search Provider"))
@@ -188,9 +188,9 @@ namespace Trailers
                 TrailerProviders.Remove(item);
             }
 
-            if (TrailerProviders.Exists(t => t.Name == "TMDb Movie Trailer Provider"))
+            if (TrailerProviders.Exists(t => t.Name == "TMDb Trailer Provider"))
             {
-                var item = TrailerProviders.FirstOrDefault(t => t.Name == "TMDb Movie Trailer Provider");
+                var item = TrailerProviders.FirstOrDefault(t => t.Name == "TMDb Trailer Provider");
                 TrailerProviders.Remove(item);
             }
 
@@ -228,7 +228,8 @@ namespace Trailers
         void GUIWindowManager_Receivers(GUIMessage message)
         {
             // check event was fired from a trailer button
-            if (message.SenderControlId != 11899 && message.SenderControlId != 11900) return;
+            // buttons allocated are 11899, 11900 and 11901
+            if (message.SenderControlId < 11899 || message.SenderControlId > 11901) return;
 
             bool isDetailsView = true;
             MediaItem currentMediaItem = null;
@@ -265,6 +266,8 @@ namespace Trailers
                             break;
 
                         case (int)ExternalPluginWindows.TVSeries:
+                            MPTVSeriesHandler.GetCurrentMediaItem(out currentMediaItem);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
                         case (int)ExternalPluginWindows.TraktRecentAddedMovies:
@@ -289,7 +292,25 @@ namespace Trailers
 
             if (currentMediaItem != null)
             {
-                FileLog.Info("Searching for trailers on: Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}', Filename='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
+                switch (currentMediaItem.MediaType)
+                {
+                    case MediaItemType.Movie:
+                        FileLog.Info("Searching for movie trailers on: Title='{0}', Year='{1}', IMDb='{2}', TMDb='{3}', Filename='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
+                        break;
+
+                    case MediaItemType.Show:
+                        FileLog.Info("Searching for tv show trailers on: Title='{0}', Year='{1}', FirstAired='{2}', IMDb='{3}', TVDb='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>");
+                        break;
+
+                    case MediaItemType.Season:
+                        FileLog.Info("Searching for tv season trailers on: Title='{0}', Season='{1}', Year='{2}', FirstAired='{3}', IMDb='{4}', TVDb='{5}'", currentMediaItem.Title, currentMediaItem.Season, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>");
+                        break;
+
+                    case MediaItemType.Episode:
+                        FileLog.Info("Searching for tv episode trailers on: Title='{0}', Season='{1}', Episode='{2}', Year='{3}', FirstAired='{4}', IMDb='{5}', TVDb='{6}', Filename='{7}'", currentMediaItem.Title, currentMediaItem.Season, currentMediaItem.Episode, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
+                        break;
+                }
+                
                 SearchForTrailers(currentMediaItem);
             }
         }

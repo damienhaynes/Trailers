@@ -8,7 +8,7 @@ namespace Trailers.Downloader
     public interface IDownloader
     {
         /// <summary>
-        /// Wether or not trailer downloads are enabled for plugin
+        /// Whether or not trailer downloads are enabled for plugin
         /// </summary>
         bool Enabled { get; set; }
 

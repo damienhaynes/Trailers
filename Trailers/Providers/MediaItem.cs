@@ -6,17 +6,41 @@ using System.Text;
 
 namespace Trailers.Providers
 {
+    public enum MediaItemType
+    {
+        Movie,
+        Show,
+        Season,
+        Episode
+    }
+
+    /// <summary>
+    /// Hold information about the currently selected Media (movie, show, season, episode)
+    /// TVShow and Seasons will hold no path details, similarly movies will contain no season/episode info
+    /// </summary>
     public class MediaItem
     {
+        public MediaItemType MediaType { get; set; }
+
         public string IMDb { get; set; }
 
         public string TVDb { get; set; }
 
         public string TMDb { get; set; }
 
+        public string TVRage { get; set; }
+
         public string Title { get; set; }
 
         public int Year { get; set; }
+
+        public int? Season { get; set; }
+
+        public int? Episode { get; set; }
+
+        public string EpisodeName { get; set; }
+
+        public string AirDate { get; set; }
 
         public string Poster { get; set; }
 

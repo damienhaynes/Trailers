@@ -56,7 +56,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.chkBoxOnlineVideosIMDbEnabled = new System.Windows.Forms.CheckBox();
             this.chkBoxOnlineVideosITunesEnabled = new System.Windows.Forms.CheckBox();
-            this.txtBoxOnlineVideosYouTubeSearchString = new System.Windows.Forms.TextBox();
+            this.txtBoxOnlineVideosYouTubeMovieSearchString = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chkBoxOnlineVideosYouTubeEnabled = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -349,7 +349,7 @@
             this.groupBoxManualSearchSettings.Controls.Add(this.label7);
             this.groupBoxManualSearchSettings.Controls.Add(this.chkBoxOnlineVideosIMDbEnabled);
             this.groupBoxManualSearchSettings.Controls.Add(this.chkBoxOnlineVideosITunesEnabled);
-            this.groupBoxManualSearchSettings.Controls.Add(this.txtBoxOnlineVideosYouTubeSearchString);
+            this.groupBoxManualSearchSettings.Controls.Add(this.txtBoxOnlineVideosYouTubeMovieSearchString);
             this.groupBoxManualSearchSettings.Controls.Add(this.label6);
             this.groupBoxManualSearchSettings.Controls.Add(this.chkBoxOnlineVideosYouTubeEnabled);
             this.groupBoxManualSearchSettings.Location = new System.Drawing.Point(547, 141);
@@ -393,11 +393,11 @@
             // 
             // txtBoxOnlineVideosYouTubeSearchString
             // 
-            this.txtBoxOnlineVideosYouTubeSearchString.Location = new System.Drawing.Point(40, 106);
-            this.txtBoxOnlineVideosYouTubeSearchString.Name = "txtBoxOnlineVideosYouTubeSearchString";
-            this.txtBoxOnlineVideosYouTubeSearchString.Size = new System.Drawing.Size(381, 20);
-            this.txtBoxOnlineVideosYouTubeSearchString.TabIndex = 3;
-            this.txtBoxOnlineVideosYouTubeSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeSearchString_TextChanged);
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.Location = new System.Drawing.Point(40, 106);
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.Name = "txtBoxOnlineVideosYouTubeSearchString";
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.Size = new System.Drawing.Size(381, 20);
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.TabIndex = 3;
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeMovieSearchString_TextChanged);
             // 
             // label6
             // 
@@ -800,7 +800,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chkBoxOnlineVideosIMDbEnabled;
         private System.Windows.Forms.CheckBox chkBoxOnlineVideosITunesEnabled;
-        private System.Windows.Forms.TextBox txtBoxOnlineVideosYouTubeSearchString;
+        private System.Windows.Forms.TextBox txtBoxOnlineVideosYouTubeMovieSearchString;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkBoxOnlineVideosYouTubeEnabled;
         private System.Windows.Forms.Button btnApplySettings;

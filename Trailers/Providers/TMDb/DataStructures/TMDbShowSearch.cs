@@ -8,12 +8,9 @@ using System.Web;
 namespace Trailers.Providers.TMDb.DataStructures
 {
     [DataContract]
-    public class TMDbTrailers
+    public class TMDbShowSearch : TMDbPage
     {
-        [DataMember(Name = "id")]
-        public int ID { get; set; }
-
         [DataMember(Name = "results")]
-        public List<TMDbTrailerResult> Results { get; set; }
+        public List<TMDbSearchResultShow> Results { get; set; }
     }
 }

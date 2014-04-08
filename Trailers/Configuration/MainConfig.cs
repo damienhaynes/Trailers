@@ -39,7 +39,7 @@ namespace Trailers.Configuration
         private void PopulateSearchProviderSettings()
         {
             chkBoxLocalTrailers.Checked = PluginSettings.ProviderLocalSearch;
-            chkBoxTMDbTrailers.Checked = PluginSettings.ProviderTMDbMovies;
+            chkBoxTMDbTrailers.Checked = PluginSettings.ProviderTMDb;
             chkBoxOnlineVideos.Checked = PluginSettings.ProviderOnlineVideoSearch;
         }
 
@@ -71,7 +71,7 @@ namespace Trailers.Configuration
         private void PopulateManualSearchSettings()
         {
             chkBoxOnlineVideosYouTubeEnabled.Checked = PluginSettings.OnlineVideosYouTubeEnabled;
-            txtBoxOnlineVideosYouTubeSearchString.Text = PluginSettings.OnlineVideosYouTubeSearchString;
+            txtBoxOnlineVideosYouTubeMovieSearchString.Text = PluginSettings.OnlineVideosYouTubeMovieSearchString;
 
             chkBoxOnlineVideosITunesEnabled.Checked = PluginSettings.OnlineVideosITunesEnabled;
             chkBoxOnlineVideosIMDbEnabled.Checked = PluginSettings.OnlineVideosIMDbEnabled;
@@ -134,7 +134,7 @@ namespace Trailers.Configuration
 
         private void chkBoxTMDbTrailers_Click(object sender, EventArgs e)
         {
-            PluginSettings.ProviderTMDbMovies = !PluginSettings.ProviderTMDbMovies;
+            PluginSettings.ProviderTMDb = !PluginSettings.ProviderTMDb;
         }
 
         private void chkBoxOnlineVideos_Click(object sender, EventArgs e)
@@ -239,9 +239,9 @@ namespace Trailers.Configuration
             SetManualSearchControlsEnabledState();
         }
 
-        private void txtBoxOnlineVideosYouTubeSearchString_TextChanged(object sender, EventArgs e)
+        private void txtBoxOnlineVideosYouTubeMovieSearchString_TextChanged(object sender, EventArgs e)
         {
-            PluginSettings.OnlineVideosYouTubeSearchString = txtBoxOnlineVideosYouTubeSearchString.Text;
+            PluginSettings.OnlineVideosYouTubeMovieSearchString = txtBoxOnlineVideosYouTubeMovieSearchString.Text;
         }
 
         private void chkBoxOnlineVideosITunesEnabled_Click(object sender, EventArgs e)
@@ -364,7 +364,7 @@ namespace Trailers.Configuration
 
         private void SetManualSearchControlsEnabledState()
         {
-            txtBoxOnlineVideosYouTubeSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
+            txtBoxOnlineVideosYouTubeMovieSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
 
             groupBoxManualSearchSettings.Enabled = PluginSettings.ProviderOnlineVideoSearch;
         }

@@ -28,9 +28,12 @@ namespace Trailers
         private const string cWebTimeout = "WebTimeout";
         private const string cWebMaxRetries = "WebMaxRetries";
         private const string cProviderLocalSearch = "ProviderLocalSearch";
-        private const string cProviderTMDbMovies = "ProviderTMDbMovies";
+        private const string cProviderTMDb = "ProviderTMDbMovies";
         private const string cProviderOnlineVideoSearch = "ProviderOnlineVideoSearch";
-        private const string cOnlineVideosYouTubeSearchString = "OnlineVideosYouTubeSearchString";
+        private const string cOnlineVideosYouTubeMovieSearchString = "OnlineVideosYouTubeSearchString";
+        private const string cOnlineVideosYouTubeShowSearchString = "OnlineVideosYouTubeShowSearchString";
+        private const string cOnlineVideosYouTubeSeasonSearchString = "OnlineVideosYouTubeSeasonSearchString";
+        private const string cOnlineVideosYouTubeEpisodeSearchString = "OnlineVideosYouTubeEpisodeSearchString";
         private const string cOnlineVideosYouTubeEnabled = "OnlineVideosYouTubeEnabled";
         private const string cOnlineVideosITunesEnabled = "OnlineVideosITunesEnabled";
         private const string cOnlineVideosIMDbEnabled = "OnlineVideosIMDbEnabled";
@@ -69,9 +72,12 @@ namespace Trailers
         public static int WebTimeout { get; set; }
         public static int WebMaxRetries { get; set; }
         public static bool ProviderLocalSearch { get; set; }
-        public static bool ProviderTMDbMovies { get; set; }
+        public static bool ProviderTMDb { get; set; }
         public static bool ProviderOnlineVideoSearch { get; set; }
-        public static string OnlineVideosYouTubeSearchString { get; set; }
+        public static string OnlineVideosYouTubeMovieSearchString { get; set; }
+        public static string OnlineVideosYouTubeShowSearchString { get; set; }
+        public static string OnlineVideosYouTubeSeasonSearchString { get; set; }
+        public static string OnlineVideosYouTubeEpisodeSearchString { get; set; }
         public static bool OnlineVideosYouTubeEnabled { get; set; }
         public static bool OnlineVideosITunesEnabled { get; set; }
         public static bool OnlineVideosIMDbEnabled { get; set; }
@@ -156,9 +162,12 @@ namespace Trailers
                 WebTimeoutIncrement = xmlreader.GetValueAsInt(cTrailers, cWebTimeoutIncrement, 1000);
                 WebMaxRetries = xmlreader.GetValueAsInt(cTrailers, cWebMaxRetries, 5);
                 ProviderLocalSearch = xmlreader.GetValueAsBool(cTrailers, cProviderLocalSearch, true);
-                ProviderTMDbMovies = xmlreader.GetValueAsBool(cTrailers, cProviderTMDbMovies, true);
+                ProviderTMDb = xmlreader.GetValueAsBool(cTrailers, cProviderTMDb, true);
                 ProviderOnlineVideoSearch = xmlreader.GetValueAsBool(cTrailers, cProviderOnlineVideoSearch, true);
-                OnlineVideosYouTubeSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeSearchString, "%title% %year% trailer");
+                OnlineVideosYouTubeMovieSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeMovieSearchString, "%title% %year% trailer");
+                OnlineVideosYouTubeShowSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeShowSearchString, "%title% trailer");
+                OnlineVideosYouTubeSeasonSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeSeasonSearchString, "%title% season %season%");
+                OnlineVideosYouTubeEpisodeSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeEpisodeSearchString, "%title% season %season% episode %episode%");
                 OnlineVideosYouTubeEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosYouTubeEnabled, true);
                 OnlineVideosIMDbEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosIMDbEnabled, true);
                 OnlineVideosITunesEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosITunesEnabled, true);
@@ -203,9 +212,12 @@ namespace Trailers
                 xmlwriter.SetValue(cTrailers, cWebTimeout, WebTimeout);
                 xmlwriter.SetValue(cTrailers, cWebTimeoutIncrement, WebTimeoutIncrement);
                 xmlwriter.SetValueAsBool(cTrailers, cProviderLocalSearch, ProviderLocalSearch);
-                xmlwriter.SetValueAsBool(cTrailers, cProviderTMDbMovies, ProviderTMDbMovies);
+                xmlwriter.SetValueAsBool(cTrailers, cProviderTMDb, ProviderTMDb);
                 xmlwriter.SetValueAsBool(cTrailers, cProviderOnlineVideoSearch, ProviderOnlineVideoSearch);
-                xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeSearchString, OnlineVideosYouTubeSearchString);
+                xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeMovieSearchString, OnlineVideosYouTubeMovieSearchString);
+                xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeShowSearchString, OnlineVideosYouTubeShowSearchString);
+                xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeSeasonSearchString, OnlineVideosYouTubeSeasonSearchString);
+                xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeEpisodeSearchString, OnlineVideosYouTubeEpisodeSearchString);
                 xmlwriter.SetValueAsBool(cTrailers, cOnlineVideosYouTubeEnabled, OnlineVideosYouTubeEnabled);
                 xmlwriter.SetValueAsBool(cTrailers, cOnlineVideosITunesEnabled, OnlineVideosITunesEnabled);
                 xmlwriter.SetValueAsBool(cTrailers, cOnlineVideosIMDbEnabled, OnlineVideosIMDbEnabled);
