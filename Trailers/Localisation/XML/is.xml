@@ -38,6 +38,7 @@
   <string name="SettingPluginEnabledName">Viðbót virk</string>
   <string name="SettingListedHomeName">Lista í Home skjá</string>
   <string name="SettingListedPluginsName">Lista í viðbótum</string>
+  <string name="SettingOnlineVideosYouTubeEnabledName">Virkja YouTube fyrir ósjálfvirka leit</string>
   <string name="Settings">Stillingar</string>
   <!--T-->
   <string name="Timeout">Tímatakmörk</string>

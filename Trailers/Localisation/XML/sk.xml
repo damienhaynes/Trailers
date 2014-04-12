@@ -22,6 +22,7 @@
   <!--M-->
   <string name="MultiSelectDialog">Dialóg s multi-výberom</string>
   <!--N-->
+  <string name="No">Nie</string>
   <string name="NoTrailersFound">Trailery sa nenašli.</string>
   <!--O-->
   <string name="Off">Vyp.</string>
@@ -30,9 +31,13 @@
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">Na prehratie trailerov je nutný doplnok OnlineVideos. Zaistite že je inštalovaný a je povolený.</string>
   <!--P-->
+  <string name="Play">Prehrať</string>
   <!--R-->
   <!--S-->
   <string name="Search">Hľadanie</string>
+  <string name="SettingPluginEnabledName">Doplnok povolený</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundName">Vynechať online obsah, pokiaľ sú dostupné trailery lokálne</string>
+  <string name="Settings">Nastavenie</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
@@ -42,5 +47,6 @@
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Áno</string>
   <string name="YouTubeTrailers">YouTube Trailery</string>
 </resources>
