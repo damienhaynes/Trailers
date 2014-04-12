@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trailers", "Trailers\Trailers.csproj", "{49D3717B-F870-4B22-923D-9550991F3911}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MPEI", "MPEI", "{C23025CB-5E8A-4DA6-A6A2-46039F2C0AAF}"
+	ProjectSection(SolutionItems) = preProject
+		Installer\extension_settings.xml = Installer\extension_settings.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

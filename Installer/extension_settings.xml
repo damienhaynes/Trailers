@@ -1,39 +1,299 @@
 <extension_settings>
-	<disable_entry>
-		<setting entryname="plugins" name="Trailers" displayname="Plugin Enabled" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="Yes|No"/>
-	</disable_entry>
-	<settings section="#Trailers.Translation.Trailers.Label">
-        <setting entryname="plugins" name="Trailers" displayname="#Trailers.Translation.SettingPluginEnabledName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingPluginEnabledDescription.Label" configfile="MediaPortal.xml" />
-        <!--
+  <disable_entry>
+    <setting entryname="plugins"
+             name="Trailers"
+             displayname="Plugin Enabled"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="Yes|No"/>
+  </disable_entry>
+  <settings section="#Trailers.Translation.Trailers.Label">
+    <setting entryname="plugins"
+             name="Trailers"
+             displayname="#Trailers.Translation.SettingPluginEnabledName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingPluginEnabledDescription.Label"
+             configfile="MediaPortal.xml" />
+    <!--
         <setting entryname="home" name="Trailers" displayname="#Trailers.Translation.SettingListedHomeName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingListedHomeDescription.Label" configfile="MediaPortal.xml" />
         <setting entryname="myplugins" name="Trailers" displayname="#Trailers.Translation.SettingListedPluginsName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingListedPluginsDescription.Label" configfile="MediaPortal.xml" />
-        -->
-        <setting entryname="Trailers" name="WebMaxRetries" displayname="#Trailers.Translation.SettingWebMaxRetriesName.Label" defaultvalue="5" type="string" listvalues="1|2|3|4|5|6|7|8|9|10" displaylistvalues="1|2|3|4|5|6|7|8|9|10" description="#Trailers.Translation.SettingWebMaxRetriesDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="WebTimeout" displayname="#Trailers.Translation.SettingWebTimeoutName.Label" defaultvalue="5000" type="string" listvalues="1000|3000|5000|10000|15000|30000" displaylistvalues="1 sec|3 sec|5 sec|10 sec|15 sec|30 sec" description="#Trailers.Translation.SettingWebTimeoutDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="WebTimeoutIncrement" displayname="#Trailers.Translation.SettingWebTimeoutIncrementName.Label" defaultvalue="1000" type="string" listvalues="250|500|1000|3000|5000" displaylistvalues="250 ms|500 ms|1 sec|3 sec|5 sec" description="#Trailers.Translation.SettingWebTimeoutIncrementDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="ProviderLocalSearch" displayname="#Trailers.Translation.SettingProviderLocalSearchName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingProviderLocalSearchDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="ProviderTMDbMovies" displayname="#Trailers.Translation.SettingProviderTMDbMoviesName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingProviderTMDbMoviesDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="ProviderOnlineVideoSearch" displayname="#Trailers.Translation.SettingProviderOnlineVideoSearchName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingProviderOnlineVideoSearchDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="SearchLocalInCurrentMediaFolder" displayname="#Trailers.Translation.SettingSearchLocalInCurrentMediaFolderName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingSearchLocalInCurrentMediaFolderDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="SearchLocalInSubFolder" displayname="#Trailers.Translation.SettingSearchLocalInSubFolderName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingSearchLocalInSubFolderDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="SearchLocalInDedicatedDirectory" displayname="#Trailers.Translation.SettingSearchLocalInDedicatedDirectoryName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingSearchLocalInDedicatedDirectoryDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="OnlineVideosYouTubeEnabled" displayname="#Trailers.Translation.SettingOnlineVideosYouTubeEnabledName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingOnlineVideosYouTubeEnabledDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="OnlineVideosITunesEnabled" displayname="#Trailers.Translation.SettingOnlineVideosITunesEnabledName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingOnlineVideosITunesEnabledDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="OnlineVideosIMDbEnabled" displayname="#Trailers.Translation.SettingOnlineVideosIMDbEnabledName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingOnlineVideosIMDbEnabledDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="SearchLocalAggressiveSearch" displayname="#Trailers.Translation.SettingSearchLocalAggressiveSearchName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingSearchLocalAggressiveSearchDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="SkipOnlineProvidersIfLocalFound" displayname="#Trailers.Translation.SettingSkipOnlineProvidersIfLocalFoundName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingSkipOnlineProvidersIfLocalFoundDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoPlayOnSingleLocalOrOnlineTrailer" displayname="#Trailers.Translation.SettingAutoPlayOnSingleLocalOrOnlineTrailerName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadTrailersMovingPictures" displayname="#Trailers.Translation.SettingAutoDownloadTrailersMovingPicturesName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadTrailersMovingPicturesDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadTrailersMyFilms" displayname="#Trailers.Translation.SettingAutoDownloadTrailersMyFilmsName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadTrailersMyFilmsDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadTrailersMyVideos" displayname="#Trailers.Translation.SettingAutoDownloadTrailersMyVideosName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadTrailersMyVideosDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadStartDelay" displayname="#Trailers.Translation.SettingAutoDownloadStartDelayName.Label" defaultvalue="30000" type="string" listvalues="0|3000|5000|10000|15000|20000|25000|30000|60000|300000|900000|1800000|3600000" displaylistvalues="0 secs|3 secs|5 secs|10 secs|15 secs|20 secs|25 secs|30 secs|1 mins|5 mins|15 mins|30 mins|60 mins" description="#Trailers.Translation.SettingAutoDownloadStartDelayDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadInterval" displayname="#Trailers.Translation.SettingAutoDownloadIntervalName.Label" defaultvalue="86400000" type="string" listvalues="3600000|10800000|21600000|43200000|86400000|259200000|604800000" displaylistvalues="1 hours|3 hours|6 hours|12 hours|24 hours|3 days|7 days" description="#Trailers.Translation.SettingAutoDownloadIntervalDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadUpdateInterval" displayname="#Trailers.Translation.SettingAutoDownloadUpdateIntervalName.Label" defaultvalue="7" type="string" listvalues="1|2|3|4|5|6|7|14|30|90|180|365" displaylistvalues="1 day|2 days|3 days|4 days|5 days|6 days|1 week|2 weeks|1 month|3 months|6 months|1 year" description="#Trailers.Translation.SettingAutoDownloadUpdateIntervalDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadQuality" displayname="#Trailers.Translation.SettingAutoDownloadQualityName.Label" defaultvalue="HD" type="string" listvalues="HD|HQ|LQ" displaylistvalues="HD - 1280x720|HQ - 640x360|LQ - 320x240" description="#Trailers.Translation.SettingAutoDownloadQualityDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadTrailers" displayname="#Trailers.Translation.SettingAutoDownloadTrailersName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadTrailersDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadTeasers" displayname="#Trailers.Translation.SettingAutoDownloadTeasersName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadTeasersDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadFeaturettes" displayname="#Trailers.Translation.SettingAutoDownloadFeaturettesName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadFeaturettesDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadClips" displayname="#Trailers.Translation.SettingAutoDownloadClipsName.Label" defaultvalue="yes" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadClipsDescription.Label" configfile="MediaPortal.xml" />
-        <setting entryname="Trailers" name="AutoDownloadCleanup" displayname="#Trailers.Translation.SettingAutoDownloadCleanupName.Label" defaultvalue="no" type="string" listvalues="yes|no" displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label" description="#Trailers.Translation.SettingAutoDownloadCleanupDescription.Label" configfile="MediaPortal.xml" />
-    </settings>
+    -->
+    <setting entryname="Trailers"
+             name="WebMaxRetries"
+             displayname="#Trailers.Translation.SettingWebMaxRetriesName.Label"
+             defaultvalue="5"
+             type="string"
+             listvalues="1|2|3|4|5|6|7|8|9|10"
+             displaylistvalues="1|2|3|4|5|6|7|8|9|10"
+             description="#Trailers.Translation.SettingWebMaxRetriesDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="WebTimeout"
+             displayname="#Trailers.Translation.SettingWebTimeoutName.Label"
+             defaultvalue="5000"
+             type="string"
+             listvalues="1000|3000|5000|10000|15000|30000"
+             displaylistvalues="1 sec|3 sec|5 sec|10 sec|15 sec|30 sec"
+             description="#Trailers.Translation.SettingWebTimeoutDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="WebTimeoutIncrement"
+             displayname="#Trailers.Translation.SettingWebTimeoutIncrementName.Label"
+             defaultvalue="1000"
+             type="string"
+             listvalues="250|500|1000|3000|5000"
+             displaylistvalues="250 ms|500 ms|1 sec|3 sec|5 sec"
+             description="#Trailers.Translation.SettingWebTimeoutIncrementDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="ProviderLocalSearch"
+             displayname="#Trailers.Translation.SettingProviderLocalSearchName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingProviderLocalSearchDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="ProviderTMDbMovies"
+             displayname="#Trailers.Translation.SettingProviderTMDbMoviesName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingProviderTMDbMoviesDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="ProviderOnlineVideoSearch"
+             displayname="#Trailers.Translation.SettingProviderOnlineVideoSearchName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingProviderOnlineVideoSearchDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="SearchLocalInCurrentMediaFolder"
+             displayname="#Trailers.Translation.SettingSearchLocalInCurrentMediaFolderName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingSearchLocalInCurrentMediaFolderDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="SearchLocalInSubFolder"
+             displayname="#Trailers.Translation.SettingSearchLocalInSubFolderName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingSearchLocalInSubFolderDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="SearchLocalInDedicatedDirectory"
+             displayname="#Trailers.Translation.SettingSearchLocalInDedicatedDirectoryName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingSearchLocalInDedicatedDirectoryDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="OnlineVideosYouTubeEnabled"
+             displayname="#Trailers.Translation.SettingOnlineVideosYouTubeEnabledName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingOnlineVideosYouTubeEnabledDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="OnlineVideosITunesEnabled"
+             displayname="#Trailers.Translation.SettingOnlineVideosITunesEnabledName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingOnlineVideosITunesEnabledDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="OnlineVideosIMDbEnabled"
+             displayname="#Trailers.Translation.SettingOnlineVideosIMDbEnabledName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingOnlineVideosIMDbEnabledDescription.Label"
+             configfile="MediaPortal.xml" />    
+    <setting entryname="Trailers"
+              name="OnlineVideosYouTubeSearchString"
+              type="string"
+              defaultvalue="%title% %year% trailer"
+              displayname="#Trailers.Translation.SettingOnlineVideosYouTubeMovieSearchStringName.Label"
+              description="#Trailers.Translation.SettingOnlineVideosYouTubeMovieSearchStringDescription.Label" />
+    <setting entryname="Trailers"
+              name="OnlineVideosYouTubeShowSearchString"
+              type="string"
+              defaultvalue="%title% trailer"
+              displayname="#Trailers.Translation.SettingOnlineVideosYouTubeShowSearchStringName.Label"
+              description="#Trailers.Translation.SettingOnlineVideosYouTubeShowSearchStringDescription.Label" />
+    <setting entryname="Trailers"
+             name="OnlineVideosYouTubeSeasonSearchString"
+             type="string"
+             defaultvalue="%title% season %season%"
+             displayname="#Trailers.Translation.SettingOnlineVideosYouTubeSeasonSearchStringName.Label"
+             description="#Trailers.Translation.SettingOnlineVideosYouTubeSeasonSearchStringDescription.Label" />
+    <setting entryname="Trailers"
+             name="OnlineVideosYouTubeEpisodeSearchString"
+             type="string"
+             defaultvalue="%title% season %season% episode %episode%"
+             displayname="#Trailers.Translation.SettingOnlineVideosYouTubeEpisodeSearchStringName.Label"
+             description="#Trailers.Translation.SettingOnlineVideosYouTubeEpisodeSearchStringDescription.Label" />
+    <setting entryname="Trailers"
+             name="OnlineVideosYouTubeEpisodeSpecialSearchString"
+             type="string"
+             defaultvalue="%title% %episodename%"
+             displayname="#Trailers.Translation.SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName.Label"
+             description="#Trailers.Translation.SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription.Label" />
+    <setting entryname="Trailers"
+             name="SearchLocalAggressiveSearch"
+             displayname="#Trailers.Translation.SettingSearchLocalAggressiveSearchName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingSearchLocalAggressiveSearchDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="SkipOnlineProvidersIfLocalFound"
+             displayname="#Trailers.Translation.SettingSkipOnlineProvidersIfLocalFoundName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingSkipOnlineProvidersIfLocalFoundDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoPlayOnSingleLocalOrOnlineTrailer"
+             displayname="#Trailers.Translation.SettingAutoPlayOnSingleLocalOrOnlineTrailerName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadTrailersMovingPictures"
+             displayname="#Trailers.Translation.SettingAutoDownloadTrailersMovingPicturesName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadTrailersMovingPicturesDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadTrailersMyFilms"
+             displayname="#Trailers.Translation.SettingAutoDownloadTrailersMyFilmsName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadTrailersMyFilmsDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadTrailersMyVideos"
+             displayname="#Trailers.Translation.SettingAutoDownloadTrailersMyVideosName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadTrailersMyVideosDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadStartDelay"
+             displayname="#Trailers.Translation.SettingAutoDownloadStartDelayName.Label"
+             defaultvalue="30000"
+             type="string"
+             listvalues="0|3000|5000|10000|15000|20000|25000|30000|60000|300000|900000|1800000|3600000"
+             displaylistvalues="0 secs|3 secs|5 secs|10 secs|15 secs|20 secs|25 secs|30 secs|1 mins|5 mins|15 mins|30 mins|60 mins"
+             description="#Trailers.Translation.SettingAutoDownloadStartDelayDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadInterval"
+             displayname="#Trailers.Translation.SettingAutoDownloadIntervalName.Label"
+             defaultvalue="86400000"
+             type="string"
+             listvalues="3600000|10800000|21600000|43200000|86400000|259200000|604800000"
+             displaylistvalues="1 hours|3 hours|6 hours|12 hours|24 hours|3 days|7 days"
+             description="#Trailers.Translation.SettingAutoDownloadIntervalDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadUpdateInterval"
+             displayname="#Trailers.Translation.SettingAutoDownloadUpdateIntervalName.Label"
+             defaultvalue="7"
+             type="string"
+             listvalues="1|2|3|4|5|6|7|14|30|90|180|365"
+             displaylistvalues="1 day|2 days|3 days|4 days|5 days|6 days|1 week|2 weeks|1 month|3 months|6 months|1 year"
+             description="#Trailers.Translation.SettingAutoDownloadUpdateIntervalDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadQuality"
+             displayname="#Trailers.Translation.SettingAutoDownloadQualityName.Label"
+             defaultvalue="HD"
+             type="string"
+             listvalues="HD|HQ|LQ"
+             displaylistvalues="HD - 1280x720|HQ - 640x360|LQ - 320x240"
+             description="#Trailers.Translation.SettingAutoDownloadQualityDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadTrailers"
+             displayname="#Trailers.Translation.SettingAutoDownloadTrailersName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadTrailersDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadTeasers"
+             displayname="#Trailers.Translation.SettingAutoDownloadTeasersName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadTeasersDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadFeaturettes"
+             displayname="#Trailers.Translation.SettingAutoDownloadFeaturettesName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadFeaturettesDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadClips"
+             displayname="#Trailers.Translation.SettingAutoDownloadClipsName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadClipsDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AutoDownloadCleanup"
+             displayname="#Trailers.Translation.SettingAutoDownloadCleanupName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAutoDownloadCleanupDescription.Label"
+             configfile="MediaPortal.xml" />
+  </settings>
 </extension_settings>

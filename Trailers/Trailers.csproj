@@ -176,6 +176,7 @@
     <Content Include="Localisation\XML\pl.xml" />
     <Content Include="Localisation\XML\pt-BR.xml" />
     <Content Include="Localisation\XML\pt.xml" />
+    <Content Include="Localisation\XML\ro.xml" />
     <Content Include="Localisation\XML\ru.xml" />
     <Content Include="Localisation\XML\sk.xml" />
     <Content Include="Localisation\XML\sl.xml" />

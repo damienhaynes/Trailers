@@ -61,6 +61,16 @@
   <string name="SettingSearchLocalInDedicatedDirectoryDescription">Enable to search for trailers in a list of specified dedicated directories, these would be outside of the current media path. By default the OnlineVideos and ShowTimes download directories are used for search.</string>
   <string name="SettingOnlineVideosYouTubeEnabledName">Enable YouTube Site for Manual Search</string>
   <string name="SettingOnlineVideosYouTubeEnabledDescription">The YouTube site is probably the best site in OnlineVideos to perform a manual search, there is a large range of movies trailers available at good quality.</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringName">YouTube Movie Search String</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringDescription">Specify the search string used for manual movie trailer searches on YouTube. Special replacement parameters for movies are %title% and %year%.</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringName">YouTube TV Show Search String</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringDescription">Specify the search string used for manual tv show trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate% and %year%.</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringName">YouTube TV Season Search String</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringDescription">Specify the search string used for manual tv season trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate%, %year% and %season%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringName">YouTube TV Episode Search String</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringDescription">Specify the search string used for manual tv episode trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName">YouTube TV Episode Specials Search String</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription">Specify the search string used for manual tv episode trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
   <string name="SettingOnlineVideosITunesEnabledName">Enable iTunes Site for Manual Search</string>
   <string name="SettingOnlineVideosITunesEnabledDescription">The iTunes Movie Trailer site is a dedicated trailer site, this is a good choice for more recent movies.</string>
   <string name="SettingOnlineVideosIMDbEnabledName">Enable IMDb Site for Manual Search</string>
