@@ -10,6 +10,7 @@ It searches local trailers and online sources, it also has the capability to str
 * MovingPictures
 * My Films
 * My Videos
+* MP-TVSeries
 * ShowTimes
 * Trakt
 * Netflix
