@@ -449,7 +449,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
 
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
     <VersionDescription>* Added support for TV Show, Season and Episode trailers.
-** Skinners can now add the trailer button to MP-TVSeries Show, Season and Episode levels as well as all Trakt Episode Windows.
+** Skinners can now add the trailer button to MP-TVSeries Show, Season and Episode levels as well as all Trakt Show, Season and Episode Windows.
 ** Settings added to change the manual search strings on YouTube.
 * Updated translations from Transifex.
 
