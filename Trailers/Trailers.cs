@@ -270,6 +270,7 @@ namespace Trailers
                             GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
+                        // trakt movie windows
                         case (int)ExternalPluginWindows.TraktRecentAddedMovies:
                         case (int)ExternalPluginWindows.TraktRecentWatchedMovies:
                         case (int)ExternalPluginWindows.TraktRecommendationsMovies:
@@ -277,9 +278,37 @@ namespace Trailers
                         case (int)ExternalPluginWindows.TraktSearchMovies:
                         case (int)ExternalPluginWindows.TraktTrendingMovies:
                         case (int)ExternalPluginWindows.TraktWatchedListMovies:
-                        case (int)ExternalPluginWindows.TraktListItems:
-                            TraktMovieHandler.GetCurrentMediaItem(out currentMediaItem);
+                            TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Movie);
                             GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
+                            break;
+
+                        // trakt show windows
+                        case (int)ExternalPluginWindows.TraktRecommendationsShows:
+                        case (int)ExternalPluginWindows.TraktRelatedShows:
+                        case (int)ExternalPluginWindows.TraktTrendingShows:
+                        case (int)ExternalPluginWindows.TraktWatchedListShows:
+                        case (int)ExternalPluginWindows.TraktSearchShows:
+                            TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Show);
+                            break;
+
+                        // trakt season windows
+                        case (int)ExternalPluginWindows.TraktShowSeasons:
+                            TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Season);
+                            break;
+
+                        // trakt episode windows
+                        case (int)ExternalPluginWindows.TraktCalendar:
+                        case (int)ExternalPluginWindows.TraktRecentAddedEpisodes:
+                        case (int)ExternalPluginWindows.TraktRecentWatchedEpisodes:
+                        case (int)ExternalPluginWindows.TraktSearchEpisodes:
+                        case (int)ExternalPluginWindows.TraktSeasonEpisodes:
+                        case (int)ExternalPluginWindows.TraktWatchedListEpisodes:
+                            TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Episode);
+                            break;
+
+                        // trakt list window
+                        case (int)ExternalPluginWindows.TraktListItems:
+                            TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.List);
                             break;
 
                         case (int)ExternalPluginWindows.NetflixAlpha:
