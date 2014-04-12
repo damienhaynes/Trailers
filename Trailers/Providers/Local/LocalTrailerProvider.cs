@@ -95,6 +95,10 @@ namespace Trailers.Providers
             searchPattern = searchPattern.Replace("%year%", searchItem.Year.ToString());
             searchPattern = searchPattern.Replace("%imdb%", searchItem.IMDb ?? string.Empty);
             searchPattern = searchPattern.Replace("%filename%", searchItem.FilenameWOExtension ?? "null");
+            searchPattern = searchPattern.Replace("%episode%", searchItem.Episode.HasValue ? searchItem.Episode.ToString() : string.Empty);
+            searchPattern = searchPattern.Replace("%season%", searchItem.Season.HasValue ? searchItem.Season.ToString() : string.Empty);
+            searchPattern = searchPattern.Replace("%episodename%", searchItem.EpisodeName ?? string.Empty);
+            searchPattern = searchPattern.Replace("%airdate%", searchItem.AirDate ?? string.Empty);
 
             if (string.IsNullOrEmpty(searchPattern)) 
                 searchPattern = "null";

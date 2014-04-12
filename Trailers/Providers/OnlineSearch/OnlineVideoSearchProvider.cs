@@ -98,7 +98,14 @@ namespace Trailers.Providers
                     youTubeSearchStr = PluginSettings.OnlineVideosYouTubeSeasonSearchString;
                     break;
                 case MediaItemType.Episode:
-                    youTubeSearchStr = PluginSettings.OnlineVideosYouTubeEpisodeSearchString;
+                    if (item.Season == 0)
+                    {
+                        youTubeSearchStr = PluginSettings.OnlineVideosYouTubeEpisodeSpecialSearchString;
+                    }
+                    else
+                    {
+                        youTubeSearchStr = PluginSettings.OnlineVideosYouTubeEpisodeSearchString;
+                    }
                     break;
             }
             
@@ -106,10 +113,14 @@ namespace Trailers.Providers
             // only title and year are useful for youtube movies and shows
             youTubeSearchStr = youTubeSearchStr.Replace("%title%", item.Title);
             youTubeSearchStr = youTubeSearchStr.Replace("%year%", item.Year.ToString());
+            youTubeSearchStr = youTubeSearchStr.Replace("%airdate%", item.AirDate ?? string.Empty);
 
             if (item.MediaType == MediaItemType.Season || item.MediaType == MediaItemType.Episode)
             {
                 youTubeSearchStr = youTubeSearchStr.Replace("%season%", item.Season.ToString());
+
+                // change 'season 0' to specials
+                youTubeSearchStr = youTubeSearchStr.Replace("season 0", "Specials");
             }
             if (item.MediaType == MediaItemType.Episode)
             {

@@ -34,6 +34,7 @@ namespace Trailers
         private const string cOnlineVideosYouTubeShowSearchString = "OnlineVideosYouTubeShowSearchString";
         private const string cOnlineVideosYouTubeSeasonSearchString = "OnlineVideosYouTubeSeasonSearchString";
         private const string cOnlineVideosYouTubeEpisodeSearchString = "OnlineVideosYouTubeEpisodeSearchString";
+        private const string cOnlineVideosYouTubeEpisodeSpecialSearchString = "OnlineVideosYouTubeEpisodeSpecialSearchString";
         private const string cOnlineVideosYouTubeEnabled = "OnlineVideosYouTubeEnabled";
         private const string cOnlineVideosITunesEnabled = "OnlineVideosITunesEnabled";
         private const string cOnlineVideosIMDbEnabled = "OnlineVideosIMDbEnabled";
@@ -78,6 +79,7 @@ namespace Trailers
         public static string OnlineVideosYouTubeShowSearchString { get; set; }
         public static string OnlineVideosYouTubeSeasonSearchString { get; set; }
         public static string OnlineVideosYouTubeEpisodeSearchString { get; set; }
+        public static string OnlineVideosYouTubeEpisodeSpecialSearchString { get; set; }
         public static bool OnlineVideosYouTubeEnabled { get; set; }
         public static bool OnlineVideosITunesEnabled { get; set; }
         public static bool OnlineVideosIMDbEnabled { get; set; }
@@ -168,6 +170,7 @@ namespace Trailers
                 OnlineVideosYouTubeShowSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeShowSearchString, "%title% trailer");
                 OnlineVideosYouTubeSeasonSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeSeasonSearchString, "%title% season %season%");
                 OnlineVideosYouTubeEpisodeSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeEpisodeSearchString, "%title% season %season% episode %episode%");
+                OnlineVideosYouTubeEpisodeSpecialSearchString = xmlreader.GetValueAsString(cTrailers, cOnlineVideosYouTubeEpisodeSpecialSearchString, "%title% %episodename%");
                 OnlineVideosYouTubeEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosYouTubeEnabled, true);
                 OnlineVideosIMDbEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosIMDbEnabled, true);
                 OnlineVideosITunesEnabled = xmlreader.GetValueAsBool(cTrailers, cOnlineVideosITunesEnabled, true);
@@ -218,6 +221,7 @@ namespace Trailers
                 xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeShowSearchString, OnlineVideosYouTubeShowSearchString);
                 xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeSeasonSearchString, OnlineVideosYouTubeSeasonSearchString);
                 xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeEpisodeSearchString, OnlineVideosYouTubeEpisodeSearchString);
+                xmlwriter.SetValue(cTrailers, cOnlineVideosYouTubeEpisodeSpecialSearchString, OnlineVideosYouTubeEpisodeSpecialSearchString);
                 xmlwriter.SetValueAsBool(cTrailers, cOnlineVideosYouTubeEnabled, OnlineVideosYouTubeEnabled);
                 xmlwriter.SetValueAsBool(cTrailers, cOnlineVideosITunesEnabled, OnlineVideosITunesEnabled);
                 xmlwriter.SetValueAsBool(cTrailers, cOnlineVideosIMDbEnabled, OnlineVideosIMDbEnabled);

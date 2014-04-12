@@ -72,6 +72,10 @@ namespace Trailers.Configuration
         {
             chkBoxOnlineVideosYouTubeEnabled.Checked = PluginSettings.OnlineVideosYouTubeEnabled;
             txtBoxOnlineVideosYouTubeMovieSearchString.Text = PluginSettings.OnlineVideosYouTubeMovieSearchString;
+            txtBoxOnlineVideosYouTubeShowSearchString.Text = PluginSettings.OnlineVideosYouTubeShowSearchString;
+            txtBoxOnlineVideosYouTubeSeasonSearchString.Text = PluginSettings.OnlineVideosYouTubeSeasonSearchString;
+            txtBoxOnlineVideosYouTubeEpisodeSearchString.Text = PluginSettings.OnlineVideosYouTubeEpisodeSearchString;
+            txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Text = PluginSettings.OnlineVideosYouTubeEpisodeSpecialSearchString;
 
             chkBoxOnlineVideosITunesEnabled.Checked = PluginSettings.OnlineVideosITunesEnabled;
             chkBoxOnlineVideosIMDbEnabled.Checked = PluginSettings.OnlineVideosIMDbEnabled;
@@ -243,6 +247,25 @@ namespace Trailers.Configuration
         {
             PluginSettings.OnlineVideosYouTubeMovieSearchString = txtBoxOnlineVideosYouTubeMovieSearchString.Text;
         }
+        private void txtBoxOnlineVideosYouTubeShowSearchString_TextChanged(object sender, EventArgs e)
+        {
+            PluginSettings.OnlineVideosYouTubeShowSearchString = txtBoxOnlineVideosYouTubeShowSearchString.Text;
+        }
+
+        private void txtBoxOnlineVideosYouTubeSeasonSearchString_TextChanged(object sender, EventArgs e)
+        {
+            PluginSettings.OnlineVideosYouTubeSeasonSearchString = txtBoxOnlineVideosYouTubeSeasonSearchString.Text;
+        }
+
+        private void txtBoxOnlineVideosYouTubeEpisodeSearchString_TextChanged(object sender, EventArgs e)
+        {
+            PluginSettings.OnlineVideosYouTubeEpisodeSearchString = txtBoxOnlineVideosYouTubeEpisodeSearchString.Text;
+        }
+
+        private void txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString_TextChanged(object sender, EventArgs e)
+        {
+            PluginSettings.OnlineVideosYouTubeEpisodeSpecialSearchString = txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Text;
+        }
 
         private void chkBoxOnlineVideosITunesEnabled_Click(object sender, EventArgs e)
         {
@@ -365,9 +388,15 @@ namespace Trailers.Configuration
         private void SetManualSearchControlsEnabledState()
         {
             txtBoxOnlineVideosYouTubeMovieSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
+            txtBoxOnlineVideosYouTubeShowSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
+            txtBoxOnlineVideosYouTubeSeasonSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
+            txtBoxOnlineVideosYouTubeEpisodeSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
+            txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
 
             groupBoxManualSearchSettings.Enabled = PluginSettings.ProviderOnlineVideoSearch;
         }
         #endregion
+
+        
     }
 }

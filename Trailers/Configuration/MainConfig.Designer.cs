@@ -86,6 +86,15 @@
             this.chkBoxAutoDownloadMovingPictures = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtBoxOnlineVideosYouTubeShowSearchString = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtBoxOnlineVideosYouTubeSeasonSearchString = new System.Windows.Forms.TextBox();
+            this.txtBoxOnlineVideosYouTubeEpisodeSearchString = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxLocalTrailerSettings.SuspendLayout();
             this.groupBoxManualSearchSettings.SuspendLayout();
@@ -346,6 +355,15 @@
             // 
             // groupBoxManualSearchSettings
             // 
+            this.groupBoxManualSearchSettings.Controls.Add(this.label21);
+            this.groupBoxManualSearchSettings.Controls.Add(this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString);
+            this.groupBoxManualSearchSettings.Controls.Add(this.label20);
+            this.groupBoxManualSearchSettings.Controls.Add(this.txtBoxOnlineVideosYouTubeEpisodeSearchString);
+            this.groupBoxManualSearchSettings.Controls.Add(this.txtBoxOnlineVideosYouTubeSeasonSearchString);
+            this.groupBoxManualSearchSettings.Controls.Add(this.label19);
+            this.groupBoxManualSearchSettings.Controls.Add(this.label18);
+            this.groupBoxManualSearchSettings.Controls.Add(this.txtBoxOnlineVideosYouTubeShowSearchString);
+            this.groupBoxManualSearchSettings.Controls.Add(this.label17);
             this.groupBoxManualSearchSettings.Controls.Add(this.label7);
             this.groupBoxManualSearchSettings.Controls.Add(this.chkBoxOnlineVideosIMDbEnabled);
             this.groupBoxManualSearchSettings.Controls.Add(this.chkBoxOnlineVideosITunesEnabled);
@@ -354,7 +372,7 @@
             this.groupBoxManualSearchSettings.Controls.Add(this.chkBoxOnlineVideosYouTubeEnabled);
             this.groupBoxManualSearchSettings.Location = new System.Drawing.Point(547, 141);
             this.groupBoxManualSearchSettings.Name = "groupBoxManualSearchSettings";
-            this.groupBoxManualSearchSettings.Size = new System.Drawing.Size(479, 205);
+            this.groupBoxManualSearchSettings.Size = new System.Drawing.Size(479, 276);
             this.groupBoxManualSearchSettings.TabIndex = 3;
             this.groupBoxManualSearchSettings.TabStop = false;
             this.groupBoxManualSearchSettings.Text = "Manual Search Settings (OnlineVideos)";
@@ -372,31 +390,33 @@
             // chkBoxOnlineVideosIMDbEnabled
             // 
             this.chkBoxOnlineVideosIMDbEnabled.AutoSize = true;
-            this.chkBoxOnlineVideosIMDbEnabled.Location = new System.Drawing.Point(16, 162);
+            this.chkBoxOnlineVideosIMDbEnabled.Location = new System.Drawing.Point(16, 252);
             this.chkBoxOnlineVideosIMDbEnabled.Name = "chkBoxOnlineVideosIMDbEnabled";
             this.chkBoxOnlineVideosIMDbEnabled.Size = new System.Drawing.Size(163, 17);
-            this.chkBoxOnlineVideosIMDbEnabled.TabIndex = 5;
+            this.chkBoxOnlineVideosIMDbEnabled.TabIndex = 14;
             this.chkBoxOnlineVideosIMDbEnabled.Text = "Enable IMD&b manual search.";
+            this.toolTip.SetToolTip(this.chkBoxOnlineVideosIMDbEnabled, "Does not support episode or season search.");
             this.chkBoxOnlineVideosIMDbEnabled.UseVisualStyleBackColor = true;
             this.chkBoxOnlineVideosIMDbEnabled.Click += new System.EventHandler(this.chkBoxOnlineVideosIMDbEnabled_Click);
             // 
             // chkBoxOnlineVideosITunesEnabled
             // 
             this.chkBoxOnlineVideosITunesEnabled.AutoSize = true;
-            this.chkBoxOnlineVideosITunesEnabled.Location = new System.Drawing.Point(16, 138);
+            this.chkBoxOnlineVideosITunesEnabled.Location = new System.Drawing.Point(16, 228);
             this.chkBoxOnlineVideosITunesEnabled.Name = "chkBoxOnlineVideosITunesEnabled";
             this.chkBoxOnlineVideosITunesEnabled.Size = new System.Drawing.Size(169, 17);
-            this.chkBoxOnlineVideosITunesEnabled.TabIndex = 4;
+            this.chkBoxOnlineVideosITunesEnabled.TabIndex = 13;
             this.chkBoxOnlineVideosITunesEnabled.Text = "Enable &iTunes manual search.";
+            this.toolTip.SetToolTip(this.chkBoxOnlineVideosITunesEnabled, "Only supports movies.");
             this.chkBoxOnlineVideosITunesEnabled.UseVisualStyleBackColor = true;
             this.chkBoxOnlineVideosITunesEnabled.Click += new System.EventHandler(this.chkBoxOnlineVideosITunesEnabled_Click);
             // 
-            // txtBoxOnlineVideosYouTubeSearchString
+            // txtBoxOnlineVideosYouTubeMovieSearchString
             // 
-            this.txtBoxOnlineVideosYouTubeMovieSearchString.Location = new System.Drawing.Point(40, 106);
-            this.txtBoxOnlineVideosYouTubeMovieSearchString.Name = "txtBoxOnlineVideosYouTubeSearchString";
-            this.txtBoxOnlineVideosYouTubeMovieSearchString.Size = new System.Drawing.Size(381, 20);
-            this.txtBoxOnlineVideosYouTubeMovieSearchString.TabIndex = 3;
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.Location = new System.Drawing.Point(125, 106);
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.Name = "txtBoxOnlineVideosYouTubeMovieSearchString";
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxOnlineVideosYouTubeMovieSearchString.TabIndex = 4;
             this.txtBoxOnlineVideosYouTubeMovieSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeMovieSearchString_TextChanged);
             // 
             // label6
@@ -454,7 +474,7 @@
             // 
             // btnApplySettings
             // 
-            this.btnApplySettings.Location = new System.Drawing.Point(852, 684);
+            this.btnApplySettings.Location = new System.Drawing.Point(852, 754);
             this.btnApplySettings.Name = "btnApplySettings";
             this.btnApplySettings.Size = new System.Drawing.Size(174, 23);
             this.btnApplySettings.TabIndex = 5;
@@ -485,7 +505,7 @@
             this.groupBox2.Controls.Add(this.chkBoxAutoDownloadMyVideos);
             this.groupBox2.Controls.Add(this.chkBoxAutoDownloadMovingPictures);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(548, 353);
+            this.groupBox2.Location = new System.Drawing.Point(548, 423);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(478, 325);
             this.groupBox2.TabIndex = 4;
@@ -736,11 +756,91 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Select plugins to auto-download trailers for media in local libraries:";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(46, 111);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Movies:";
+            // 
+            // txtBoxOnlineVideosYouTubeShowSearchString
+            // 
+            this.txtBoxOnlineVideosYouTubeShowSearchString.Location = new System.Drawing.Point(125, 128);
+            this.txtBoxOnlineVideosYouTubeShowSearchString.Name = "txtBoxOnlineVideosYouTubeShowSearchString";
+            this.txtBoxOnlineVideosYouTubeShowSearchString.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxOnlineVideosYouTubeShowSearchString.TabIndex = 6;
+            this.txtBoxOnlineVideosYouTubeShowSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeShowSearchString_TextChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(46, 133);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(42, 13);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Shows:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(46, 155);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(48, 13);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Seasons";
+            // 
+            // txtBoxOnlineVideosYouTubeSeasonSearchString
+            // 
+            this.txtBoxOnlineVideosYouTubeSeasonSearchString.Location = new System.Drawing.Point(125, 150);
+            this.txtBoxOnlineVideosYouTubeSeasonSearchString.Name = "txtBoxOnlineVideosYouTubeSeasonSearchString";
+            this.txtBoxOnlineVideosYouTubeSeasonSearchString.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxOnlineVideosYouTubeSeasonSearchString.TabIndex = 8;
+            this.toolTip.SetToolTip(this.txtBoxOnlineVideosYouTubeSeasonSearchString, "Extra fields for tvshows are %episode%, %season% and %episodename%");
+            this.txtBoxOnlineVideosYouTubeSeasonSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeSeasonSearchString_TextChanged);
+            // 
+            // txtBoxOnlineVideosYouTubeEpisodeSearchString
+            // 
+            this.txtBoxOnlineVideosYouTubeEpisodeSearchString.Location = new System.Drawing.Point(125, 172);
+            this.txtBoxOnlineVideosYouTubeEpisodeSearchString.Name = "txtBoxOnlineVideosYouTubeEpisodeSearchString";
+            this.txtBoxOnlineVideosYouTubeEpisodeSearchString.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxOnlineVideosYouTubeEpisodeSearchString.TabIndex = 10;
+            this.toolTip.SetToolTip(this.txtBoxOnlineVideosYouTubeEpisodeSearchString, "Extra fields for tvshows are %episode%, %season% and %episodename%");
+            this.txtBoxOnlineVideosYouTubeEpisodeSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeEpisodeSearchString_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(46, 177);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Episodes:";
+            // 
+            // txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString
+            // 
+            this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Location = new System.Drawing.Point(125, 194);
+            this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Name = "txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString";
+            this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.TabIndex = 12;
+            this.toolTip.SetToolTip(this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString, "Extra fields for tvshows are %episode%, %season% and %episodename%");
+            this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.TextChanged += new System.EventHandler(this.txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(46, 199);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(50, 13);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Specials:";
+            // 
             // MainConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 714);
+            this.ClientSize = new System.Drawing.Size(1038, 789);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnApplySettings);
             this.Controls.Add(this.groupBox4);
@@ -829,5 +929,14 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.CheckBox chkBoxAutoDownloadCleanup;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtBoxOnlineVideosYouTubeEpisodeSearchString;
+        private System.Windows.Forms.TextBox txtBoxOnlineVideosYouTubeSeasonSearchString;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtBoxOnlineVideosYouTubeShowSearchString;
+        private System.Windows.Forms.Label label17;
     }
 }
