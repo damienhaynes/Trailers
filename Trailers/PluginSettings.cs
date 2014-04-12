@@ -6,9 +6,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Xml;
+using System.Runtime.Serialization;
+using System.Web;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Profile;
+using Trailers.Extensions;
 
 namespace Trailers
 {
@@ -17,6 +20,10 @@ namespace Trailers
         private static Object lockObject = new object();
 
         #region Constants
+
+        private static string cTVDbExternalIDs = Path.Combine(Config.GetFolder(Config.Dir.Config), @"Trailers\tvdb_ids.json");
+        private static string cIMDbExternalIDs = Path.Combine(Config.GetFolder(Config.Dir.Config), @"Trailers\imdb_ids.json");
+        private static string cTVRageExternalIDs = Path.Combine(Config.GetFolder(Config.Dir.Config), @"Trailers\tvrage_ids.json");
 
         private const string cTrailers = "Trailers";
         private const string cOnlineVideos = "onlinevideos";
@@ -68,6 +75,10 @@ namespace Trailers
         #region Persisted Settings
 
         static int SettingsVersion = 1;
+
+        public static List<ExternalID> TVDbIds { get; set; }
+        public static List<ExternalID> IMDbIds { get; set; }
+        public static List<ExternalID> TVRageIds { get; set; }
 
         public static int WebTimeoutIncrement { get; set; }
         public static int WebTimeout { get; set; }
@@ -199,6 +210,15 @@ namespace Trailers
                 AutoDownloadClips = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadClips, true);
                 AutoDownloadCleanup = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadCleanup, false);
             }
+
+            FileLog.Info("Loading Persisted File Cache");
+            TVDbIds = LoadFileCache(cTVDbExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
+            IMDbIds = LoadFileCache(cIMDbExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
+            TVRageIds = LoadFileCache(cTVRageExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
+
+            if (TVDbIds == null) TVDbIds = new List<ExternalID>();
+            if (IMDbIds == null) TVDbIds = new List<ExternalID>();
+            if (TVRageIds == null) TVDbIds = new List<ExternalID>();
         }
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace Trailers
             }
 
             Settings.SaveCache();
+
+            FileLog.Info("Saving Persistent File Cache");
+            SaveFileCache(cTVDbExternalIDs, (TVDbIds ?? "{}".FromJsonArray<ExternalID>()).ToList().ToJson());
+            SaveFileCache(cIMDbExternalIDs, (IMDbIds ?? "{}".FromJsonArray<ExternalID>()).ToList().ToJson());
+            SaveFileCache(cTVRageExternalIDs, (TVRageIds ?? "{}".FromJsonArray<ExternalID>()).ToList().ToJson());
         }
 
         /// <summary>
@@ -356,6 +381,50 @@ namespace Trailers
             return trailerDirs;
         }
 
+        static void SaveFileCache(string file, string value)
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(file));
+                File.WriteAllText(file, value, Encoding.UTF8);
+            }
+            catch (Exception e)
+            {
+                FileLog.Error(string.Format("Error saving file: {0}, Error: {1}", file, e.Message));
+            }
+        }
+
+        static string LoadFileCache(string file, string defaultValue)
+        {
+            string returnValue = defaultValue;
+
+            try
+            {
+                if (File.Exists(file))
+                {
+                    returnValue = File.ReadAllText(file, Encoding.UTF8);
+                }
+            }
+            catch (Exception e)
+            {
+                FileLog.Error(string.Format("Error loading file: {0}, Error: {1}", file, e.Message));
+                return defaultValue;
+            }
+
+            return returnValue;
+        }
+
         #endregion
+
+        [DataContract]
+        public class ExternalID
+        {
+            [DataMember(Name = "external_id")]
+            public string ExternalId { get; set; }
+
+            [DataMember(Name = "tmdb_id")]
+            public int TmdbId { get; set; }
+        }
+
     }
 }

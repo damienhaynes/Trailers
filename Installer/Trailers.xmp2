@@ -448,8 +448,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
 
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>* 
-* Updated translations from Transifex.</VersionDescription>
+    <VersionDescription>* Added support for TV Show, Season and Episode trailers.
+** Skinners can now add the trailer button to MP-TVSeries Show, Season and Episode levels as well as all Trakt Episode Windows.
+** Settings added to change the manual search strings on YouTube.
+* Updated translations from Transifex.
+
+Note: Remember to start contributing to themoviedb.org, this is where all the online searches are coming from.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=296&amp;cf_id=24</OnlineLocation>
     <ReleaseDate>2014-04-12T21:11:07</ReleaseDate>

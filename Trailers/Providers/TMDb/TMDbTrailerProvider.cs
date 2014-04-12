@@ -70,18 +70,30 @@ namespace Trailers.Providers
             }
             else if (!string.IsNullOrEmpty((searchItem.IMDb ?? string.Empty).Trim()))
             {
-                // use the find method to lookup by external source id
-                FileLog.Debug("Searching themoviedb.org for all objects with IMDb ID '{0}'", searchItem.IMDb);
-
-                var findResults = TMDbAPI.TMDbFind(searchItem.IMDb, TMDbAPI.ExternalSource.imdb_id);
-                if (findResults == null || findResults.Movies == null || findResults.Movies.Count == 0)
+                var externalId = PluginSettings.IMDbIds.FirstOrDefault(t => t.ExternalId == searchItem.IMDb);
+                if (externalId == null)
                 {
-                    FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using IMDb ID");
-                    return listItems;
-                }
+                    // use the find method to lookup by external source id
+                    FileLog.Debug("Searching themoviedb.org for all objects with IMDb ID '{0}'", searchItem.IMDb);
 
-                // there should only be one
-                searchTerm = findResults.Movies.First().Id.ToString();
+                    var findResults = TMDbAPI.TMDbFind(searchItem.IMDb, TMDbAPI.ExternalSource.imdb_id);
+                    if (findResults == null || findResults.Movies == null || findResults.Movies.Count == 0)
+                    {
+                        FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using IMDb ID");
+                        return listItems;
+                    }
+
+                    // there should only be one
+                    searchTerm = findResults.Movies.First().Id.ToString();
+
+                    // cache id so we can use it again
+                    PluginSettings.IMDbIds.Add(new PluginSettings.ExternalID { ExternalId = searchItem.IMDb, TmdbId = findResults.Movies.First().Id });
+                }
+                else
+                {
+                    FileLog.Debug("Found cached TMDb ID '{0}' for IMDb External ID: '{1}'", externalId.TmdbId.ToString(), searchItem.IMDb);
+                    searchTerm = externalId.TmdbId.ToString();
+                }
             }
             else if (!string.IsNullOrEmpty(searchItem.Title))
             {
@@ -158,46 +170,86 @@ namespace Trailers.Providers
             }
             else if (!string.IsNullOrEmpty(searchItem.TVDb))
             {
-                // use the find method to lookup by external source id
-                FileLog.Debug("Searching themoviedb.org for all objects with TVDb ID '{0}'", searchItem.TVDb);
-
-                var findResults = TMDbAPI.TMDbFind(searchItem.TVDb, TMDbAPI.ExternalSource.tvdb_id);
-                if (findResults == null || findResults.Shows == null || findResults.Shows.Count == 0)
+                // check if external id is cached
+                var externalId = PluginSettings.TVDbIds.FirstOrDefault(t => t.ExternalId == searchItem.TVDb);
+                if (externalId == null)
                 {
-                    FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using TVDb ID");
-                    return listItems;
-                }
 
-                // there should only be one
-                searchTerm = findResults.Shows.First().Id.ToString();
+                    // use the find method to lookup by external source id
+                    FileLog.Debug("Searching themoviedb.org for all objects with TVDb ID '{0}'", searchItem.TVDb);
+
+                    var findResults = TMDbAPI.TMDbFind(searchItem.TVDb, TMDbAPI.ExternalSource.tvdb_id);
+                    if (findResults == null || findResults.Shows == null || findResults.Shows.Count == 0)
+                    {
+                        FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using TVDb ID");
+                        return listItems;
+                    }
+
+                    // there should only be one
+                    searchTerm = findResults.Shows.First().Id.ToString();
+
+                    // cache id so we can use it again
+                    PluginSettings.TVDbIds.Add(new PluginSettings.ExternalID { ExternalId = searchItem.TVDb, TmdbId = findResults.Shows.First().Id });
+                }
+                else
+                {
+                    FileLog.Debug("Found cached TMDb ID '{0}' for TVDb External ID: '{1}'", externalId.TmdbId.ToString(), searchItem.TVDb);
+                    searchTerm = externalId.TmdbId.ToString();
+                }
             }
             else if (!string.IsNullOrEmpty(searchItem.IMDb))
             {
-                FileLog.Debug("Searching themoviedb.org for all objects with IMDb ID '{0}'", searchItem.IMDb);
-
-                var findResults = TMDbAPI.TMDbFind(searchItem.IMDb, TMDbAPI.ExternalSource.imdb_id);
-                if (findResults == null || findResults.Shows == null || findResults.Shows.Count == 0)
+                // check if external id is cached
+                var externalId = PluginSettings.IMDbIds.FirstOrDefault(t => t.ExternalId == searchItem.IMDb);
+                if (externalId == null)
                 {
-                    FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using IMDb ID");
-                    return listItems;
-                }
+                    FileLog.Debug("Searching themoviedb.org for all objects with IMDb ID '{0}'", searchItem.IMDb);
 
-                // there should only be one
-                searchTerm = findResults.Shows.First().Id.ToString();
+                    var findResults = TMDbAPI.TMDbFind(searchItem.IMDb, TMDbAPI.ExternalSource.imdb_id);
+                    if (findResults == null || findResults.Shows == null || findResults.Shows.Count == 0)
+                    {
+                        FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using IMDb ID");
+                        return listItems;
+                    }
+
+                    // there should only be one
+                    searchTerm = findResults.Shows.First().Id.ToString();
+
+                    // cache id so we can use it again
+                    PluginSettings.IMDbIds.Add(new PluginSettings.ExternalID { ExternalId = searchItem.IMDb, TmdbId = findResults.Shows.First().Id });
+                }
+                else
+                {
+                    FileLog.Debug("Found cached TMDb ID '{0}' for IMDb External ID: '{1}'", externalId.TmdbId.ToString(), searchItem.IMDb);
+                    searchTerm = externalId.TmdbId.ToString();
+                }
             }
             else if (!string.IsNullOrEmpty(searchItem.TVRage))
             {
-                FileLog.Debug("Searching themoviedb.org for all objects with TVRage ID '{0}'", searchItem.TVRage);
-
-                var findResults = TMDbAPI.TMDbFind(searchItem.TVRage, TMDbAPI.ExternalSource.tvrage_id);
-                if (findResults == null || findResults.Shows == null || findResults.Shows.Count == 0)
+                // check if external id is cached
+                var externalId = PluginSettings.TVRageIds.FirstOrDefault(t => t.ExternalId == searchItem.TVRage);
+                if (externalId == null)
                 {
-                    FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using TVRage ID");
-                    return listItems;
-                }
+                    FileLog.Debug("Searching themoviedb.org for all objects with TVRage ID '{0}'", searchItem.TVRage);
 
-                // there should only be one
-                searchTerm = findResults.Shows.First().Id.ToString();
+                    var findResults = TMDbAPI.TMDbFind(searchItem.TVRage, TMDbAPI.ExternalSource.tvrage_id);
+                    if (findResults == null || findResults.Shows == null || findResults.Shows.Count == 0)
+                    {
+                        FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using TVRage ID");
+                        return listItems;
+                    }
+
+                    // there should only be one
+                    searchTerm = findResults.Shows.First().Id.ToString();
+
+                    // cache id so we can use it again
+                    PluginSettings.TVRageIds.Add(new PluginSettings.ExternalID { ExternalId = searchItem.TVRage, TmdbId = findResults.Shows.First().Id });
+                }
+                else
+                {
+                    FileLog.Debug("Found cached TMDb ID '{0}' for TVRage External ID: '{1}'", externalId.TmdbId.ToString(), searchItem.TVRage);
+                    searchTerm = externalId.TmdbId.ToString();
+                }
             }
             else if (!string.IsNullOrEmpty(searchItem.Title))
             {
@@ -289,18 +341,31 @@ namespace Trailers.Providers
             }
             else if (!string.IsNullOrEmpty((imdbid ?? string.Empty).Trim()))
             {
-                // use the find method to lookup by external source id
-                FileLog.Debug("Searching themoviedb.org for all objects with IMDb ID '{0}'", imdbid);
-
-                var findResults = TMDbAPI.TMDbFind(imdbid, TMDbAPI.ExternalSource.imdb_id);
-                if (findResults == null || findResults.Movies == null || findResults.Movies.Count == 0)
+                var externalId = PluginSettings.IMDbIds.FirstOrDefault(t => t.ExternalId == imdbid);
+                if (externalId == null)
                 {
-                    FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using IMDb ID");
-                    return searchTerm;
+                    // use the find method to lookup by external source id
+                    FileLog.Debug("Searching themoviedb.org for all objects with IMDb ID '{0}'", imdbid);
+
+                    var findResults = TMDbAPI.TMDbFind(imdbid, TMDbAPI.ExternalSource.imdb_id);
+                    if (findResults == null || findResults.Movies == null || findResults.Movies.Count == 0)
+                    {
+                        FileLog.Warning("Not enough information to search for trailers from themoviedb.org, no matches found using IMDb ID");
+                        return searchTerm;
+                    }
+
+                    // there should only be one
+                    searchTerm = findResults.Movies.First().Id.ToString();
+
+                    // cache id so we can use it again
+                    PluginSettings.IMDbIds.Add(new PluginSettings.ExternalID { ExternalId = imdbid, TmdbId = findResults.Movies.First().Id });
+                }
+                else
+                {
+                    FileLog.Debug("Found cached TMDb ID '{0}' for IMDb External ID: '{1}'", externalId.TmdbId.ToString(), imdbid);
+                    searchTerm = externalId.TmdbId.ToString();
                 }
 
-                // there should only be one
-                searchTerm = findResults.Movies.First().Id.ToString();
             }
             else if (!string.IsNullOrEmpty(title))
             {
