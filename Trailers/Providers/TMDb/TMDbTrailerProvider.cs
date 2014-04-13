@@ -321,7 +321,7 @@ namespace Trailers.Providers
                 listItems.Add(listItem);
             }
 
-            FileLog.Info("Found {0} movie trailer(s) from themoviedb.org", trailers.Results.Count.ToString());
+            FileLog.Info("Found {0} tv {1} trailer(s) from themoviedb.org", trailers.Results.Count.ToString(), searchItem.MediaType.ToString().ToLower());
 
             return listItems;
         }
