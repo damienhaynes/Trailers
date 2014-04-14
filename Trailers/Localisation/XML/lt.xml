@@ -61,6 +61,16 @@
   <string name="SettingSearchLocalInDedicatedDirectoryDescription">Įjungti anonsų paiešką numatytuose aplankuose, kurie yra kitoje vietoje nei dabartinis media kelias.  Pagal nutylėjimą bus naudojami OnlineVideos ir ShowTimes aplankai.</string>
   <string name="SettingOnlineVideosYouTubeEnabledName">Įjungti YouTube puslapį rankinei paieškai.</string>
   <string name="SettingOnlineVideosYouTubeEnabledDescription">YouTube yra bene geriausias OnlienVideos puslapis rankinei paieškai, ten yra didelė ir geros kokybės anonsų biblioteka.</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringName">YouTube filmų paieškos užklausa</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringDescription">Apibrėžkite paieškos užklausą, kuri bus naudojama rankinei filmų anonsų paieškai YouTube. Specialieji filmų parametrai yra %title% and %year%</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringName">YouTube TV laidų paieškos užklausa</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringDescription">Apibrėžkite paieškos užklausą, kuri bus naudojama rankinei tv laidų anonsų paieškai YouTube. Specialieji filmų parametrai yra %title%, %airdate% and %year%.</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringName">YouTube TV Sezonų paieškos užklausa</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringDescription">Apibrėžkite paieškos užklausą, kuri bus naudojama rankinei tv sezonų anonsų paieškai YouTube. Specialieji tv sezonų parametrai yra  %title%, %airdate%, %year% and %season%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringName">YouTube TV Epizodų paieškos užklausa</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringDescription">Apibrėžkite paieškos užklausą, kuri bus naudojama rankinei tv epizodų anonsų paieškai YouTube. Specialieji tv epizodų parametrai yra %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName">YouTube TV Specialiųjų epizodų paieškos užklausa</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription">Apibrėžkite paieškos užklausą, kuri bus naudojama rankinei tv epizodų anonsų paieškai YouTube. Specialieji tv epizodų parametrai yra %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
   <string name="SettingOnlineVideosITunesEnabledName">Įjungti iTunes puslapį rankinei paieškai</string>
   <string name="SettingOnlineVideosITunesEnabledDescription">iTunes filmų anonsų puslapis yra dedikuotas anonsams, jis labai tinkamas vėliausiems filmams.</string>
   <string name="SettingOnlineVideosIMDbEnabledName">Įjungti IMDb puslapį rankinei paieškai</string>

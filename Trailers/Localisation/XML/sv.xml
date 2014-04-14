@@ -61,6 +61,16 @@
   <string name="SettingSearchLocalInDedicatedDirectoryDescription">Aktivera sökning efter trailers i en lista av mappar, dessa ligger inte i det aktuella mediats sökväg. Förvalda platser är OnlineVideos och ShowTimes nedladdningsmappar.</string>
   <string name="SettingOnlineVideosYouTubeEnabledName">Aktivera YouTube för manuell sökning.</string>
   <string name="SettingOnlineVideosYouTubeEnabledDescription">YouTube är antagligen den bästa sidan i OnlineVideos för att söka manuellt, där finns ett stort antal filmtrailers med god kvalitet tillgängliga.</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringName">Sök YouTube-klipp </string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringDescription">Sökord för manuell sökning av trailrar för film på YouTube. Parametrar för filmer är %title% and %year%.</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringName">Söksträng för YouTube TV-program</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringDescription">Sökord för manuell sökning av trailer för TV-program på YouTube. \nParametrar för TV-program är %title%, %airdate% and %year%.</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringName">Sökord för TV-säsong på YouTube.</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringDescription">Sökord för manuell sökning av trailer för TV-säsong på YouTube. Parametrar för TV-program är %title%, %airdate%, %year% and %season%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringName">Sökord för TV-avsnitt på YouTube..</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringDescription">Sökord för manuell sökning av trailer för TV-avsnitt på YouTube. \nParametrar för TV-program är  %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName">Sökord för TV-specialavsnitt på YouTube.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription">Sökord för manuell sökning av trailer för TV-avsnitt på YouTube. \nParametrar för TV-program är  %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
   <string name="SettingOnlineVideosITunesEnabledName">Aktivera iTunes för manuell sökning.</string>
   <string name="SettingOnlineVideosITunesEnabledDescription">iTunes Movie Trailers är en speciell sida för filmtrailers, ett bra val för nya filmer. </string>
   <string name="SettingOnlineVideosIMDbEnabledName">Aktivera IMDB för manuell sökning.</string>
@@ -85,7 +95,7 @@
   <string name="SettingAutoDownloadUpdateIntervalDescription">Sätter intervallet för omkontroll av filmer som saknade trailers. \nNya trailers kan ha lagts till online under denna tid.</string>
   <string name="SettingAutoDownloadQualityName">Videokvalitet på automatiska nedladdningar</string>
   <string name="SettingAutoDownloadQualityDescription">Sätt kvalitet på video för youtube trailers, om kvaliteten saknas så laddas nästa lägre kvalitet ned.</string>
-  <string name="SettingAutoDownloadTrailersName">Aktivera automatisk nedladdning av trailers</string>
+  <string name="SettingAutoDownloadTrailersName">Aktivera automatisk nedladdning av trailrar</string>
   <string name="SettingAutoDownloadTrailersDescription">Kontrollerar om videotypen är en trailer för nedladdning</string>
   <string name="SettingAutoDownloadTeasersName">Aktivera automatisk nedladdning av teaser</string>
   <string name="SettingAutoDownloadTeasersDescription">Kontrollerar om videotypen är en teaser för nedladdning</string>
