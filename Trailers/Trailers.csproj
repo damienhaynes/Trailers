@@ -62,6 +62,9 @@
       <HintPath>..\Externals\MP-TVSeries.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="MPEIPlugin">
+      <HintPath>..\Externals\MPEIPlugin.dll</HintPath>
+    </Reference>
     <Reference Include="MyFilms">
       <HintPath>..\Externals\MyFilms.dll</HintPath>
       <Private>False</Private>

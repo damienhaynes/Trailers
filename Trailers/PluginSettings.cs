@@ -21,6 +21,9 @@ namespace Trailers
 
         #region Constants
 
+        // MPEI Installer ID
+        public const string cGuid = "b4293f64-9e83-4f1f-b2e3-8bdea2a37425";
+
         private static string cTVDbExternalIDs = Path.Combine(Config.GetFolder(Config.Dir.Config), @"Trailers\tvdb_ids.json");
         private static string cIMDbExternalIDs = Path.Combine(Config.GetFolder(Config.Dir.Config), @"Trailers\imdb_ids.json");
         private static string cTVRageExternalIDs = Path.Combine(Config.GetFolder(Config.Dir.Config), @"Trailers\tvrage_ids.json");
@@ -164,7 +167,7 @@ namespace Trailers
         /// <summary>
         /// Loads the Settings
         /// </summary>
-        internal static void LoadSettings()
+        internal static void LoadSettings(bool reload = false)
         {
             FileLog.Info("Loading Local Settings");
 
@@ -211,14 +214,17 @@ namespace Trailers
                 AutoDownloadCleanup = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadCleanup, false);
             }
 
-            FileLog.Info("Loading Persisted File Cache");
-            TVDbIds = LoadFileCache(cTVDbExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
-            IMDbIds = LoadFileCache(cIMDbExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
-            TVRageIds = LoadFileCache(cTVRageExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
+            if (!reload)
+            {
+                FileLog.Info("Loading Persisted File Cache");
+                TVDbIds = LoadFileCache(cTVDbExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
+                IMDbIds = LoadFileCache(cIMDbExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
+                TVRageIds = LoadFileCache(cTVRageExternalIDs, "{}").FromJsonArray<ExternalID>().ToList();
 
-            if (TVDbIds == null) TVDbIds = new List<ExternalID>();
-            if (IMDbIds == null) TVDbIds = new List<ExternalID>();
-            if (TVRageIds == null) TVDbIds = new List<ExternalID>();
+                if (TVDbIds == null) TVDbIds = new List<ExternalID>();
+                if (IMDbIds == null) TVDbIds = new List<ExternalID>();
+                if (TVRageIds == null) TVDbIds = new List<ExternalID>();
+            }
         }
 
         /// <summary>
@@ -426,5 +432,58 @@ namespace Trailers
             public int TmdbId { get; set; }
         }
 
+    }
+
+    internal class ExtensionSettings
+    {
+        #region Init
+        public void Init()
+        {
+            Thread hookThread = new Thread(delegate()
+            {
+                try
+                {
+                    FileLog.Info("Adding hooks to MPEI Settings");
+                    AddHooksIntoMPEISettings();
+                }
+                catch
+                {
+                    FileLog.Warning("Unable to add hooks into MPEI Settings, Extensions plugin not installed or out of date. Install the Extensions plugin to have support to change settings in the GUI and/or auto-update plugin.");
+                }
+            })
+            {
+                Name = "Settings",
+                IsBackground = true
+            };
+
+            hookThread.Start();
+        }
+        #endregion
+
+        #region Hooks
+        private void AddHooksIntoMPEISettings()
+        {
+            // sleep until we know that there has been enough time
+            // for window manager to have loaded extension settings window
+            // todo: find a better way...
+            Thread.Sleep(10000);
+
+            // get a reference to the extension settings window
+            MPEIPlugin.GUISettings extensionSettings = (MPEIPlugin.GUISettings)GUIWindowManager.GetWindow((int)GUI.ExternalPluginWindows.MPEISettings);
+            extensionSettings.OnSettingsChanged += new MPEIPlugin.GUISettings.SettingsChangedHandler(Extensions_OnSettingsChanged);
+        }
+
+        private void Extensions_OnSettingsChanged(string guid)
+        {
+            // settings change occured
+            if (guid == PluginSettings.cGuid)
+            {
+                FileLog.Info("Settings updated externally, re-loading trailer settings.");
+
+                // re-load settings
+                PluginSettings.LoadSettings(true);
+            }
+        }
+        #endregion
     }
 }

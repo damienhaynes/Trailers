@@ -40,7 +40,8 @@ namespace Trailers.GUI
         TraktListItems = 87276,
         TraktShowSeasons = 87281,
         TraktSeasonEpisodes = 87282,
-        NetflixAlpha = 18764
+        NetflixAlpha = 18764,
+        MPEISettings = 803
     }
 
     public static class GUIUtils

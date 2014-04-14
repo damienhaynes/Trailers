@@ -18,6 +18,10 @@ namespace Trailers
     [PluginIcons("Trailers.Images.icon_normal.png", "Trailers.Images.icon_faded.png")]
     public class Trailers : GUIInternalWindow, ISetupForm
     {
+        #region Private Variables
+        ExtensionSettings extensionSettings = new ExtensionSettings();
+        #endregion
+
         #region Public Variables
 
         internal static List<IProvider> TrailerProviders = new List<IProvider>();
@@ -51,6 +55,9 @@ namespace Trailers
 
             PluginSettings.PerformMaintenance();
             PluginSettings.LoadSettings();
+            
+            // Initialize Extension Settings
+            extensionSettings.Init();
 
             // Load Trailer Providers
             LoadTrailerProviders();
