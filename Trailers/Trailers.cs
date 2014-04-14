@@ -386,19 +386,24 @@ namespace Trailers
                     var menuItems = result as List<GUITrailerListItem>;
                     if (menuItems.Count > 0)
                     {
-                        if (PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer && menuItems.Where(t => !t.IsOnlineItem).Count() == 1)
+                        #region Auto-Play
+                        // only one local trailer
+                        if (PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer && menuItems.Where(t => !t.IsOnlineItem && !t.IsSearchItem).Count() == 1)
                         {
                             var localTrailer = menuItems.Find(t => !t.IsOnlineItem);
                             LocalPlayer.Play(localTrailer.URL, localTrailer.CurrentMedia);
                             return;
                         }
+                        // only one online trailer"
                         else if (PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer && menuItems.Where(t => t.IsOnlineItem && !t.IsSearchItem).Count() == 1)
                         {
                             var onlineTrailer = menuItems.Find(t => t.IsOnlineItem && !t.IsSearchItem);
                             OnlinePlayer.Play(onlineTrailer.URL, onlineTrailer.CurrentMedia);
                             return;
                         }
+                        #endregion
 
+                        #region Show Menu
                         int selectedItem = GUIUtils.ShowMenuDialog(Translation.Trailers, menuItems);
                         if (selectedItem >= 0)
                         {
@@ -423,6 +428,7 @@ namespace Trailers
                         {
                             FileLog.Debug("No Trailer selected for playback or search.");
                         }
+                        #endregion
                     }
                     else
                     {
