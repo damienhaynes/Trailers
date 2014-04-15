@@ -394,11 +394,32 @@ namespace Trailers
                             LocalPlayer.Play(localTrailer.URL, localTrailer.CurrentMedia);
                             return;
                         }
-                        // only one online trailer"
+                        // only one online trailer
                         else if (PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer && menuItems.Where(t => t.IsOnlineItem && !t.IsSearchItem).Count() == 1)
                         {
                             var onlineTrailer = menuItems.Find(t => t.IsOnlineItem && !t.IsSearchItem);
                             OnlinePlayer.Play(onlineTrailer.URL, onlineTrailer.CurrentMedia);
+                            return;
+                        }
+                        // only one of anything - doesn't matter if AutoPlay is enabled just do it.
+                        else if (menuItems.Count == 1)
+                        {
+                            FileLog.Info("Only a single result to show, skipping GUI menu selection dialog.");
+
+                            if (menuItems.First().IsSearchItem)
+                            {
+                                FileLog.Info("Performing online lookup for trailer: {0}", menuItems.First().URL);
+                                GUIWindowManager.ActivateWindow((int)ExternalPluginWindows.OnlineVideos, menuItems.First().URL);
+                            }
+                            else if (menuItems.First().IsOnlineItem)
+                            {
+                                FileLog.Info("Performing online lookup for trailer: {0}", menuItems.First().URL);
+                                GUIWindowManager.ActivateWindow((int)ExternalPluginWindows.OnlineVideos, menuItems.First().URL);
+                            }
+                            else
+                            {
+                                LocalPlayer.Play(menuItems.First().URL, menuItems.First().CurrentMedia);
+                            }
                             return;
                         }
                         #endregion
