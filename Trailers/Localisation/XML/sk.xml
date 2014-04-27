@@ -13,8 +13,8 @@
   <string name="GettingTrailerUrls">Načítam URL traileru</string>
   <!--H-->
   <!--I-->
-  <string name="IMDbTrailers">IMDB Trailery</string>
-  <string name="ITunesTrailers">iTunes Trailery</string>
+  <string name="IMDbTrailers">IMDB trailery</string>
+  <string name="ITunesTrailers">iTunes trailery</string>
   <!--J-->
   <!--K-->
   <!--L-->
@@ -48,5 +48,5 @@
   <!--W-->
   <!--Y-->
   <string name="Yes">Áno</string>
-  <string name="YouTubeTrailers">YouTube Trailery</string>
+  <string name="YouTubeTrailers">YouTube trailery</string>
 </resources>
