@@ -307,6 +307,15 @@ You can also configure settings for Trailers from the GUI.</Description>
           <Items />
         </Files>
       </GroupItem>
+      <GroupItem Name="OnlineVideos">
+        <ParentGroup />
+        <DisplayName>Online Videos</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>OnlineVideos is used by the Trailers plugin to stream youtube trailers from online. It's also used for manual search of trailers when none are found in local and online providers.</Description>
+        <Files>
+          <Items />
+        </Files>
+      </GroupItem>
     </Items>
   </Groups>
   <Sections>
@@ -374,6 +383,60 @@ Click Next to continue or Cancel to exit Setup.</Value>
             <ActionItem Name="InstallFiles" ActionType="InstallFiles" ConditionGroup="">
               <Params>
                 <Items />
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+            <ActionItem Name="Extensions Plugin" ActionType="Extension Installer" ConditionGroup="ExtensionsPlugin">
+              <Params>
+                <Items>
+                  <SectionParam Name="Extension package">
+                    <Value />
+                    <ValueType>File</ValueType>
+                    <Description>Location of the extension package</Description>
+                  </SectionParam>
+                  <SectionParam Name="Extension Id">
+                    <Value>a6afa4d6-4fd8-4607-8878-5911db044fd7</Value>
+                    <ValueType>String</ValueType>
+                    <Description>Global Id of the extension package - it will be downloaded when no file is set.</Description>
+                  </SectionParam>
+                  <SectionParam Name="Extension Version">
+                    <Value>1.2.1.195</Value>
+                    <ValueType>String</ValueType>
+                    <Description>Minimum Version of the extension package - older versions will be updated (only used when downloading via Id).</Description>
+                  </SectionParam>
+                  <SectionParam Name="Silent Install">
+                    <Value>YES</Value>
+                    <ValueType>Bool</ValueType>
+                    <Description>Silent install, No wizard screen will be displayed </Description>
+                  </SectionParam>
+                </Items>
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+            <ActionItem Name="OnlineVideos Plugin" ActionType="Extension Installer" ConditionGroup="OnlineVideos">
+              <Params>
+                <Items>
+                  <SectionParam Name="Extension package">
+                    <Value />
+                    <ValueType>File</ValueType>
+                    <Description>Location of the extension package</Description>
+                  </SectionParam>
+                  <SectionParam Name="Extension Id">
+                    <Value>269bd257-7ce5-450a-b786-1c2834c81849</Value>
+                    <ValueType>String</ValueType>
+                    <Description>Global Id of the extension package - it will be downloaded when no file is set.</Description>
+                  </SectionParam>
+                  <SectionParam Name="Extension Version">
+                    <Value>1.8.0.0</Value>
+                    <ValueType>String</ValueType>
+                    <Description>Minimum Version of the extension package - older versions will be updated (only used when downloading via Id).</Description>
+                  </SectionParam>
+                  <SectionParam Name="Silent Install">
+                    <Value>YES</Value>
+                    <ValueType>Bool</ValueType>
+                    <Description>Silent install, No wizard screen will be displayed </Description>
+                  </SectionParam>
+                </Items>
               </Params>
               <ExecuteLocation>AfterPanelShow</ExecuteLocation>
             </ActionItem>
@@ -453,14 +516,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Version>
       <Major>1</Major>
       <Minor>1</Minor>
-      <Build>3</Build>
+      <Build>4</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
 
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>* Redesigned configuration dialog.
-* Skip GUI selection menu regardless of Auto-Play setting if there is only a single menu item is to be displayed.
+    <VersionDescription>* Added OnlineVideos extension to the installer package. Pre-requiste for online trailer streaming and manual searches.
 * Updated translations from Transifex.
 
 Note: Remember to start contributing to themoviedb.org, this is where all the online searches are coming from.</VersionDescription>
@@ -780,7 +842,7 @@ Note: Remember to start contributing to themoviedb.org, this is where all the on
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\Trailers.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{a5609a25-334a-43c6-b19f-8bc101a76293}-Trailers.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{eba4b4fc-b01e-41fc-9bf7-4c1aa3c4e236}-Trailers.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
