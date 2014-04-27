@@ -581,9 +581,9 @@
             this.chkBoxSkipOnlineProvidersIfLocalFound.AutoSize = true;
             this.chkBoxSkipOnlineProvidersIfLocalFound.Location = new System.Drawing.Point(17, 28);
             this.chkBoxSkipOnlineProvidersIfLocalFound.Name = "chkBoxSkipOnlineProvidersIfLocalFound";
-            this.chkBoxSkipOnlineProvidersIfLocalFound.Size = new System.Drawing.Size(230, 17);
+            this.chkBoxSkipOnlineProvidersIfLocalFound.Size = new System.Drawing.Size(276, 17);
             this.chkBoxSkipOnlineProvidersIfLocalFound.TabIndex = 0;
-            this.chkBoxSkipOnlineProvidersIfLocalFound.Text = "Ski&p online search if local trailers are found.";
+            this.chkBoxSkipOnlineProvidersIfLocalFound.Text = "Ski&p online search providers if local trailers are found.";
             this.chkBoxSkipOnlineProvidersIfLocalFound.UseVisualStyleBackColor = true;
             this.chkBoxSkipOnlineProvidersIfLocalFound.Click += new System.EventHandler(this.chkBoxSkipOnlineProvidersIfLocalFound_Click);
             // 
@@ -881,9 +881,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabConfig.Controls.Add(this.tabSearchProviders);
-            this.tabConfig.Controls.Add(this.tabGeneralSettings);
             this.tabConfig.Controls.Add(this.tabLocalSearch);
             this.tabConfig.Controls.Add(this.tabManualSearch);
+            this.tabConfig.Controls.Add(this.tabGeneralSettings);
             this.tabConfig.Controls.Add(this.tabAutoDownload);
             this.tabConfig.Location = new System.Drawing.Point(7, 10);
             this.tabConfig.Name = "tabConfig";
