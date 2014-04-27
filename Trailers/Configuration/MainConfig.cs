@@ -382,7 +382,7 @@ namespace Trailers.Configuration
             txtBoxDedicatedSubDirectories.Enabled = PluginSettings.SearchLocalInDedicatedDirectory;
             txtBoxLocalDedicatedDirectorySearchPatterns.Enabled = PluginSettings.SearchLocalInDedicatedDirectory;
 
-            groupBoxLocalTrailerSettings.Enabled = PluginSettings.ProviderLocalSearch;
+            gbxLocalTrailerSettings.Enabled = PluginSettings.ProviderLocalSearch;
         }
 
         private void SetManualSearchControlsEnabledState()
@@ -393,7 +393,7 @@ namespace Trailers.Configuration
             txtBoxOnlineVideosYouTubeEpisodeSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
             txtBoxOnlineVideosYouTubeEpisodeSpecialSearchString.Enabled = PluginSettings.OnlineVideosYouTubeEnabled;
 
-            groupBoxManualSearchSettings.Enabled = PluginSettings.ProviderOnlineVideoSearch;
+            gbxOnlineVideoSettings.Enabled = PluginSettings.ProviderOnlineVideoSearch;
         }
         #endregion
 
