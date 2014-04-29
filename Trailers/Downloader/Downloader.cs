@@ -164,7 +164,7 @@ namespace Trailers.Downloader
                 if (searchTerm == null) continue;
 
                 // search for trailers
-                var trailers = TMDbAPI.GetMovieTrailers(searchTerm);
+                var trailers = TMDbAPI.GetMovieTrailers(searchTerm, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
                 if (trailers == null || trailers.Results == null || trailers.Results.Count == 0)
                     continue;
 

@@ -126,7 +126,7 @@ namespace Trailers.Providers
             }
 
             FileLog.Debug("Searching for movie trailers using search term '{0}' from themoviedb.org...", searchTerm);
-            var trailers = TMDbAPI.GetMovieTrailers(searchTerm);
+            var trailers = TMDbAPI.GetMovieTrailers(searchTerm, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
             if (trailers == null || trailers.Results == null)
             {
                 FileLog.Error("Error getting movie trailers from themoviedb.org.");
@@ -139,6 +139,10 @@ namespace Trailers.Providers
 
                 string itemName = string.IsNullOrEmpty(trailer.Type) || trailer.Name.ToLowerInvariant().Contains(trailer.Type.ToLowerInvariant()) ? trailer.Name : string.Format("{0} - {1}", trailer.Name, trailer.Type);
                 itemName = string.IsNullOrEmpty(trailer.Size) || itemName.ToLowerInvariant().Contains(trailer.Size.ToLowerInvariant()) ? itemName : string.Format("{0} ({1})", itemName, trailer.Size);
+                if (PluginSettings.PreferredLanguage != "en")
+                {
+                    itemName = string.Format("{0} [{1}]", itemName, trailer.LanguageCode);
+                }
 
                 listItem.Label = itemName;
                 listItem.Label2 = Localisation.Translation.Online;
@@ -288,13 +292,13 @@ namespace Trailers.Providers
             switch (searchItem.MediaType)
             {
                 case MediaItemType.Show:
-                    trailers = TMDbAPI.GetShowTrailers(searchTerm);
+                    trailers = TMDbAPI.GetShowTrailers(searchTerm, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
                     break;
                 case MediaItemType.Season:
-                    trailers = TMDbAPI.GetSeasonTrailers(searchTerm, searchItem.Season.ToString());
+                    trailers = TMDbAPI.GetSeasonTrailers(searchTerm, searchItem.Season.ToString(), PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
                     break;
                 case MediaItemType.Episode:
-                    trailers = TMDbAPI.GetEpisodeTrailers(searchTerm, searchItem.Season.ToString(), searchItem.Episode.ToString());
+                    trailers = TMDbAPI.GetEpisodeTrailers(searchTerm, searchItem.Season.ToString(), searchItem.Episode.ToString(), PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
                     break;
             }
             
@@ -310,6 +314,10 @@ namespace Trailers.Providers
 
                 string itemName = string.IsNullOrEmpty(trailer.Type) || trailer.Name.ToLowerInvariant().Contains(trailer.Type.ToLowerInvariant()) ? trailer.Name : string.Format("{0} - {1}", trailer.Name, trailer.Type);
                 itemName = string.IsNullOrEmpty(trailer.Size) || itemName.ToLowerInvariant().Contains(trailer.Size.ToLowerInvariant()) ? itemName : string.Format("{0} ({1})", itemName, trailer.Size);
+                if (PluginSettings.PreferredLanguage != "en")
+                {
+                    itemName = string.Format("{0} [{1}]", itemName, trailer.LanguageCode);
+                }
 
                 listItem.Label = itemName;
                 listItem.Label2 = Localisation.Translation.Online;

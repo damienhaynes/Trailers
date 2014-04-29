@@ -47,6 +47,22 @@ namespace Trailers.Configuration
         {
             chkBoxSkipOnlineProvidersIfLocalFound.Checked = PluginSettings.SkipOnlineProvidersIfLocalFound;
             chkBoxAutoPlayOnSingleLocalOrOnlineTrailer.Checked = PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer;
+
+            int selectedItem = 0;
+            int i = 0;
+            foreach (var language in PluginSettings.Languages)
+            {
+                cboPreferredLanguage.Items.Add(language);
+
+                if (language.TwoLetterCode == PluginSettings.PreferredLanguage)
+                    selectedItem = i;
+
+                i++;
+            }
+            cboPreferredLanguage.SelectedIndex = selectedItem;
+
+            chkboxFallbackToEnglish.Checked = PluginSettings.FallbackToEnglishLanguage;
+            chkboxAlwaysGetEnglish.Checked = PluginSettings.AlwaysGetEnglishTrailers;
         }
 
         private void PopulateLocalTrailerSettings()
@@ -157,6 +173,22 @@ namespace Trailers.Configuration
         private void chkBoxAutoPlayOnSingleLocalOrOnlineTrailer_Click(object sender, EventArgs e)
         {
             PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer = !PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer;
+        }
+
+        private void chkboxFallbackToEnglish_Click(object sender, EventArgs e)
+        {
+            PluginSettings.FallbackToEnglishLanguage = !PluginSettings.FallbackToEnglishLanguage;
+        }
+
+        private void chkboxAlwaysGetEnglish_Click(object sender, EventArgs e)
+        {
+            PluginSettings.AlwaysGetEnglishTrailers = !PluginSettings.AlwaysGetEnglishTrailers;
+        }
+
+        private void cboPreferredLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedLanguage = cboPreferredLanguage.SelectedItem as PluginSettings.LanguageISO;
+            PluginSettings.PreferredLanguage = selectedLanguage.TwoLetterCode;
         }
         #endregion
 
@@ -397,6 +429,5 @@ namespace Trailers.Configuration
         }
         #endregion
 
-        
     }
 }

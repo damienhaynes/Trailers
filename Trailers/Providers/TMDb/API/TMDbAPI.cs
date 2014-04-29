@@ -51,28 +51,148 @@ namespace Trailers.Providers.TMDb.API
 
         #region Public Methods
 
-        public static TMDbTrailers GetMovieTrailers(string movieId, string language = "en")
+        public static TMDbTrailers GetMovieTrailers(string movieId, string language = "en", bool fallbackToEnglish = false, bool addEnglish = false)
         {
             string response = GetJson(string.Format(apiMovieTrailers, movieId, language));
-            return response.FromJson<TMDbTrailers>();
+            var trailers = response.FromJson<TMDbTrailers>();
+
+            if (trailers == null || trailers.Results == null)
+                return null;
+
+            if (!fallbackToEnglish && !addEnglish) 
+                return trailers;
+
+            if (language != "en")
+            {
+                // if no results get english trailers
+                if (trailers.Results.Count == 0 && fallbackToEnglish)
+                {
+                    response = GetJson(string.Format(apiMovieTrailers, movieId, "en"));
+                    return response.FromJson<TMDbTrailers>();
+                }
+
+                // also get the english trailers
+                if (addEnglish)
+                {
+                    response = GetJson(string.Format(apiMovieTrailers, movieId, "en"));
+                    var englishTrailers = response.FromJson<TMDbTrailers>();
+                    if (englishTrailers == null || englishTrailers.Results == null)
+                        return trailers;
+
+                    trailers.Results = trailers.Results.Union(englishTrailers.Results).ToList();
+                    return trailers;
+                }
+            }
+
+            return trailers;
         }
 
-        public static TMDbTrailers GetShowTrailers(string showid, string language = "en")
+        public static TMDbTrailers GetShowTrailers(string showid, string language = "en", bool fallbackToEnglish = false, bool addEnglish = false)
         {
             string response = GetJson(string.Format(apiShowTrailers, showid, language));
-            return response.FromJson<TMDbTrailers>();
+            var trailers = response.FromJson<TMDbTrailers>();
+
+            if (trailers == null || trailers.Results == null)
+                return null;
+
+            if (!fallbackToEnglish && !addEnglish)
+                return trailers;
+
+            if (language != "en")
+            {
+                // if no results get english trailers
+                if (trailers.Results.Count == 0 && fallbackToEnglish)
+                {
+                    response = GetJson(string.Format(apiShowTrailers, showid, "en"));
+                    return response.FromJson<TMDbTrailers>();
+                }
+
+                // also get the english trailers
+                if (addEnglish)
+                {
+                    response = GetJson(string.Format(apiShowTrailers, showid, "en"));
+                    var englishTrailers = response.FromJson<TMDbTrailers>();
+                    if (englishTrailers == null || englishTrailers.Results == null)
+                        return trailers;
+
+                    trailers.Results = trailers.Results.Union(englishTrailers.Results).ToList();
+                    return trailers;
+                }
+            }
+
+            return trailers;
         }
 
-        public static TMDbTrailers GetSeasonTrailers(string showid, string season, string language = "en")
+        public static TMDbTrailers GetSeasonTrailers(string showid, string season, string language = "en", bool fallbackToEnglish = false, bool addEnglish = false)
         {
             string response = GetJson(string.Format(apiSeasonTrailers, showid, season, language));
-            return response.FromJson<TMDbTrailers>();
+            var trailers = response.FromJson<TMDbTrailers>();
+
+            if (trailers == null || trailers.Results == null)
+                return null;
+
+            if (!fallbackToEnglish && !addEnglish)
+                return trailers;
+
+            if (language != "en")
+            {
+                // if no results get english trailers
+                if (trailers.Results.Count == 0 && fallbackToEnglish)
+                {
+                    response = GetJson(string.Format(apiSeasonTrailers, showid, season, "en"));
+                    return response.FromJson<TMDbTrailers>();
+                }
+
+                // also get the english trailers
+                if (addEnglish)
+                {
+                    response = GetJson(string.Format(apiSeasonTrailers, showid, season, "en"));
+                    var englishTrailers = response.FromJson<TMDbTrailers>();
+                    if (englishTrailers == null || englishTrailers.Results == null)
+                        return trailers;
+
+                    trailers.Results = trailers.Results.Union(englishTrailers.Results).ToList();
+                    return trailers;
+                }
+            }
+
+            return trailers;
         }
 
-        public static TMDbTrailers GetEpisodeTrailers(string showid, string season, string episode, string language = "en")
+        public static TMDbTrailers GetEpisodeTrailers(string showid, string season, string episode, string language = "en", bool fallbackToEnglish = false, bool addEnglish = false)
         {
             string response = GetJson(string.Format(apiEpisodeTrailers, showid, season, episode, language));
-            return response.FromJson<TMDbTrailers>();
+            var trailers = response.FromJson<TMDbTrailers>();
+
+            if (trailers == null || trailers.Results == null)
+                return null;
+
+            if (!fallbackToEnglish && !addEnglish)
+                return trailers;
+
+            if (language != "en")
+            {
+                // if no results get english trailers
+                if (trailers.Results.Count == 0 && fallbackToEnglish)
+                {
+                    response = GetJson(string.Format(apiEpisodeTrailers, showid, season, episode, "en"));
+                    return response.FromJson<TMDbTrailers>();
+                }
+
+                // also get the english trailers
+                if (addEnglish)
+                {
+                    response = GetJson(string.Format(apiEpisodeTrailers, showid, season, episode, "en"));
+                    var englishTrailers = response.FromJson<TMDbTrailers>();
+                    if (englishTrailers == null || englishTrailers.Results == null)
+                        return trailers;
+
+                    trailers.Results = trailers.Results.Union(englishTrailers.Results).ToList();
+                    return trailers;
+                }
+            }
+
+            return trailers;
         }
 
         public static TMDbMovieSearch SearchMovies(string searchStr, int page = 1, string language = "en", bool includeAdult = false, string year = null)

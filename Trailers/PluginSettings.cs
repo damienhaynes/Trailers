@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.IO;
 using System.Reflection;
@@ -72,6 +73,9 @@ namespace Trailers
         private const string cAutoDownloadFeaturettes = "AutoDownloadFeaturettes";
         private const string cAutoDownloadClips = "AutoDownloadClips";
         private const string cAutoDownloadCleanup = "AutoDownloadCleanup";
+        private const string cPreferredLanguage = "PreferredLanguage";
+        private const string cFallbackToEnglishLanguage = "FallbackToEnglishLanguage";
+        private const string cAlwaysGetEnglishTrailers = "AlwaysGetEnglishTrailers";
 
         #endregion
 
@@ -121,6 +125,9 @@ namespace Trailers
         public static bool AutoDownloadFeaturettes { get; set; }
         public static bool AutoDownloadClips { get; set; }
         public static bool AutoDownloadCleanup { get; set; }
+        public static string PreferredLanguage { get; set; }
+        public static bool FallbackToEnglishLanguage { get; set; }
+        public static bool AlwaysGetEnglishTrailers { get; set; }
 
         #endregion
 
@@ -160,6 +167,23 @@ namespace Trailers
                 return string.Format("TrailersForMediaPortal/{0}", Version);
             }
         }
+
+        public static IEnumerable<LanguageISO> Languages
+        {
+            get
+            {
+                if (_languages == null)
+                {
+                    var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).Except(CultureInfo.GetCultures(CultureTypes.SpecificCultures));
+
+                    _languages = from c in cultures
+                                 select new LanguageISO { DisplayName = c.DisplayName, TwoLetterCode = c.TwoLetterISOLanguageName };
+                }
+
+                return _languages;
+            }
+        }
+        static IEnumerable<LanguageISO>  _languages;
 
         #endregion
 
@@ -212,6 +236,9 @@ namespace Trailers
                 AutoDownloadFeaturettes = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadFeaturettes, true);
                 AutoDownloadClips = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadClips, true);
                 AutoDownloadCleanup = xmlreader.GetValueAsBool(cTrailers, cAutoDownloadCleanup, false);
+                PreferredLanguage = xmlreader.GetValueAsString(cTrailers, cPreferredLanguage, "en");
+                FallbackToEnglishLanguage = xmlreader.GetValueAsBool(cTrailers, cFallbackToEnglishLanguage, true);
+                AlwaysGetEnglishTrailers = xmlreader.GetValueAsBool(cTrailers, cAlwaysGetEnglishTrailers, true);
             }
 
             if (!reload)
@@ -275,6 +302,9 @@ namespace Trailers
                 xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadFeaturettes, AutoDownloadFeaturettes);
                 xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadClips, AutoDownloadClips);
                 xmlwriter.SetValueAsBool(cTrailers, cAutoDownloadCleanup, AutoDownloadCleanup);
+                xmlwriter.SetValue(cTrailers, cPreferredLanguage, PreferredLanguage);
+                xmlwriter.SetValueAsBool(cTrailers, cFallbackToEnglishLanguage, FallbackToEnglishLanguage);
+                xmlwriter.SetValueAsBool(cTrailers, cAlwaysGetEnglishTrailers, AlwaysGetEnglishTrailers);
             }
 
             Settings.SaveCache();
@@ -432,6 +462,16 @@ namespace Trailers
             public int TmdbId { get; set; }
         }
 
+        public class LanguageISO
+        {
+            public string DisplayName { get; set; }
+            public string TwoLetterCode { get; set; }
+
+            public override string ToString()
+            {
+                return string.Format("{0} ({1})", this.DisplayName, this.TwoLetterCode);
+            }
+        }
     }
 
     internal class ExtensionSettings
