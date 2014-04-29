@@ -180,6 +180,7 @@ namespace Trailers.Downloader
                         Quality = trailer.Size,
                         Source = trailer.Key,
                         Type = trailer.Type,
+                        Language = trailer.LanguageCode,
                         IsValid = true
                     });
 

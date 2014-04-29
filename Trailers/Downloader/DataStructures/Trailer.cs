@@ -17,6 +17,9 @@ namespace Trailers.Downloader.DataStructures
         [XmlElement("Source")]
         public string Source { get; set; }
 
+        [XmlElement("Language")]
+        public string Language { get; set; }
+
         [XmlElement("Type")]
         public string Type { get; set; }
 
