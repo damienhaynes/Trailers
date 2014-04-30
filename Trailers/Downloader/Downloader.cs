@@ -130,7 +130,7 @@ namespace Trailers.Downloader
             // create local filename for download
             string folder = string.Format("{0} ({1}) [{2}]", movie.Title, movie.Year ?? string.Empty, movie.IMDbID ?? string.Empty);
             string directory = Path.Combine(PluginSettings.AutoDownloadDirectory, folder.ToCleanFileName());
-            string filename = string.Format("{0}{1} [{2}].mp4", trailer.Name.ReplaceMultiSpaceWithSingleWhiteSpace(), trailer.Name.Contains(trailer.Type) ? string.Empty : " " + trailer.Type ,qualityOptions.Value);
+            string filename = string.Format("{0}{1} [{2}]{3}.mp4", trailer.Name.ReplaceMultiSpaceWithSingleWhiteSpace(), trailer.Name.Contains(trailer.Type) ? string.Empty : " " + trailer.Type, qualityOptions.Value, PluginSettings.PreferredLanguage != "en" ? " [" + trailer.Language + "]" : string.Empty);
 
             downloadDetails.DestinationFilename = string.Format(@"{0}\{1}", directory, filename.ToCleanFileName());
             return downloadDetails;
@@ -409,7 +409,7 @@ namespace Trailers.Downloader
             }
             catch (Exception e)
             {
-                FileLog.Error("Error saving cache file: {0}', {1}", filename, e.Message);
+                FileLog.Error("Error saving cache '{0}', {1}", filename, e.Message);
                 return;
             }
         }
