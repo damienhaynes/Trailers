@@ -517,14 +517,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Major>1</Major>
       <Minor>1</Minor>
       <Build>4</Build>
-      <Revision>0</Revision>
+      <Revision>1</Revision>
     </Version>
-    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
-
+    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
+
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>* Added OnlineVideos extension to the installer package. Pre-requiste for online trailer streaming and manual searches.
-* Updated translations from Transifex.
-
+    <VersionDescription>* Added support for Trailers in your preferred language with options to fallback to English and/or always get English trailers in addition.
+* Added OnlineVideos extension to the installer package. Pre-requiste for online trailer streaming and manual searches.
+* Updated translations from Transifex.
+
 Note: Remember to start contributing to themoviedb.org, this is where all the online searches are coming from.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=296&amp;cf_id=24</OnlineLocation>
@@ -842,7 +843,7 @@ Note: Remember to start contributing to themoviedb.org, this is where all the on
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\Trailers.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{eba4b4fc-b01e-41fc-9bf7-4c1aa3c4e236}-Trailers.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{03e02cb4-90d7-4307-afa9-b5ffb17530b1}-Trailers.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
