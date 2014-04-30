@@ -295,5 +295,30 @@
              displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
              description="#Trailers.Translation.SettingAutoDownloadCleanupDescription.Label"
              configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="PreferredLanguage"
+             displayname="#Trailers.Translation.SettingPreferredLanguageName.Label"
+             defaultvalue="en"
+             type="string"
+             description="#Trailers.Translation.SettingPreferredLanguageDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="FallbackToEnglishLanguage"
+             displayname="#Trailers.Translation.SettingFallbackToEnglishTrailersName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingFallbackToEnglishTrailersDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="AlwaysGetEnglishTrailers"
+             displayname="#Trailers.Translation.SettingAlwaysGetEnglishTrailersName.Label"
+             defaultvalue="yes"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingAlwaysGetEnglishTrailersDescription.Label"
+             configfile="MediaPortal.xml" />
   </settings>
 </extension_settings>

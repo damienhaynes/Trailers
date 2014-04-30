@@ -18,6 +18,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Language</string>
   <string name="Local">Local</string>
   <!--M-->
   <string name="MultiSelectDialog">Multi-Select Dialog</string>
@@ -105,6 +106,12 @@
   <string name="SettingAutoDownloadClipsDescription">Checks if the video type is a clip for automatic trailer downloads.</string>
   <string name="SettingAutoDownloadCleanupName">Enable Auto Download Cleanup</string>
   <string name="SettingAutoDownloadCleanupDescription">Enable this to remove any trailers from disk if the associated movie is no longer in your plugin libraries.</string>
+  <string name="SettingPreferredLanguageName">Preferred Trailer Language</string>
+  <string name="SettingPreferredLanguageDescription">Set the language to download trailers from supported online providers. Language must be a valid two letter country code in iso_639_1 format e.g. fr, en, de, el, it, nl, es.</string>
+  <string name="SettingFallbackToEnglishTrailersName">Fallback to English Trailers</string>
+  <string name="SettingFallbackToEnglishTrailersDescription">Enable this to fallback to English trailers when no preferred language trailers exist online.</string>
+  <string name="SettingAlwaysGetEnglishTrailersName">Always Get English Trailers</string>
+  <string name="SettingAlwaysGetEnglishTrailersDescription">Enable this to get English trailers in addition to trailers in your preferred language.</string>
   <string name="Settings">Settings</string>
   <!--T-->
   <string name="Timeout">Timeout</string>

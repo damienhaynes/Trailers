@@ -231,6 +231,7 @@ namespace Trailers.Localisation
         // K
 
         // L
+        public static string Language = "Language";
         public static string Local = "Local";
 
         // M
@@ -325,6 +326,12 @@ namespace Trailers.Localisation
         public static string SettingAutoDownloadClipsDescription = "Checks if the video type is a clip for automatic trailer downloads.";
         public static string SettingAutoDownloadCleanupName = "Enable Auto Download Cleanup";
         public static string SettingAutoDownloadCleanupDescription = "Enable this to remove any trailers from disk if the associated movie is no longer in your plugin libraries.";
+        public static string SettingPreferredLanguageName = "Preferred Trailer Language";
+        public static string SettingPreferredLanguageDescription = "Set the language to download trailers from supported online providers. Language must be a valid two letter country code in iso_639_1 format e.g. fr, en, de, el, it, nl, es.";
+        public static string SettingFallbackToEnglishTrailersName = "Fallback to English Trailers";
+        public static string SettingFallbackToEnglishTrailersDescription = "Enable this to fallback to English trailers when no preferred language trailers exist online.";
+        public static string SettingAlwaysGetEnglishTrailersName = "Always Get English Trailers";
+        public static string SettingAlwaysGetEnglishTrailersDescription = "Enable this to get English trailers in addition to trailers in your preferred language.";
 
         // T
         public static string Timeout = "Timeout";
