@@ -38,6 +38,7 @@ namespace Trailers
         private const string cWebTimeoutIncrement = "WebTimeoutIncrement";
         private const string cWebTimeout = "WebTimeout";
         private const string cWebMaxRetries = "WebMaxRetries";
+        private const string cWebRequestCacheMinutes = "WebRequestCacheMinutes";
         private const string cProviderLocalSearch = "ProviderLocalSearch";
         private const string cProviderTMDb = "ProviderTMDbMovies";
         private const string cProviderOnlineVideoSearch = "ProviderOnlineVideoSearch";
@@ -90,6 +91,7 @@ namespace Trailers
         public static int WebTimeoutIncrement { get; set; }
         public static int WebTimeout { get; set; }
         public static int WebMaxRetries { get; set; }
+        public static int WebRequestCacheMinutes { get; set; }
         public static bool ProviderLocalSearch { get; set; }
         public static bool ProviderTMDb { get; set; }
         public static bool ProviderOnlineVideoSearch { get; set; }
@@ -201,6 +203,7 @@ namespace Trailers
                 WebTimeout = xmlreader.GetValueAsInt(cTrailers, cWebTimeout, 5000);
                 WebTimeoutIncrement = xmlreader.GetValueAsInt(cTrailers, cWebTimeoutIncrement, 1000);
                 WebMaxRetries = xmlreader.GetValueAsInt(cTrailers, cWebMaxRetries, 5);
+                WebRequestCacheMinutes = xmlreader.GetValueAsInt(cTrailers, cWebRequestCacheMinutes, 60);
                 ProviderLocalSearch = xmlreader.GetValueAsBool(cTrailers, cProviderLocalSearch, true);
                 ProviderTMDb = xmlreader.GetValueAsBool(cTrailers, cProviderTMDb, true);
                 ProviderOnlineVideoSearch = xmlreader.GetValueAsBool(cTrailers, cProviderOnlineVideoSearch, true);
@@ -267,6 +270,7 @@ namespace Trailers
                 xmlwriter.SetValue(cTrailers, cWebMaxRetries, WebMaxRetries);
                 xmlwriter.SetValue(cTrailers, cWebTimeout, WebTimeout);
                 xmlwriter.SetValue(cTrailers, cWebTimeoutIncrement, WebTimeoutIncrement);
+                xmlwriter.SetValue(cTrailers, cWebRequestCacheMinutes, WebRequestCacheMinutes.ToString());
                 xmlwriter.SetValueAsBool(cTrailers, cProviderLocalSearch, ProviderLocalSearch);
                 xmlwriter.SetValueAsBool(cTrailers, cProviderTMDb, ProviderTMDb);
                 xmlwriter.SetValueAsBool(cTrailers, cProviderOnlineVideoSearch, ProviderOnlineVideoSearch);

@@ -48,6 +48,8 @@
   <string name="SettingWebTimeoutDescription">The amount of time to wait for a response from a web-request.</string>
   <string name="SettingWebTimeoutIncrementName">Web Request Timeout Increment</string>
   <string name="SettingWebTimeoutIncrementDescription">The amount of time to wait after a failed web-request before retrying.</string>
+  <string name="SettingWebRequestCacheMinutesName">Web Request Cache Duration</string>
+  <string name="SettingWebRequestCacheMinutesDescription">Set the desired duration in minutes for how long to cache web requests, valid values are between 1 and 1440 (24 hours).</string>
   <string name="SettingProviderLocalSearchName">Enable Local Trailer Provider</string>
   <string name="SettingProviderLocalSearchDescription">The Local Trailer Provider will search your local drives for trailers, trailers can be stored either with your current media or from a dedicated directory / directories.</string>
   <string name="SettingProviderTMDbMoviesName">Enable TheMovieDb Trailer Provider</string>

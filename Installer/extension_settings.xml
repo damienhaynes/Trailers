@@ -50,6 +50,15 @@
              description="#Trailers.Translation.SettingWebTimeoutIncrementDescription.Label"
              configfile="MediaPortal.xml" />
     <setting entryname="Trailers"
+             name="WebRequestCacheMinutes"
+             displayname="#Trailers.Translation.SettingWebRequestCacheMinutesName.Label"
+             defaultvalue="60"
+             type="int"
+             minvalue="1"
+             maxvalue="1440"
+             description="#Trailers.Translation.SettingWebRequestCacheMinutesDescription.Label"
+             configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
              name="ProviderLocalSearch"
              displayname="#Trailers.Translation.SettingProviderLocalSearchName.Label"
              defaultvalue="yes"

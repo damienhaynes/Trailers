@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using Trailers.GUI;
 using Trailers.Providers.TMDb.API;
+using Trailers.Providers.TMDb.DataStructures;
 using Trailers.Web;
 
 namespace Trailers.Providers
 {
     class TMDbTrailerProvider : IProvider
     {
+        #region Variables
+
+        private DateTime LastWebRequest = new DateTime();
+        private Dictionary<string, TMDbTrailers> TrailerCache = new Dictionary<string, TMDbTrailers>();
+
+        #endregion
+
         #region Constructor
 
         public TMDbTrailerProvider(bool enableProvider)
@@ -126,7 +134,7 @@ namespace Trailers.Providers
             }
 
             FileLog.Debug("Searching for movie trailers using search term '{0}' from themoviedb.org...", searchTerm);
-            var trailers = TMDbAPI.GetMovieTrailers(searchTerm, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+            var trailers = GetMovieTrailersFromCache(searchTerm);
             if (trailers == null || trailers.Results == null)
             {
                 FileLog.Error("Error getting movie trailers from themoviedb.org.");
@@ -160,7 +168,7 @@ namespace Trailers.Providers
         }
 
         #endregion
-
+         
         #region Search for Show Trailers
 
         private List<GUITrailerListItem> SearchShowTrailers(MediaItem searchItem)
@@ -292,13 +300,13 @@ namespace Trailers.Providers
             switch (searchItem.MediaType)
             {
                 case MediaItemType.Show:
-                    trailers = TMDbAPI.GetShowTrailers(searchTerm, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+                    trailers = GetTvShowTrailersFromCache(searchTerm);
                     break;
                 case MediaItemType.Season:
-                    trailers = TMDbAPI.GetSeasonTrailers(searchTerm, searchItem.Season.ToString(), PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+                    trailers = GetTvSeasonTrailersFromCache(searchTerm, searchItem.Season);
                     break;
                 case MediaItemType.Episode:
-                    trailers = TMDbAPI.GetEpisodeTrailers(searchTerm, searchItem.Season.ToString(), searchItem.Episode.ToString(), PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+                    trailers = GetTvEpisodeTrailersFromCache(searchTerm, searchItem.Season, searchItem.Episode);
                     break;
             }
             
@@ -333,6 +341,114 @@ namespace Trailers.Providers
 
             return listItems;
         }
+        #endregion
+
+        #region Trailer Cache
+
+        private TMDbTrailers GetMovieTrailersFromCache(string movieId)
+        {
+            string key = string.Format("{0}_{1}_{2}_{3}", movieId, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+            TMDbTrailers trailers = null;
+
+            // check if we have a cached request
+            TrailerCache.TryGetValue(key, out trailers);
+
+            // check if web request cache has expired and make a new request
+            if (trailers == null || LastWebRequest < DateTime.UtcNow.Subtract(new TimeSpan(0, PluginSettings.WebRequestCacheMinutes, 0)))
+            {
+                // check if we have already cached the request
+                trailers = TMDbAPI.GetMovieTrailers(movieId, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+
+                // remove from cache if already exists
+                if (TrailerCache.ContainsKey(key))
+                    TrailerCache.Remove(key);
+
+                // add to cache
+                TrailerCache.Add(key, trailers);
+                LastWebRequest = DateTime.UtcNow;
+            }
+            
+            return trailers;
+        }
+
+        private TMDbTrailers GetTvShowTrailersFromCache(string showId)
+        {
+            string key = string.Format("{0}_{1}_{2}_{3}", showId, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+            TMDbTrailers trailers = null;
+
+            // check if we have a cached request
+            TrailerCache.TryGetValue(key, out trailers);
+
+            // check if web request cache has expired and make a new request
+            if (trailers == null || LastWebRequest < DateTime.UtcNow.Subtract(new TimeSpan(0, PluginSettings.WebRequestCacheMinutes, 0)))
+            {
+                // check if we have already cached the request
+                trailers = TMDbAPI.GetShowTrailers(showId, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+
+                // remove from cache if already exists
+                if (TrailerCache.ContainsKey(key))
+                    TrailerCache.Remove(key);
+
+                // add to cache
+                TrailerCache.Add(key, trailers);
+                LastWebRequest = DateTime.UtcNow;
+            }
+
+            return trailers;
+        }
+
+        private TMDbTrailers GetTvSeasonTrailersFromCache(string showId, int? season)
+        {
+            string key = string.Format("{0}_{1}_{2}_{3}_{4}", showId, season, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+            TMDbTrailers trailers = null;
+
+            // check if we have a cached request
+            TrailerCache.TryGetValue(key, out trailers);
+
+            // check if web request cache has expired and make a new request
+            if (trailers == null || LastWebRequest < DateTime.UtcNow.Subtract(new TimeSpan(0, PluginSettings.WebRequestCacheMinutes, 0)))
+            {
+                // check if we have already cached the request
+                trailers = TMDbAPI.GetSeasonTrailers(showId, season.ToString(), PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+
+                // remove from cache if already exists
+                if (TrailerCache.ContainsKey(key))
+                    TrailerCache.Remove(key);
+
+                // add to cache
+                TrailerCache.Add(key, trailers);
+                LastWebRequest = DateTime.UtcNow;
+            }
+
+            return trailers;
+        }
+
+        private TMDbTrailers GetTvEpisodeTrailersFromCache(string showId, int? season, int? episode)
+        {
+            string key = string.Format("{0}_{1}_{2}_{3}_{4}_{5}", showId, season, episode, PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+            TMDbTrailers trailers = null;
+
+            // check if we have a cached request
+            TrailerCache.TryGetValue(key, out trailers);
+
+            // check if web request cache has expired and make a new request
+            if (trailers == null || LastWebRequest < DateTime.UtcNow.Subtract(new TimeSpan(0, PluginSettings.WebRequestCacheMinutes, 0)))
+            {
+                // check if we have already cached the request
+                trailers = TMDbAPI.GetEpisodeTrailers(showId, season.ToString(), episode.ToString(), PluginSettings.PreferredLanguage, PluginSettings.FallbackToEnglishLanguage, PluginSettings.AlwaysGetEnglishTrailers);
+
+                // remove from cache if already exists
+                if (TrailerCache.ContainsKey(key))
+                    TrailerCache.Remove(key);
+
+                // add to cache
+                TrailerCache.Add(key, trailers);
+                LastWebRequest = DateTime.UtcNow;
+            }
+
+            return trailers;
+        }
+
         #endregion
 
         #endregion

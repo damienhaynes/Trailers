@@ -268,6 +268,8 @@ namespace Trailers.Localisation
         public static string SettingWebTimeoutDescription = "The amount of time to wait for a response from a web-request.";
         public static string SettingWebTimeoutIncrementName = "Web Request Timeout Increment";
         public static string SettingWebTimeoutIncrementDescription = "The amount of time to wait after a failed web-request before retrying.";
+        public static string SettingWebRequestCacheMinutesName = "Web Request Cache Duration";
+        public static string SettingWebRequestCacheMinutesDescription = "Set the desired duration in minutes for how long to cache web requests, valid values are between 1 and 1440 (24 hours).";
         public static string SettingProviderLocalSearchName = "Enable Local Trailer Provider";
         public static string SettingProviderLocalSearchDescription = "The Local Trailer Provider will search your local drives for trailers, trailers can be stored either with your current media or from a dedicated directory / directories.";
         public static string SettingProviderTMDbMoviesName = "Enable TheMovieDb Trailer Provider";
@@ -331,7 +333,7 @@ namespace Trailers.Localisation
         public static string SettingFallbackToEnglishTrailersName = "Fallback to English Trailers";
         public static string SettingFallbackToEnglishTrailersDescription = "Enable this to fallback to English trailers when no preferred language trailers exist online.";
         public static string SettingAlwaysGetEnglishTrailersName = "Always Get English Trailers";
-        public static string SettingAlwaysGetEnglishTrailersDescription = "Enable this to get English trailers in addition to trailers in your preferred language.";
+        public static string SettingAlwaysGetEnglishTrailersDescription = "Enable this to get English trailers in addition to trailers in your preferred language.";        
 
         // T
         public static string Timeout = "Timeout";
