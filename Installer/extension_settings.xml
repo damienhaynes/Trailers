@@ -329,5 +329,14 @@
              displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
              description="#Trailers.Translation.SettingAlwaysGetEnglishTrailersDescription.Label"
              configfile="MediaPortal.xml" />
+    <setting entryname="Trailers"
+             name="ReShowMenuAfterTrailerPlay"
+             displayname="#Trailers.Translation.SettingReShowMenuAfterTrailerPlayName.Label"
+             defaultvalue="no"
+             type="string"
+             listvalues="yes|no"
+             displaylistvalues="#Trailers.Translation.Yes.Label|#Trailers.Translation.No.Label"
+             description="#Trailers.Translation.SettingReShowMenuAfterTrailerPlayDescription.Label"
+             configfile="MediaPortal.xml" />
   </settings>
 </extension_settings>

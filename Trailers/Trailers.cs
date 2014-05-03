@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
+using MediaPortal.Player;
 using Trailers.Configuration;
 using Trailers.Downloader;
 using Trailers.GUI;
@@ -12,6 +13,7 @@ using Trailers.Localisation;
 using Trailers.Player;
 using Trailers.Providers;
 using Trailers.PluginHandlers;
+using System.Threading;
 
 namespace Trailers
 {
@@ -19,13 +21,15 @@ namespace Trailers
     public class Trailers : GUIInternalWindow, ISetupForm
     {
         #region Private Variables
-        ExtensionSettings extensionSettings = new ExtensionSettings();
+        ExtensionSettings ExtensionSettings = new ExtensionSettings();
+        static MediaItem CurrentMediaItem = new MediaItem();
+        static bool ReShowTrailerMenu = false;
         #endregion
 
         #region Public Variables
 
         internal static List<IProvider> TrailerProviders = new List<IProvider>();
-
+        
         #endregion
 
         #region GUIInternalWindow Overrides
@@ -57,7 +61,7 @@ namespace Trailers
             PluginSettings.LoadSettings();
             
             // Initialize Extension Settings
-            extensionSettings.Init();
+            ExtensionSettings.Init();
 
             // Load Trailer Providers
             LoadTrailerProviders();
@@ -66,6 +70,10 @@ namespace Trailers
             GUIWindowManager.OnDeActivateWindow += new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnDeActivateWindow);
             GUIWindowManager.OnActivateWindow += new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
             GUIWindowManager.Receivers += new SendMessageHandler(GUIWindowManager_Receivers);
+
+            // Listen to player events
+            g_Player.PlayBackEnded += new g_Player.EndedHandler(g_Player_PlayBackEnded);
+            g_Player.PlayBackStopped += new g_Player.StoppedHandler(g_Player_PlayBackStopped);
 
             // Initialize translations
             Translation.Init();
@@ -353,10 +361,32 @@ namespace Trailers
 
         #endregion
 
+        #region MediaPortal Playback Hooks
+        
+        private void g_Player_PlayBackStopped(g_Player.MediaType type, int stoptime, string filename)
+        {
+            if (ReShowTrailerMenu && (OnlinePlayer.CurrentFileName == filename || LocalPlayer.CurrentFileName == filename))
+            {
+                SearchForTrailers(CurrentMediaItem);
+            }
+        }
+
+        private void g_Player_PlayBackEnded(g_Player.MediaType type, string filename)
+        {
+            if (ReShowTrailerMenu && (OnlinePlayer.CurrentFileName == filename || LocalPlayer.CurrentFileName == filename))
+            {
+                SearchForTrailers(CurrentMediaItem);
+            }
+        }
+
+        #endregion
+
         #region Public Methods
 
         public static void SearchForTrailers(MediaItem searchItem)
         {
+            ReShowTrailerMenu = false;
+
             GUIBackgroundTask.Instance.ExecuteInBackgroundAndCallback(() =>
             {
                 var menuItems = new List<GUITrailerListItem>();
@@ -428,6 +458,10 @@ namespace Trailers
                         int selectedItem = GUIUtils.ShowMenuDialog(Translation.Trailers, menuItems);
                         if (selectedItem >= 0)
                         {
+                            // re-show menu after playback is enabled and there is more than one local/online trailer to select.
+                            ReShowTrailerMenu = PluginSettings.ReShowMenuAfterTrailerPlay && (menuItems.Count(t => !t.IsSearchItem) > 1);
+                            CurrentMediaItem = menuItems[selectedItem].CurrentMedia;
+
                             // Search or Play?
                             if (menuItems[selectedItem].IsSearchItem)
                             {

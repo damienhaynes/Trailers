@@ -333,7 +333,9 @@ namespace Trailers.Localisation
         public static string SettingFallbackToEnglishTrailersName = "Fallback to English Trailers";
         public static string SettingFallbackToEnglishTrailersDescription = "Enable this to fallback to English trailers when no preferred language trailers exist online.";
         public static string SettingAlwaysGetEnglishTrailersName = "Always Get English Trailers";
-        public static string SettingAlwaysGetEnglishTrailersDescription = "Enable this to get English trailers in addition to trailers in your preferred language.";        
+        public static string SettingAlwaysGetEnglishTrailersDescription = "Enable this to get English trailers in addition to trailers in your preferred language.";
+        public static string SettingReShowMenuAfterTrailerPlayName = "Reshow Menu After Trailer Playback";
+        public static string SettingReShowMenuAfterTrailerPlayDescription = "Enable this to reshow the menu after playback of a Trailer. If there is only a single local/online trailer available then this setting will be ignored.";
 
         // T
         public static string Timeout = "Timeout";

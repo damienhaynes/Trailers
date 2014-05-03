@@ -77,6 +77,7 @@ namespace Trailers
         private const string cPreferredLanguage = "PreferredLanguage";
         private const string cFallbackToEnglishLanguage = "FallbackToEnglishLanguage";
         private const string cAlwaysGetEnglishTrailers = "AlwaysGetEnglishTrailers";
+        private const string cReShowMenuAfterTrailerPlay = "ReShowMenuAfterTrailerPlay";
 
         #endregion
 
@@ -130,6 +131,7 @@ namespace Trailers
         public static string PreferredLanguage { get; set; }
         public static bool FallbackToEnglishLanguage { get; set; }
         public static bool AlwaysGetEnglishTrailers { get; set; }
+        public static bool ReShowMenuAfterTrailerPlay { get; set; }
 
         #endregion
 
@@ -242,6 +244,7 @@ namespace Trailers
                 PreferredLanguage = xmlreader.GetValueAsString(cTrailers, cPreferredLanguage, "en");
                 FallbackToEnglishLanguage = xmlreader.GetValueAsBool(cTrailers, cFallbackToEnglishLanguage, true);
                 AlwaysGetEnglishTrailers = xmlreader.GetValueAsBool(cTrailers, cAlwaysGetEnglishTrailers, true);
+                ReShowMenuAfterTrailerPlay = xmlreader.GetValueAsBool(cTrailers, cReShowMenuAfterTrailerPlay, false);
             }
 
             if (!reload)
@@ -309,6 +312,7 @@ namespace Trailers
                 xmlwriter.SetValue(cTrailers, cPreferredLanguage, PreferredLanguage);
                 xmlwriter.SetValueAsBool(cTrailers, cFallbackToEnglishLanguage, FallbackToEnglishLanguage);
                 xmlwriter.SetValueAsBool(cTrailers, cAlwaysGetEnglishTrailers, AlwaysGetEnglishTrailers);
+                xmlwriter.SetValueAsBool(cTrailers, cReShowMenuAfterTrailerPlay, ReShowMenuAfterTrailerPlay);
             }
 
             Settings.SaveCache();

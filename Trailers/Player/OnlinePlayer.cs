@@ -16,6 +16,8 @@ namespace Trailers.Player
 {
     class OnlinePlayer
     {
+        internal static string CurrentFileName { get; set; }
+
         static MediaItem CurrentMedia { get; set; }
 
         static void GetTrailerUrl(string htmlPage)
@@ -109,6 +111,7 @@ namespace Trailers.Player
 
                 try
                 {
+                    CurrentFileName = factory.PreparedUrl;
                     g_Player.Play(factory.PreparedUrl, g_Player.MediaType.Video);
                     GUIUtils.SetPlayProperties(CurrentMedia);
                 }

@@ -114,6 +114,8 @@
   <string name="SettingFallbackToEnglishTrailersDescription">Enable this to fallback to English trailers when no preferred language trailers exist online.</string>
   <string name="SettingAlwaysGetEnglishTrailersName">Always Get English Trailers</string>
   <string name="SettingAlwaysGetEnglishTrailersDescription">Enable this to get English trailers in addition to trailers in your preferred language.</string>
+  <string name="SettingReShowMenuAfterTrailerName">Reshow Menu After Trailer Playback</string>
+  <string name="SettingReShowMenuAfterTrailerDescription">Enable this to reshow the menu after playback of a Trailer. If there is only a single local/online trailer available then this setting will be ignored.</string>
   <string name="Settings">Settings</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
