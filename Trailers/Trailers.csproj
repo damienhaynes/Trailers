@@ -64,6 +64,7 @@
     </Reference>
     <Reference Include="MPEIPlugin">
       <HintPath>..\Externals\MPEIPlugin.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MyFilms">
       <HintPath>..\Externals\MyFilms.dll</HintPath>

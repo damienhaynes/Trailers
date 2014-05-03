@@ -18,6 +18,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Språk</string>
   <string name="Local">Tillgänglig lokalt</string>
   <!--M-->
   <string name="MultiSelectDialog">Flervalsdialog</string>
@@ -105,6 +106,12 @@
   <string name="SettingAutoDownloadClipsDescription">Kontrollerar om videotypen är ett filmklipp för nedladdning</string>
   <string name="SettingAutoDownloadCleanupName">Aktivera städning av automatiska nedladdningar</string>
   <string name="SettingAutoDownloadCleanupDescription">Aktivera för att ta bort trailers för filmer som inte längre finns i ditt bibliotek</string>
+  <string name="SettingPreferredLanguageName">Föredraget språk på trailers</string>
+  <string name="SettingPreferredLanguageDescription">Sätt språk på trailers att ladda ned.\nSpråket ska anges med en två bokstavskod enligt ISO 639-1. Till exempel sv, en, fr, de, el, it, nl, es.</string>
+  <string name="SettingFallbackToEnglishTrailersName">Om trailern inte finns på föredraget språk, använd engelska.</string>
+  <string name="SettingFallbackToEnglishTrailersDescription">Aktivera detta för att använda engelska om det inte finns någon trailer på föredraget språk.</string>
+  <string name="SettingAlwaysGetEnglishTrailersName">Hämta alltid trailers på engelska också.</string>
+  <string name="SettingAlwaysGetEnglishTrailersDescription">Aktivera detta för att alltid hämta trailers på engelska också.</string>
   <string name="Settings">Inställningar</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
