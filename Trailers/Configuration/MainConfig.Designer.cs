@@ -70,6 +70,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.chkBoxOnlineVideosYouTubeEnabled = new System.Windows.Forms.CheckBox();
             this.gbxGeneralSettings = new System.Windows.Forms.GroupBox();
+            this.chkBoxReShowMenuAfterTrailerPlayback = new System.Windows.Forms.CheckBox();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.gbxLanguage = new System.Windows.Forms.GroupBox();
             this.chkboxAlwaysGetEnglish = new System.Windows.Forms.CheckBox();
@@ -88,7 +89,7 @@
             this.chkBoxAutoDownloadTeasers = new System.Windows.Forms.CheckBox();
             this.chkBoxAutoDownloadTrailers = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBrowseAutoDownloadDir = new System.Windows.Forms.Button();
             this.txtBoxAutoDownloadSavePath = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.spinBoxAutoDownloadScanInterval = new System.Windows.Forms.NumericUpDown();
@@ -207,7 +208,7 @@
             this.gbxLocalTrailerSettings.Controls.Add(this.chkBoxSearchLocalInSubFolder);
             this.gbxLocalTrailerSettings.Location = new System.Drawing.Point(6, 3);
             this.gbxLocalTrailerSettings.Name = "gbxLocalTrailerSettings";
-            this.gbxLocalTrailerSettings.Size = new System.Drawing.Size(563, 543);
+            this.gbxLocalTrailerSettings.Size = new System.Drawing.Size(551, 542);
             this.gbxLocalTrailerSettings.TabIndex = 2;
             this.gbxLocalTrailerSettings.TabStop = false;
             this.gbxLocalTrailerSettings.Text = "Local Trailer Settings";
@@ -562,6 +563,7 @@
             this.gbxGeneralSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxGeneralSettings.Controls.Add(this.chkBoxReShowMenuAfterTrailerPlayback);
             this.gbxGeneralSettings.Controls.Add(this.lblLanguage);
             this.gbxGeneralSettings.Controls.Add(this.gbxLanguage);
             this.gbxGeneralSettings.Controls.Add(this.chkboxAlwaysGetEnglish);
@@ -572,36 +574,48 @@
             this.gbxGeneralSettings.Controls.Add(this.chkBoxSkipOnlineProvidersIfLocalFound);
             this.gbxGeneralSettings.Location = new System.Drawing.Point(6, 3);
             this.gbxGeneralSettings.Name = "gbxGeneralSettings";
-            this.gbxGeneralSettings.Size = new System.Drawing.Size(563, 543);
-            this.gbxGeneralSettings.TabIndex = 1;
+            this.gbxGeneralSettings.Size = new System.Drawing.Size(551, 542);
+            this.gbxGeneralSettings.TabIndex = 0;
             this.gbxGeneralSettings.TabStop = false;
             this.gbxGeneralSettings.Text = "General Settings";
+            // 
+            // chkBoxReShowMenuAfterTrailerPlayback
+            // 
+            this.chkBoxReShowMenuAfterTrailerPlayback.AutoSize = true;
+            this.chkBoxReShowMenuAfterTrailerPlayback.Location = new System.Drawing.Point(17, 76);
+            this.chkBoxReShowMenuAfterTrailerPlayback.Name = "chkBoxReShowMenuAfterTrailerPlayback";
+            this.chkBoxReShowMenuAfterTrailerPlayback.Size = new System.Drawing.Size(418, 17);
+            this.chkBoxReShowMenuAfterTrailerPlayback.TabIndex = 2;
+            this.chkBoxReShowMenuAfterTrailerPlayback.Text = "&Re-show menu after trailer playback if there is more than a single local/online " +
+    "trailer.";
+            this.chkBoxReShowMenuAfterTrailerPlayback.UseVisualStyleBackColor = true;
+            this.chkBoxReShowMenuAfterTrailerPlayback.Click += new System.EventHandler(this.chkBoxReShowMenuAfterTrailerPlayback_Click);
             // 
             // lblLanguage
             // 
             this.lblLanguage.AutoSize = true;
             this.lblLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(14, 84);
+            this.lblLanguage.Location = new System.Drawing.Point(14, 112);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(63, 13);
-            this.lblLanguage.TabIndex = 7;
+            this.lblLanguage.TabIndex = 3;
             this.lblLanguage.Text = "Language";
             // 
             // gbxLanguage
             // 
-            this.gbxLanguage.Location = new System.Drawing.Point(99, 92);
+            this.gbxLanguage.Location = new System.Drawing.Point(99, 120);
             this.gbxLanguage.Name = "gbxLanguage";
             this.gbxLanguage.Size = new System.Drawing.Size(285, 2);
-            this.gbxLanguage.TabIndex = 6;
+            this.gbxLanguage.TabIndex = 4;
             this.gbxLanguage.TabStop = false;
             // 
             // chkboxAlwaysGetEnglish
             // 
             this.chkboxAlwaysGetEnglish.AutoSize = true;
-            this.chkboxAlwaysGetEnglish.Location = new System.Drawing.Point(17, 170);
+            this.chkboxAlwaysGetEnglish.Location = new System.Drawing.Point(17, 198);
             this.chkboxAlwaysGetEnglish.Name = "chkboxAlwaysGetEnglish";
             this.chkboxAlwaysGetEnglish.Size = new System.Drawing.Size(338, 17);
-            this.chkboxAlwaysGetEnglish.TabIndex = 5;
+            this.chkboxAlwaysGetEnglish.TabIndex = 8;
             this.chkboxAlwaysGetEnglish.Text = "Always get &English trailers in addition to preferred language trailers.";
             this.chkboxAlwaysGetEnglish.UseVisualStyleBackColor = true;
             this.chkboxAlwaysGetEnglish.Click += new System.EventHandler(this.chkboxAlwaysGetEnglish_Click);
@@ -609,10 +623,10 @@
             // chkboxFallbackToEnglish
             // 
             this.chkboxFallbackToEnglish.AutoSize = true;
-            this.chkboxFallbackToEnglish.Location = new System.Drawing.Point(17, 147);
+            this.chkboxFallbackToEnglish.Location = new System.Drawing.Point(17, 175);
             this.chkboxFallbackToEnglish.Name = "chkboxFallbackToEnglish";
             this.chkboxFallbackToEnglish.Size = new System.Drawing.Size(311, 17);
-            this.chkboxFallbackToEnglish.TabIndex = 4;
+            this.chkboxFallbackToEnglish.TabIndex = 7;
             this.chkboxFallbackToEnglish.Text = "&Fallback to English when no preferred language trailers exist.";
             this.chkboxFallbackToEnglish.UseVisualStyleBackColor = true;
             this.chkboxFallbackToEnglish.Click += new System.EventHandler(this.chkboxFallbackToEnglish_Click);
@@ -621,10 +635,10 @@
             // 
             this.cboPreferredLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPreferredLanguage.FormattingEnabled = true;
-            this.cboPreferredLanguage.Location = new System.Drawing.Point(139, 111);
+            this.cboPreferredLanguage.Location = new System.Drawing.Point(139, 139);
             this.cboPreferredLanguage.Name = "cboPreferredLanguage";
             this.cboPreferredLanguage.Size = new System.Drawing.Size(245, 21);
-            this.cboPreferredLanguage.TabIndex = 3;
+            this.cboPreferredLanguage.TabIndex = 6;
             this.toolTip.SetToolTip(this.cboPreferredLanguage, "The preferred language to retrieve trailers. This is currently supported by the T" +
         "MDb online provider.");
             this.cboPreferredLanguage.SelectedIndexChanged += new System.EventHandler(this.cboPreferredLanguage_SelectedIndexChanged);
@@ -632,10 +646,10 @@
             // lblPreferredLanguage
             // 
             this.lblPreferredLanguage.AutoSize = true;
-            this.lblPreferredLanguage.Location = new System.Drawing.Point(14, 114);
+            this.lblPreferredLanguage.Location = new System.Drawing.Point(14, 142);
             this.lblPreferredLanguage.Name = "lblPreferredLanguage";
             this.lblPreferredLanguage.Size = new System.Drawing.Size(104, 13);
-            this.lblPreferredLanguage.TabIndex = 2;
+            this.lblPreferredLanguage.TabIndex = 5;
             this.lblPreferredLanguage.Text = "&Preferred Language:";
             // 
             // chkBoxAutoPlayOnSingleLocalOrOnlineTrailer
@@ -663,7 +677,7 @@
             // btnApplySettings
             // 
             this.btnApplySettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApplySettings.Location = new System.Drawing.Point(432, 602);
+            this.btnApplySettings.Location = new System.Drawing.Point(420, 601);
             this.btnApplySettings.Name = "btnApplySettings";
             this.btnApplySettings.Size = new System.Drawing.Size(174, 23);
             this.btnApplySettings.TabIndex = 0;
@@ -684,7 +698,7 @@
             this.gbxAutoDownloadSettings.Controls.Add(this.chkBoxAutoDownloadTeasers);
             this.gbxAutoDownloadSettings.Controls.Add(this.chkBoxAutoDownloadTrailers);
             this.gbxAutoDownloadSettings.Controls.Add(this.label16);
-            this.gbxAutoDownloadSettings.Controls.Add(this.button1);
+            this.gbxAutoDownloadSettings.Controls.Add(this.btnBrowseAutoDownloadDir);
             this.gbxAutoDownloadSettings.Controls.Add(this.txtBoxAutoDownloadSavePath);
             this.gbxAutoDownloadSettings.Controls.Add(this.label14);
             this.gbxAutoDownloadSettings.Controls.Add(this.spinBoxAutoDownloadScanInterval);
@@ -699,7 +713,7 @@
             this.gbxAutoDownloadSettings.Controls.Add(this.label10);
             this.gbxAutoDownloadSettings.Location = new System.Drawing.Point(6, 3);
             this.gbxAutoDownloadSettings.Name = "gbxAutoDownloadSettings";
-            this.gbxAutoDownloadSettings.Size = new System.Drawing.Size(563, 543);
+            this.gbxAutoDownloadSettings.Size = new System.Drawing.Size(551, 542);
             this.gbxAutoDownloadSettings.TabIndex = 4;
             this.gbxAutoDownloadSettings.TabStop = false;
             this.gbxAutoDownloadSettings.Text = "Automatic Download Settings";
@@ -802,15 +816,15 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "Select what video types to download:";
             // 
-            // button1
+            // btnBrowseAutoDownloadDir
             // 
-            this.button1.Location = new System.Drawing.Point(417, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnFolderBrowseAutoDownloadPath_Click);
+            this.btnBrowseAutoDownloadDir.Location = new System.Drawing.Point(417, 261);
+            this.btnBrowseAutoDownloadDir.Name = "btnBrowseAutoDownloadDir";
+            this.btnBrowseAutoDownloadDir.Size = new System.Drawing.Size(28, 23);
+            this.btnBrowseAutoDownloadDir.TabIndex = 19;
+            this.btnBrowseAutoDownloadDir.Text = "...";
+            this.btnBrowseAutoDownloadDir.UseVisualStyleBackColor = true;
+            this.btnBrowseAutoDownloadDir.Click += new System.EventHandler(this.btnFolderBrowseAutoDownloadPath_Click);
             // 
             // txtBoxAutoDownloadSavePath
             // 
@@ -961,7 +975,7 @@
             this.tabConfig.Location = new System.Drawing.Point(7, 10);
             this.tabConfig.Name = "tabConfig";
             this.tabConfig.SelectedIndex = 0;
-            this.tabConfig.Size = new System.Drawing.Size(599, 587);
+            this.tabConfig.Size = new System.Drawing.Size(587, 586);
             this.tabConfig.TabIndex = 1;
             // 
             // tabSearchProviders
@@ -970,7 +984,7 @@
             this.tabSearchProviders.Location = new System.Drawing.Point(4, 22);
             this.tabSearchProviders.Name = "tabSearchProviders";
             this.tabSearchProviders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearchProviders.Size = new System.Drawing.Size(591, 561);
+            this.tabSearchProviders.Size = new System.Drawing.Size(579, 560);
             this.tabSearchProviders.TabIndex = 0;
             this.tabSearchProviders.Text = "Search Providers";
             this.tabSearchProviders.UseVisualStyleBackColor = true;
@@ -993,7 +1007,7 @@
             this.tabLocalSearch.Controls.Add(this.panelLocalTrailerSettings);
             this.tabLocalSearch.Location = new System.Drawing.Point(4, 22);
             this.tabLocalSearch.Name = "tabLocalSearch";
-            this.tabLocalSearch.Size = new System.Drawing.Size(591, 561);
+            this.tabLocalSearch.Size = new System.Drawing.Size(579, 560);
             this.tabLocalSearch.TabIndex = 2;
             this.tabLocalSearch.Text = "Local Search Settings";
             this.tabLocalSearch.UseVisualStyleBackColor = true;
@@ -1008,7 +1022,7 @@
             this.panelLocalTrailerSettings.Controls.Add(this.gbxLocalTrailerSettings);
             this.panelLocalTrailerSettings.Location = new System.Drawing.Point(6, 5);
             this.panelLocalTrailerSettings.Name = "panelLocalTrailerSettings";
-            this.panelLocalTrailerSettings.Size = new System.Drawing.Size(577, 550);
+            this.panelLocalTrailerSettings.Size = new System.Drawing.Size(565, 549);
             this.panelLocalTrailerSettings.TabIndex = 0;
             // 
             // tabManualSearch
@@ -1016,7 +1030,7 @@
             this.tabManualSearch.Controls.Add(this.panelOnlineVideoSettings);
             this.tabManualSearch.Location = new System.Drawing.Point(4, 22);
             this.tabManualSearch.Name = "tabManualSearch";
-            this.tabManualSearch.Size = new System.Drawing.Size(591, 561);
+            this.tabManualSearch.Size = new System.Drawing.Size(579, 560);
             this.tabManualSearch.TabIndex = 3;
             this.tabManualSearch.Text = "Manual Search Settings";
             this.tabManualSearch.UseVisualStyleBackColor = true;
@@ -1040,7 +1054,7 @@
             this.tabGeneralSettings.Location = new System.Drawing.Point(4, 22);
             this.tabGeneralSettings.Name = "tabGeneralSettings";
             this.tabGeneralSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneralSettings.Size = new System.Drawing.Size(591, 561);
+            this.tabGeneralSettings.Size = new System.Drawing.Size(579, 560);
             this.tabGeneralSettings.TabIndex = 1;
             this.tabGeneralSettings.Text = "General Settings";
             this.tabGeneralSettings.UseVisualStyleBackColor = true;
@@ -1051,11 +1065,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelGeneralSettings.AutoScroll = true;
-            this.panelGeneralSettings.AutoScrollMinSize = new System.Drawing.Size(335, 0);
+            this.panelGeneralSettings.AutoScrollMinSize = new System.Drawing.Size(480, 0);
             this.panelGeneralSettings.Controls.Add(this.gbxGeneralSettings);
             this.panelGeneralSettings.Location = new System.Drawing.Point(6, 5);
             this.panelGeneralSettings.Name = "panelGeneralSettings";
-            this.panelGeneralSettings.Size = new System.Drawing.Size(577, 550);
+            this.panelGeneralSettings.Size = new System.Drawing.Size(565, 549);
             this.panelGeneralSettings.TabIndex = 0;
             // 
             // tabAutoDownload
@@ -1063,7 +1077,7 @@
             this.tabAutoDownload.Controls.Add(this.panelAutoDownloadSettings);
             this.tabAutoDownload.Location = new System.Drawing.Point(4, 22);
             this.tabAutoDownload.Name = "tabAutoDownload";
-            this.tabAutoDownload.Size = new System.Drawing.Size(591, 561);
+            this.tabAutoDownload.Size = new System.Drawing.Size(579, 560);
             this.tabAutoDownload.TabIndex = 4;
             this.tabAutoDownload.Text = "Auto-Download Settings";
             this.tabAutoDownload.UseVisualStyleBackColor = true;
@@ -1078,14 +1092,14 @@
             this.panelAutoDownloadSettings.Controls.Add(this.gbxAutoDownloadSettings);
             this.panelAutoDownloadSettings.Location = new System.Drawing.Point(6, 5);
             this.panelAutoDownloadSettings.Name = "panelAutoDownloadSettings";
-            this.panelAutoDownloadSettings.Size = new System.Drawing.Size(577, 550);
+            this.panelAutoDownloadSettings.Size = new System.Drawing.Size(565, 549);
             this.panelAutoDownloadSettings.TabIndex = 0;
             // 
             // MainConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 632);
+            this.ClientSize = new System.Drawing.Size(601, 631);
             this.Controls.Add(this.tabConfig);
             this.Controls.Add(this.btnApplySettings);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1170,7 +1184,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtBoxAutoDownloadSavePath;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBrowseAutoDownloadDir;
         private System.Windows.Forms.CheckBox chkBoxAutoDownloadClips;
         private System.Windows.Forms.CheckBox chkBoxAutoDownloadFeaturettes;
         private System.Windows.Forms.CheckBox chkBoxAutoDownloadTeasers;
@@ -1206,5 +1220,6 @@
         private System.Windows.Forms.CheckBox chkboxFallbackToEnglish;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.GroupBox gbxLanguage;
+        private System.Windows.Forms.CheckBox chkBoxReShowMenuAfterTrailerPlayback;
     }
 }

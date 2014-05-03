@@ -47,6 +47,7 @@ namespace Trailers.Configuration
         {
             chkBoxSkipOnlineProvidersIfLocalFound.Checked = PluginSettings.SkipOnlineProvidersIfLocalFound;
             chkBoxAutoPlayOnSingleLocalOrOnlineTrailer.Checked = PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer;
+            chkBoxReShowMenuAfterTrailerPlayback.Checked = PluginSettings.ReShowMenuAfterTrailerPlay;
 
             int selectedItem = 0;
             int i = 0;
@@ -173,6 +174,11 @@ namespace Trailers.Configuration
         private void chkBoxAutoPlayOnSingleLocalOrOnlineTrailer_Click(object sender, EventArgs e)
         {
             PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer = !PluginSettings.AutoPlayOnSingleLocalOrOnlineTrailer;
+        }
+
+        private void chkBoxReShowMenuAfterTrailerPlayback_Click(object sender, EventArgs e)
+        {
+            PluginSettings.ReShowMenuAfterTrailerPlay = !PluginSettings.ReShowMenuAfterTrailerPlay;
         }
 
         private void chkboxFallbackToEnglish_Click(object sender, EventArgs e)
@@ -428,6 +434,5 @@ namespace Trailers.Configuration
             gbxOnlineVideoSettings.Enabled = PluginSettings.ProviderOnlineVideoSearch;
         }
         #endregion
-
     }
 }
