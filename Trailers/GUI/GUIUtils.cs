@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MediaPortal.Configuration;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
+using System.IO;
 using System.Threading;
 using Trailers.Localisation;
 using Trailers.Providers;
@@ -49,7 +50,8 @@ namespace Trailers.GUI
         private delegate bool ShowCustomYesNoDialogDelegate(string heading, string lines, string yesLabel, string noLabel, bool defaultYes);
         private delegate void ShowOKDialogDelegate(string heading, string lines);
         private delegate void ShowNotifyDialogDelegate(string heading, string text, string image, string buttonText, int timeOut);
-        private delegate int ShowMenuDialogDelegate(string heading, List<GUITrailerListItem> items);
+        private delegate int ShowTrailerMenuDialogDelegate(string heading, List<GUITrailerListItem> items, int selectedIdx);
+        private delegate int ShowMenuDialogDelegate(string heading, List<GUITrailerListItem> items, int selectedIdx);
         private delegate List<MultiSelectionItem> ShowMultiSelectionDialogDelegate(string heading, List<MultiSelectionItem> items);
         private delegate void ShowTextDialogDelegate(string heading, string text);
         private delegate bool GetStringFromKeyboardDelegate(ref string strLine, bool isPassword);
@@ -303,7 +305,14 @@ namespace Trailers.GUI
         /// <returns>Selected item index, -1 if exited</returns>
         public static int ShowMenuDialog(string heading, List<GUITrailerListItem> items)
         {
-            return ShowMenuDialog(heading, items, -1);
+            if (File.Exists(GUIGraphicsContext.Skin + @"\Trailers.Selection.Menu.xml"))
+            {
+                return ShowTrailerMenuDialog(heading, items, -1);
+            }
+            else
+            {
+                return ShowMenuDialog(heading, items, -1);
+            }
         }
 
         /// <summary>
@@ -315,15 +324,52 @@ namespace Trailers.GUI
             if (GUIGraphicsContext.form.InvokeRequired)
             {
                 ShowMenuDialogDelegate d = ShowMenuDialog;
-                return (int)GUIGraphicsContext.form.Invoke(d, heading, items);
+                return (int)GUIGraphicsContext.form.Invoke(d, heading, items, selectedItemIndex);
             }
 
             if (items == null || items.Count == 0) return -1;
 
-            GUIDialogMenu dlgMenu = (GUIDialogMenu)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);            
+            var dlgMenu = (GUIDialogMenu)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);            
 
             dlgMenu.Reset();
             dlgMenu.SetHeading(heading);           
+
+            foreach (GUIListItem item in items)
+            {
+                dlgMenu.Add(item);
+            }
+
+            if (selectedItemIndex >= 0)
+                dlgMenu.SelectedLabel = selectedItemIndex;
+
+            dlgMenu.DoModal(GUIWindowManager.ActiveWindow);
+
+            if (dlgMenu.SelectedLabel < 0)
+            {
+                return -1;
+            }
+
+            return dlgMenu.SelectedLabel;
+        }
+
+        /// <summary>
+        /// Displays a trailer menu dialog from list of items
+        /// </summary>
+        /// <returns>Selected item index, -1 if exited</returns>
+        public static int ShowTrailerMenuDialog(string heading, List<GUITrailerListItem> items, int selectedItemIndex)
+        {
+            if (GUIGraphicsContext.form.InvokeRequired)
+            {
+                ShowTrailerMenuDialogDelegate d = ShowTrailerMenuDialog;
+                return (int)GUIGraphicsContext.form.Invoke(d, heading, items, selectedItemIndex);
+            }
+
+            if (items == null || items.Count == 0) return -1;
+
+            var dlgMenu = (GUIDialogTrailers)GUIWindowManager.GetWindow(11898);
+
+            dlgMenu.Reset();
+            dlgMenu.SetHeading(heading);
 
             foreach (GUIListItem item in items)
             {

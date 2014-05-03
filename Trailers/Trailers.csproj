@@ -121,6 +121,7 @@
     <Compile Include="FileLog.cs" />
     <Compile Include="GUI\GUIBackgroundTask.cs" />
     <Compile Include="GUI\GUIDialogMultiSelect.cs" />
+    <Compile Include="GUI\GUIDialogTrailers.cs" />
     <Compile Include="GUI\GUITrailerListItem.cs" />
     <Compile Include="GUI\GUIUtils.cs" />
     <Compile Include="Player\LocalPlayer.cs" />
