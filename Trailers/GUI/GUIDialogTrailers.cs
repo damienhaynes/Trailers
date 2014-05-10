@@ -21,7 +21,21 @@ namespace Trailers.GUI
                 return 11898;
             }
         }
-        
+
+        public override string GetModuleName()
+        {
+            return Translation.Trailers;
+        }
+
+        public override void DoModal(int dwParentId)
+        {
+            // override hard-coded label in ID: 5
+            GUIControl.SetControlLabel(this.GetID, 5, Translation.Trailers);
+
+            base.DoModal(dwParentId);
+        }
+
         #endregion
+
     }
 }
