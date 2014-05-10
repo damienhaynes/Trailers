@@ -455,7 +455,7 @@ namespace Trailers
                         #endregion
 
                         #region Show Menu
-                        int selectedItem = GUIUtils.ShowMenuDialog(Translation.Trailers, menuItems);
+                        int selectedItem = GUIUtils.ShowMenuDialog(menuItems.First().CurrentMedia.ToString(), menuItems);
                         if (selectedItem >= 0)
                         {
                             // re-show menu after playback is enabled and there is more than one local/online trailer to select.

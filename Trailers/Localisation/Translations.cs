@@ -336,6 +336,10 @@ namespace Trailers.Localisation
         public static string SettingAlwaysGetEnglishTrailersDescription = "Enable this to get English trailers in addition to trailers in your preferred language.";
         public static string SettingReShowMenuAfterTrailerPlayName = "Reshow Menu After Trailer Playback";
         public static string SettingReShowMenuAfterTrailerPlayDescription = "Enable this to reshow the menu after playback of a Trailer. If there is only a single local/online trailer available then this setting will be ignored.";
+        public static string Season = "Season";
+        public static string Seasons = "Seasons";
+        public static string Special = "Special";
+        public static string Specials = "Specials";
 
         // T
         public static string Timeout = "Timeout";

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Text;
+using Trailers.Localisation;
 
 namespace Trailers.Providers
 {
@@ -73,6 +74,26 @@ namespace Trailers.Providers
                 if (string.IsNullOrEmpty(FileName)) return null;
                 return Path.GetFileNameWithoutExtension(FileName);
             }
+        }
+
+        public override string ToString()
+        {
+            string str = string.Empty;
+            switch (this.MediaType)
+            {
+                case MediaItemType.Movie:
+                case MediaItemType.Show:
+                    str = this.Title;
+                    break;
+                case MediaItemType.Season:
+                    string seasonLabel = this.Season == 0 ? Translation.Specials : string.Format("{0} {1}", Translation.Season, this.Season.ToString());
+                    str = string.Format("{0}: {1}", this.Title, seasonLabel);
+                    break;
+                case MediaItemType.Episode:
+                    str = string.Format("{0}: {1}", this.Title, string.IsNullOrEmpty(this.EpisodeName) ? string.Format("{0}x{1}", this.Season, this.Episode) : this.EpisodeName);
+                    break;
+            }
+            return str;
         }
 
     }

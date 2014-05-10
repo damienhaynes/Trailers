@@ -36,6 +36,8 @@
   <!--R-->
   <!--S-->
   <string name="Search">Search</string>
+  <string name="Season">Season</string>
+  <string name="Seasons">Seasons</string>
   <string name="SettingPluginEnabledName">Plugin Enabled</string>
   <string name="SettingPluginEnabledDescription">Enable / Disable this setting to control if the Trailers plugin is loaded with MediaPortal.</string>
   <string name="SettingListedHomeName">Listed in Home</string>
@@ -117,6 +119,8 @@
   <string name="SettingReShowMenuAfterTrailerName">Reshow Menu After Trailer Playback</string>
   <string name="SettingReShowMenuAfterTrailerDescription">Enable this to reshow the menu after playback of a Trailer. If there is only a single local/online trailer available then this setting will be ignored.</string>
   <string name="Settings">Settings</string>
+  <string name="Special">Special</string>
+  <string name="Specials">Specials</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
