@@ -289,11 +289,11 @@ namespace Trailers.Localisation
         public static string SettingOnlineVideosYouTubeShowSearchStringName = "YouTube TV Show Search String";
         public static string SettingOnlineVideosYouTubeShowSearchStringDescription = "Specify the search string used for manual tv show trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate% and %year%.";
         public static string SettingOnlineVideosYouTubeSeasonSearchStringName = "YouTube TV Season Search String";
-        public static string SettingOnlineVideosYouTubeSeasonSearchStringDescription = "Specify the search string used for manual tv season trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate%, %year% and %season%.";
+        public static string SettingOnlineVideosYouTubeSeasonSearchStringDescription = "Specify the search string used for manual tv season trailer searches on YouTube. Special replacement parameters for tv seasons are %title%, %airdate%, %year% and %season%.";
         public static string SettingOnlineVideosYouTubeEpisodeSearchStringName = "YouTube TV Episode Search String";
-        public static string SettingOnlineVideosYouTubeEpisodeSearchStringDescription = "Specify the search string used for manual tv episode trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate%, %year%, %season%, %episode% and %episodename%.";
+        public static string SettingOnlineVideosYouTubeEpisodeSearchStringDescription = "Specify the search string used for manual tv episode trailer searches on YouTube. Special replacement parameters for tv episodes are %title%, %airdate%, %year%, %season%, %episode% and %episodename%.";
         public static string SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName = "YouTube TV Episode Specials Search String";
-        public static string SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription = "Specify the search string used for manual tv episode specials trailer searches on YouTube. Special replacement parameters for tv shows are %title%, %airdate%, %year%, %season%, %episode% and %episodename%.";
+        public static string SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription = "Specify the search string used for manual tv episode special trailer searches on YouTube. Special replacement parameters for tv episode specials are %title%, %airdate%, %year%, %season%, %episode% and %episodename%.";
         public static string SettingOnlineVideosITunesEnabledName = "Enable iTunes Site for Manual Search";
         public static string SettingOnlineVideosITunesEnabledDescription = "The iTunes Movie Trailer site is a dedicated trailer site, this is a good choice for more recent movies.";
         public static string SettingOnlineVideosIMDbEnabledName = "Enable IMDb Site for Manual Search";
