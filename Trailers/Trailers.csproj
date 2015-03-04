@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Trailers</RootNamespace>
     <AssemblyName>Trailers</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -72,11 +72,9 @@
     </Reference>
     <Reference Include="OnlineVideos">
       <HintPath>..\Externals\OnlineVideos.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="OnlineVideos.MediaPortal1">
       <HintPath>..\Externals\OnlineVideos.MediaPortal1.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -145,6 +143,7 @@
     <Compile Include="Providers\Local\LocalTrailerProvider.cs" />
     <Compile Include="Providers\MediaItem.cs" />
     <Compile Include="Providers\OnlineSearch\OnlineVideoSearchProvider.cs" />
+    <Compile Include="Providers\TMDb\DataStructures\TMDbExternalId.cs" />
     <Compile Include="Providers\TMDb\DataStructures\TMDbFindResult.cs" />
     <Compile Include="Providers\TMDb\DataStructures\TMDbMovieSearch.cs" />
     <Compile Include="Providers\TMDb\DataStructures\TMDbPage.cs" />

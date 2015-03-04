@@ -38,6 +38,7 @@ namespace Trailers.Providers.TMDb.API
         private static string apiShowSearch = string.Concat(apiUrl, "search/tv?api_key=", apiKey, "&query={0}&page={1}&language={2}&first_air_date_year={3}");
         private static string apiFind = string.Concat(apiUrl, "find/{0}?&external_source={1}&api_key=", apiKey);
 
+        private static string apiEpisodeExIds = string.Concat(apiUrl, "tv/{0}/season/{1}/episode/{2}/external_ids?language={3}&api_key=", apiKey);
         #endregion
 
         #region Events
@@ -211,6 +212,13 @@ namespace Trailers.Providers.TMDb.API
         {
             string response = GetJson(string.Format(apiFind, id, sourceId.ToString()));
             return response.FromJson<TMDbFindResult>();
+        }
+
+        public static TMDbExternalId GetEpisodeExternalIds(int showid, int season, int episode, string language = "en")
+        {
+            var response = GetJson(string.Format(apiEpisodeExIds, showid, season, episode, "en"));
+            FileLog.Info(response);
+            return response.FromJson<TMDbExternalId>();
         }
 
         #endregion        
