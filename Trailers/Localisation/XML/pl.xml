@@ -12,6 +12,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Język</string>
   <string name="Local">Dostępny lokalnie</string>
   <!--M-->
   <string name="MultiSelectDialog">Okno wielokrotnego wyboru</string>

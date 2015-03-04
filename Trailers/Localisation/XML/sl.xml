@@ -18,6 +18,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Jezik</string>
   <string name="Local">Lokalno</string>
   <!--M-->
   <string name="MultiSelectDialog">Multi-Izbira</string>
@@ -31,15 +32,22 @@
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">Za predvajanje napovednikov je zahtevan OnlineVideos vtičnik. Prepričajte se, da je ta nameščen in omogočen.</string>
   <!--P-->
+  <string name="Play">Predvajaj</string>
   <!--R-->
   <!--S-->
   <string name="Search">Iskanje</string>
+  <string name="Season">Sezona</string>
+  <string name="Seasons">Sezone</string>
   <string name="SettingPluginEnabledName">Vtičnik je omogočen</string>
   <string name="SettingPluginEnabledDescription">Omogoči/Onemogoči to nastavitev za nadzor, če se vtičnik Napovedniki naloži z MediaPortal.</string>
   <string name="SettingListedHomeName">Prikazan v Home</string>
   <string name="SettingListedHomeDescription">Omogoči to nastavitev da se vtičnik Napovedniki prikaže v osnovnem meniju elementov v Home.</string>
   <string name="SettingListedPluginsName">Prikazan v Mojih vtičnikih</string>
   <string name="SettingWebMaxRetriesName">Maksimalno ponovitev za Web zahteve</string>
+  <string name="SettingWebTimeoutName">Čas poteka web zahtevka</string>
+  <string name="Settings">Nastavitve</string>
+  <string name="Special">Poseben</string>
+  <string name="Specials">Posebni</string>
   <!--T-->
   <string name="Timeout">Čas preteka</string>
   <string name="Trailer">Napovednik</string>
@@ -49,5 +57,6 @@
   <!--V-->
   <!--W-->
   <!--Y-->
+  <string name="Yes">Da</string>
   <string name="YouTubeTrailers">YouTube napovedniki</string>
 </resources>

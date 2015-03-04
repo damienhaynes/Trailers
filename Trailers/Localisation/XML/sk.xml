@@ -18,6 +18,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Jazyk</string>
   <string name="Local">Lokálna</string>
   <!--M-->
   <string name="MultiSelectDialog">Dialóg s multi-výberom</string>
@@ -35,9 +36,13 @@
   <!--R-->
   <!--S-->
   <string name="Search">Hľadanie</string>
+  <string name="Season">Sezóna</string>
+  <string name="Seasons">Sezóny</string>
   <string name="SettingPluginEnabledName">Doplnok povolený</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundName">Vynechať online obsah, pokiaľ sú dostupné trailery lokálne</string>
   <string name="Settings">Nastavenie</string>
+  <string name="Special">Špeciál</string>
+  <string name="Specials">Špeciály</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>

@@ -12,6 +12,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Γλώσσα</string>
   <string name="Local">Τοπικά</string>
   <!--M-->
   <string name="MultiSelectDialog">Πολλαπλής διάλογος Επιλογής</string>

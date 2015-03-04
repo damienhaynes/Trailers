@@ -18,6 +18,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Kieli</string>
   <string name="Local">Paikallinen</string>
   <!--M-->
   <string name="MultiSelectDialog">Monivalinta Ikkuna</string>

@@ -18,6 +18,7 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Sprache</string>
   <string name="Local">Lokal verfügbar</string>
   <!--M-->
   <string name="MultiSelectDialog">Multi-Auswahl-Dialog</string>
@@ -35,9 +36,11 @@
   <!--R-->
   <!--S-->
   <string name="Search">Suchen</string>
+  <string name="Season">Staffel</string>
+  <string name="Seasons">Staffeln</string>
   <string name="SettingPluginEnabledName">Plugin aktiviert</string>
   <string name="SettingPluginEnabledDescription">Aktivieren/deaktivieren um das Trailers-Plugin mit MediaPortal zu laden.</string>
-  <string name="SettingListedHomeName">Im Homescreen gelistet</string>
+  <string name="SettingListedHomeName">Im Homescreen anzeigen</string>
   <string name="SettingListedHomeDescription">Aktivieren um das Trailers-Plugin im Home-Screen anzeigen zu lassen.</string>
   <string name="SettingListedPluginsName">In den Plugins gelistet</string>
   <string name="SettingListedPluginsDescription">Aktivieren um das Trailers-Plugin in den Plugins in MediaPortal anzeigen zu lassen.</string>
@@ -47,6 +50,8 @@
   <string name="SettingWebTimeoutDescription">Die Zeit, die auf eine Antwort zu einer Web-Anfrage gewartet wird.</string>
   <string name="SettingWebTimeoutIncrementName">Web-Anfragen-Intervall-Länge</string>
   <string name="SettingWebTimeoutIncrementDescription">Dies ist die Zeit, die gewartet wird, bevor eine neue Web-Anfrage gestartet wird.</string>
+  <string name="SettingWebRequestCacheMinutesName">Dauer der Speicherung von Web-Anfragen</string>
+  <string name="SettingWebRequestCacheMinutesDescription">Setze die gewünschte Dauer in Minuten, die Web-Anfragen gespeichert werden. Gültige Werte liegen zwischen 1 und 1440 (24 Stunden).</string>
   <string name="SettingProviderLocalSearchName">Aktiviere den lokalen Trailer-Anbieter</string>
   <string name="SettingProviderLocalSearchDescription">Der lokale Trailer-Anbieter wird deine lokalen Ordner nach Trailern durchsuchen. Diese können bei den Mediendatein oder an definierten Orten gespeichert sein.</string>
   <string name="SettingProviderTMDbMoviesName">Aktiviere TheMovieDb als Trailer-Anbieter</string>
@@ -61,13 +66,23 @@
   <string name="SettingSearchLocalInDedicatedDirectoryDescription">Aktiviere dies um nach Trailern in einer definierten Liste von Ordnern zu suchen. Diese sind dann außerhalb des aktuellen Medienordners. Im Standard werden die Download-Ordner von OnlineVideos und ShowTimes durchsucht.</string>
   <string name="SettingOnlineVideosYouTubeEnabledName">Aktiviere YouTube für die manuelle Suche</string>
   <string name="SettingOnlineVideosYouTubeEnabledDescription">YouTube ist wohl die beste Quelle in OnlineVideos um manuell nach Trailern zu suchen. YouTube bietet ein breites Angebot in guter Qualtität.</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringName">Suchmuster für Filmtrailer auf YouTube</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringDescription">Definiere das Muster für die manuelle Suche nach Filmtrailern auf YouTube. Dynamische Parameter sind %title% als auch %year%.</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringName">Suchmuster für Serien auf YouTube</string>
+  <string name="SettingOnlineVideosYouTubeShowSearchStringDescription">Definiere das Muster für die manuelle Suche nach Serientrailern auf YouTube. Dynamische Parameter für Serien sind %title%, %airdate% als auch %year%.</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringName">Suchmuster für Serienstaffeln auf YouTube</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringDescription">Definiere das Muster für die manuelle Suche nach Staffeltrailern auf YouTube. Dynamische Parameter für Staffeln sind %title%, %airdate%, %year% als auch %season%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringName">Suchmuster für Serienfolgen auf YouTube</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringDescription">Definiere das Muster für die manuelle Suche nach Episodentrailern auf YouTube. Dynamische Parameter für Episoden sind %title%, %airdate%, %year%, %season%, %episode% als auch %episodename%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName">Suchmuster für Serienspecials auf YouTube</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription">Definiere das Muster für die manuelle Suche nach Specials auf YouTube. Dynamische Parameter für Specials sind %title%, %airdate%, %year%, %season%, %episode% als auch %episodename%.</string>
   <string name="SettingOnlineVideosITunesEnabledName">Aktiviere iTunes für die manuelle Suche</string>
   <string name="SettingOnlineVideosITunesEnabledDescription">Die iTunes Movie Trailer Seite ist eine spezielle Seite für Trailer und eine gute Wahl für eher aktuelle Titel.</string>
   <string name="SettingOnlineVideosIMDbEnabledName">Aktiviere IMDb für die manuelle Suche</string>
   <string name="SettingOnlineVideosIMDbEnabledDescription">IMDb Movie Trailer ist eine spezeille Trailer-Seite und eine gute Wahl für eher aktuellere Filme. Außerdem ist die Suche über die IMDb-ID möglich.</string>
   <string name="SettingSearchLocalAggressiveSearchName">Aktiviere die aggresive Suche für lokale Trailer.</string>
   <string name="SettingSearchLocalAggressiveSearchDescription">Die aggressive Suche stoppt nicht, sobald ein Treffer gefunden worden ist und gibt alle Treffer der lokalen Ordner zurück. Diese Einstellung wird nur benötigt wenn du verschiedene Trailer zu einem Film an verschiedenen Orten gespeichert hast. </string>
-  <string name="SettingSkipOnlineProvidersIfLocalFoundName">Überspringe die Online Anbieter wenn lokale Trailer vorhanden sind.</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundName">Überspringe die Online-Anbieter wenn lokale Trailer vorhanden sind.</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundDescription">Wenn lokale Trailer gefunden wurden, dann zeige/spiele diese. Oder setze die Suche fort um auch die Online-Treffer anzuzeigen.</string>
   <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerName">Automatisches Abspielen bei nur einem lokalen oder Online-Treffer.</string>
   <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription">Wenn nur ein Trailer lokaler oder online gefunden wird, wird dieser direkt abgespielt. Wenn nicht aktiviert (Standart), wird ein Menü mit den Resultaten gezeigt, aus dem auch manuell gesucht werden kann.</string>
@@ -95,7 +110,17 @@
   <string name="SettingAutoDownloadClipsDescription">Sollen Clips mit dem Auto-Download geladen werden?</string>
   <string name="SettingAutoDownloadCleanupName">Aktiviere die Auto-Bereinigung für Downloads</string>
   <string name="SettingAutoDownloadCleanupDescription">Wenn aktiviert werden die Trailer für nicht mehr in den Datenbanken vorhandene Filme ebenfalls gelöscht.</string>
+  <string name="SettingPreferredLanguageName">Bevorzugte Trailersprache</string>
+  <string name="SettingPreferredLanguageDescription">Die Sprache für die Downloads von unterstützten Online-Quellen. Es muss ein gültiger zweistelliger Sprachcode nach iso_639_1 angegeben werden. Also z.B. fr, en, de, el, it, nl, es.</string>
+  <string name="SettingFallbackToEnglishTrailersName">Rückgriff auf englische Trailer</string>
+  <string name="SettingFallbackToEnglishTrailersDescription">Aktivere dies um englische Trailer zu laden, wenn keine Trailer in der bevorzugten Sprache verfügbar sind.</string>
+  <string name="SettingAlwaysGetEnglishTrailersName">Immer englische Trailer laden</string>
+  <string name="SettingAlwaysGetEnglishTrailersDescription">Aktiviere dies, um englische Trailer zusätzlich zu laden, auch wenn welche in deiner bevorzugten Sprache verfügbar sind.</string>
+  <string name="SettingReShowMenuAfterTrailerName">Zeige das Menüs nach Wiedergabe des Trailers erneut</string>
+  <string name="SettingReShowMenuAfterTrailerDescription">Aktiviere dies, um nach der Wiedergabe eines Trailers das Menü erneut anzuzeigen. Wenn nur ein Trailer lokal oder online verfügbar ist, wird diese Einstellung ignoriert.</string>
   <string name="Settings">Einstellungen</string>
+  <string name="Special">Special</string>
+  <string name="Specials">Specials</string>
   <!--T-->
   <string name="Timeout">Zeitüberschreitung</string>
   <string name="Trailer">Trailer</string>

@@ -9,8 +9,10 @@
   <string name="Error">Error en el Trailer</string>
   <!--F-->
   <!--G-->
-  <string name="GettingTrailers">Obteniendo Trailers\n</string>
-  <string name="GettingTrailerUrls">Obteniendo Url del trailer\n</string>
+  <string name="GettingTrailers">Obteniendo Trailers
+</string>
+  <string name="GettingTrailerUrls">Obteniendo Url del trailer
+</string>
   <!--H-->
   <!--I-->
   <string name="IMDbTrailers">IMDb Trailers</string>
@@ -18,23 +20,26 @@
   <!--J-->
   <!--K-->
   <!--L-->
+  <string name="Language">Idioma</string>
   <string name="Local">Disponible localmente</string>
   <!--M-->
-  <string name="MultiSelectDialog">Multi-Select Dialog</string>
+  <string name="MultiSelectDialog">Menú Multiselección</string>
   <!--N-->
   <string name="No">No</string>
   <string name="NoTrailersFound">¡No se encontraron Trailers!</string>
   <!--O-->
-  <string name="Off">Off</string>
+  <string name="Off">Apagado</string>
   <string name="OK">OK</string>
-  <string name="On">On</string>
+  <string name="On">Encendido</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">Para reproducir trailers es necesario el plugin OnlineVideos, asegúrate de tener el plugin instalado y habilitado.</string>
   <!--P-->
-  <string name="Play">Play</string>
+  <string name="Play">Reproducir</string>
   <!--R-->
   <!--S-->
   <string name="Search">Buscar</string>
+  <string name="Season">Temporada</string>
+  <string name="Seasons">Temporadas</string>
   <string name="SettingPluginEnabledName">Plugin Activado</string>
   <string name="SettingPluginEnabledDescription">Marca / Desmarca esta opción para controlar si se carga el plugin Trailers con MediaPortal.</string>
   <string name="SettingListedHomeName">Listado en el Inicio</string>
@@ -47,6 +52,8 @@
   <string name="SettingWebTimeoutDescription">Tiempo de espera para la respuesta de una solicitud web.</string>
   <string name="SettingWebTimeoutIncrementName">Incremento del Tiempo de Espera para Solicitud Web</string>
   <string name="SettingWebTimeoutIncrementDescription">El tiempo que debe esperarse después de una solicitud web falle para reintentarlo.</string>
+  <string name="SettingWebRequestCacheMinutesName">Duración Caché para Solicitud Web</string>
+  <string name="SettingWebRequestCacheMinutesDescription">Configura la duración deseada en minutos para la duración de la caché para solicitudes web, valores válidos entre 1 y 1440 (24 horas).</string>
   <string name="SettingProviderLocalSearchName">Habilitar Proveedor Local de Trailer</string>
   <string name="SettingProviderLocalSearchDescription">El Proveedor Local de Trailers buscará en tus discos locales por trailers, los trailers pueden ser almacenados con tus archivos actuales o en unos directorios dedicados.</string>
   <string name="SettingProviderTMDbMoviesName">Habilitar Proveedor de Trailers de TheMovieDb</string>
@@ -66,11 +73,11 @@
   <string name="SettingOnlineVideosYouTubeShowSearchStringName">Búsqueda de programas de TV en YouTube</string>
   <string name="SettingOnlineVideosYouTubeShowSearchStringDescription">Especificar la cadena de búsqueda usada para la búsqueda manual de trailers de programas de TV en YouTube. Parámetros de sustitución especiales para programas de TV son %title%, %airdate% and %year%.</string>
   <string name="SettingOnlineVideosYouTubeSeasonSearchStringName">Búsqueda de temporadas de TV en YouTube</string>
-  <string name="SettingOnlineVideosYouTubeSeasonSearchStringDescription">Especificar la cadena de búsqueda usada para la búsqueda manual de trailers de temporadas de programas de TV en YouTube. Parámetros de sustitución especiales para temporadas de programas de TV son %title%, %airdate%, %year% and %season%.</string>
+  <string name="SettingOnlineVideosYouTubeSeasonSearchStringDescription">Especifica la cadena de búsqueda utilizada para las búsquedas manuales de tráiler de temporada TV en YouTube. Parámetros de sustitución especiales para temporadas de televisión son %title%, %airdate%, %year% and %season%.</string>
   <string name="SettingOnlineVideosYouTubeEpisodeSearchStringName">Búsqueda de episodios de TV en YouTube</string>
-  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringDescription">Especificar la cadena de búsqueda usada para la búsqueda manual de trailers de episodios de TV en YouTube. Parámetros de sustitución especiales para episodios de TV son %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSearchStringDescription">Especifica la cadena de búsqueda utilizada para las búsquedas manuales de trailers episodios en YouTube. Parámetros de sustitución especiales para episodios de televisión son %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
   <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringName">Búsqueda de Episodios Especiales de TV en YouTube</string>
-  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription">Especificar la cadena de búsqueda usada para la búsqueda manual de trailers de programas de TV en YouTube. Parámetros de sustitución especiales para programas de TV son %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
+  <string name="SettingOnlineVideosYouTubeEpisodeSpecialSearchStringDescription">Especifica la cadena de búsqueda utilizada para búsquedas manuales de trailers de episodios especiales de TV en YouTube. Parámetros de sustitución especiales para eposodios especiales  de TV son %title%, %airdate%, %year%, %season%, %episode% and %episodename%.</string>
   <string name="SettingOnlineVideosITunesEnabledName">Habilitar iTunes para búsqueda manual</string>
   <string name="SettingOnlineVideosITunesEnabledDescription">Itunes Movie Trailer es una web dedicada a trailers, es una buena opción para las películas más recientes.</string>
   <string name="SettingOnlineVideosIMDbEnabledName">Habilitar IMDb para búsqueda manual</string>
@@ -105,16 +112,26 @@
   <string name="SettingAutoDownloadClipsDescription">Comprueba si el tipo de vídeo es un clip de la descarga automática.</string>
   <string name="SettingAutoDownloadCleanupName">Habilitar Limpieza Automática de Descargas</string>
   <string name="SettingAutoDownloadCleanupDescription">Habilitar para eliminar cualquier tráiler del disco si la película asociada ya no existe en tu biblioteca.</string>
+  <string name="SettingPreferredLanguageName">Idioma preferido del Trailer</string>
+  <string name="SettingPreferredLanguageDescription">Configura el idioma en el que se descargarán los trailers online. El idioma debe ser un código de país de dos letras en formato válido iso_639_1, por ejemplo, fr, en, de, el, ella, nl, es.</string>
+  <string name="SettingFallbackToEnglishTrailersName">Volver a Trailers en Inglés</string>
+  <string name="SettingFallbackToEnglishTrailersDescription">Habiltar esto para volver a los trailers en Inglés cuando no existan en el idioma preferido.</string>
+  <string name="SettingAlwaysGetEnglishTrailersName">Tomar siempre los Trailers en Inglés</string>
+  <string name="SettingAlwaysGetEnglishTrailersDescription">Habilitar esto para obtener los trailers en Inglés además de en el idioma preferido.</string>
+  <string name="SettingReShowMenuAfterTrailerName">Volver al Menú después de la Reproducción del Trailer</string>
+  <string name="SettingReShowMenuAfterTrailerDescription">Habilitar esto para volver al menú después de la reproducción del Tráiler. Si sólo hay disponible un sólo tráiler, se ignorará esta opción.</string>
   <string name="Settings">Configuración</string>
+  <string name="Special">Especial</string>
+  <string name="Specials">Especiales</string>
   <!--T-->
   <string name="Timeout">Timeout</string>
   <string name="Trailer">Trailer</string>
   <string name="Trailers">Trailers</string>
   <!--U-->
-  <string name="UnableToPlayTrailer">Unable to play trailer.</string>
+  <string name="UnableToPlayTrailer">No se puede reproducir trailer.</string>
   <!--V-->
   <!--W-->
   <!--Y-->
   <string name="Yes">Si</string>
-  <string name="YouTubeTrailers">YouTube Trailers</string>
+  <string name="YouTubeTrailers">Trailers YouTube</string>
 </resources>
