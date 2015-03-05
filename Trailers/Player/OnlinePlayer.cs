@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using OnlineVideos;
-using OnlineVideos.Hoster.Base;
-using OnlineVideos.MediaPortal1.Player;
-using PlayerFactory = OnlineVideos.MediaPortal1.Player.PlayerFactory;
 using MediaPortal.Player;
-using Trailers;
-using Trailers.PluginHandlers;
+using OnlineVideos;
+using OnlineVideos.MediaPortal1.Player;
 using Trailers.GUI;
+using Trailers.PluginHandlers;
 using Trailers.Providers;
+using PlayerFactory = OnlineVideos.MediaPortal1.Player.PlayerFactory;
 
 namespace Trailers.Player
 {
@@ -23,13 +18,12 @@ namespace Trailers.Player
         static void GetTrailerUrl(string htmlPage)
         {
             // get playback url from stream
-            FileLog.Debug("Getting playback url from page '{0}'", htmlPage);
+            FileLog.Debug("Getting playback url from page, URL = '{0}'", htmlPage);
 
             GUIBackgroundTask.Instance.ExecuteInBackgroundAndCallback(() =>
             {
-                var ovHosterProxy = OnlineVideosAppDomain.Domain.CreateInstanceAndUnwrap(typeof(OnlineVideosTrailersHosterProxy).Assembly.FullName, typeof(OnlineVideosTrailersHosterProxy).FullName) as OnlineVideosTrailersHosterProxy;
-                var url = ovHosterProxy.GetVideoUrls(htmlPage);
-                return url;
+                var hosterBase = OnlineVideos.Hoster.HosterFactory.GetHoster("Youtube");
+                return hosterBase.GetVideoUrl(htmlPage);
             },
             delegate(bool success, object result)
             {
@@ -59,10 +53,10 @@ namespace Trailers.Player
             if (g_Player.Playing) g_Player.Stop();
 
             // prepare graph must be done on the MP main thread
-            FileLog.Debug("Preparing graph for playback of '{0}'", url);
+            FileLog.Debug("Preparing graph for playback, URL = '{0}'.", url);
             var factory = new PlayerFactory(PlayerType.Internal, url);
             bool? prepareResult = ((OnlineVideosPlayer)factory.PreparedPlayer).PrepareGraph();
-            FileLog.Debug("Preparing graph complete.");
+            FileLog.Debug("Graph is now prepared.");
 
             switch (prepareResult)
             {
@@ -70,7 +64,8 @@ namespace Trailers.Player
                     GUIBackgroundTask.Instance.ExecuteInBackgroundAndCallback(() =>
                     {
                         FileLog.Info("OnlineVideo pre-buffering started.");
-                        if (((OnlineVideosPlayer)factory.PreparedPlayer).BufferFile())
+
+                        if (((OnlineVideosPlayer)factory.PreparedPlayer).BufferFile(OnlineVideosHandler.YouTubeSiteUtil))
                         {
                             FileLog.Info("OnlineVideo pre-buffering complete.");
                             return true;
@@ -113,12 +108,15 @@ namespace Trailers.Player
                 {
                     CurrentFileName = factory.PreparedUrl;
                     g_Player.Play(factory.PreparedUrl, g_Player.MediaType.Video);
-                    GUIUtils.SetPlayProperties(CurrentMedia);
+
+                    // make the OSD pretty with poster, title etc
+                    GUIUtils.SetPlayProperties(CurrentMedia, true);
                 }
                 catch (Exception e)
                 {
-                    FileLog.Warning("Exception while playing trailer: {0}", e.Message);
+                    FileLog.Warning("Exception while playing trailer, Reason = '{0}'", e.Message);
                 }
+
                 g_Player.Factory = savedFactory;
             }
             else
@@ -150,26 +148,6 @@ namespace Trailers.Player
             {
                 BufferTrailer(url);
             }
-        }
-    }
-
-    /// <summary>
-    /// this class is needed because the Hoster class lives in the second appdomain, 
-    /// and is not marked Serialiable and does not inherit from MarshalByRefObject, 
-    /// so the object cannot cross appdomains
-    /// </summary>
-    class OnlineVideosTrailersHosterProxy : MarshalByRefObject
-    {
-        public OnlineVideosTrailersHosterProxy() { }
-
-        public Dictionary<string, string> GetPlaybackOptions(string url)
-        {
-            return HosterFactory.GetHoster("Youtube").getPlaybackOptions(url);
-        }
-
-        public string GetVideoUrls(string url)
-        {
-            return HosterFactory.GetHoster("Youtube").getVideoUrls(url);
         }
     }
 }

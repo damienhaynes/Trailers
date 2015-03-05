@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Player;
-using Trailers.Configuration;
 using Trailers.Downloader;
 using Trailers.GUI;
 using Trailers.Localisation;
 using Trailers.Player;
-using Trailers.Providers;
 using Trailers.PluginHandlers;
-using System.Threading;
+using Trailers.Providers;
 
 namespace Trailers
 {

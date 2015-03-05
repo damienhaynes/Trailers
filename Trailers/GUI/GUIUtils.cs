@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using MediaPortal.Configuration;
-using MediaPortal.Dialogs;
-using MediaPortal.GUI.Library;
 using System.IO;
 using System.Threading;
+using MediaPortal.Dialogs;
+using MediaPortal.GUI.Library;
 using Trailers.Localisation;
 using Trailers.Providers;
 
@@ -91,7 +90,7 @@ namespace Trailers.GUI
             }
         }
 
-        public static void SetPlayProperties(MediaItem item)
+        public static void SetPlayProperties(MediaItem item, bool onlinevideoplayer = false)
         {
             var playThread = new Thread((obj) =>
             {
@@ -106,6 +105,13 @@ namespace Trailers.GUI
                 SetProperty("#Play.Current.Year", playItem.Year.ToString());
                 SetProperty("#Play.Current.IMDBNumber", playItem.IMDb);
                 SetProperty("#Play.Current.TMDBNumber", playItem.TMDb);
+
+                // check if we should set any online video specific properties
+                if (onlinevideoplayer)
+                {
+                    SetProperty("#Play.Current.OnlineVideos.SiteName", "YouTube Trailers");
+                    SetProperty("#Play.Current.OnlineVideos.SiteIcon", TrailersLogo);
+                }
             })
             {
                 IsBackground = true,
