@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using MediaPortal.Configuration;
 using OnlineVideos;
+using OnlineVideos.Hoster;
 using OnlineVideos.Sites;
 using Trailers.Web;
 
@@ -10,25 +11,27 @@ namespace Trailers.PluginHandlers
 {
     class OnlineVideosHandler
     {
-        public static bool IsAvailable
+        internal static string PluginFilename = Path.Combine(Config.GetSubFolder(Config.Dir.Plugins, "Windows"), "OnlineVideos.MediaPortal1.dll");
+
+        internal static bool IsAvailable
         {
             get
             {
-                if (!File.Exists(Path.Combine(Config.GetSubFolder(Config.Dir.Plugins, "Windows"), "OnlineVideos.MediaPortal1.dll")))
+                if (!File.Exists(PluginFilename))
                     return false;
 
                 return Utility.IsPluginEnabled("Online Videos") || Utility.IsPluginEnabled("OnlineVideos");
             }
         }
 
-        public static SiteUtilBase YouTubeSiteUtil
+        internal static SiteUtilBase YouTubeSiteUtil
         {
             get
             {
                 if (_YouTubeSiteUtil == null)
                 {
                     FileLog.Info("Getting YouTube site util from OnlineVideos.");
-                    OnlineVideos.Sites.SiteUtilBase siteUtil;
+                    SiteUtilBase siteUtil;
                     OnlineVideoSettings.Instance.SiteUtilsList.TryGetValue("YouTube", out siteUtil);
                     _YouTubeSiteUtil = siteUtil;
 
@@ -39,7 +42,7 @@ namespace Trailers.PluginHandlers
         }
         static SiteUtilBase _YouTubeSiteUtil = null;
 
-        public static Dictionary<string, string> GetPlaybackOptionsFromYoutubeUrl(string source)
+        internal static Dictionary<string, string> GetPlaybackOptionsFromYoutubeUrl(string source)
         {
             var playbackOptions = new Dictionary<string, string>();
             if (string.IsNullOrEmpty(source))
@@ -51,7 +54,7 @@ namespace Trailers.PluginHandlers
 
             try
             {
-                var hosterBase = OnlineVideos.Hoster.HosterFactory.GetHoster("Youtube");
+                var hosterBase = HosterFactory.GetHoster("Youtube");
                 playbackOptions = hosterBase.GetPlaybackOptions(url);
 
                 if (playbackOptions == null) return null;

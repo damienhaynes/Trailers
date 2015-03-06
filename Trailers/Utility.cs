@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Diagnostics;
+using System.IO;
 using MediaPortal.Profile;
 
 namespace Trailers
@@ -14,6 +13,18 @@ namespace Trailers
             {
                 return xmlreader.GetValueAsBool("plugins", name, false);
             }
+        }
+
+        public static Version FileVersion(string filename)
+        {
+            if (!File.Exists(filename))
+                return new Version();
+
+            var versionInfo = FileVersionInfo.GetVersionInfo(filename);
+            return new Version(versionInfo.FileMajorPart,
+                               versionInfo.FileMinorPart,
+                               versionInfo.FilePrivatePart,
+                               versionInfo.FileBuildPart);
         }
     }
 }

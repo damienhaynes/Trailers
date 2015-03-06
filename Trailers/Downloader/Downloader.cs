@@ -31,7 +31,12 @@ namespace Trailers.Downloader
         {
             if (!OnlineVideosHandler.IsAvailable)
             {
-                FileLog.Info("Aborting trailer auto-downloads as OnlineVideos is not available.");
+                FileLog.Info("Aborting trailer auto-downloads as OnlineVideos is not available or minimum version not installed.");
+                return;
+            }
+            else if (Utility.FileVersion(OnlineVideosHandler.PluginFilename) < new Version(2, 0, 0, 0))
+            {
+                FileLog.Info("Aborting trailer auto-downloads as OnlineVideos minimum version is not installed.");
                 return;
             }
 

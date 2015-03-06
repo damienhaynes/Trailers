@@ -31,6 +31,7 @@
   <string name="On">On</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">OnlineVideos plugin is required to play trailers, ensure that you have the plugin installed and it\'s enabled.</string>
+  <string name="OnlineVideosMinVersionNotInstalled">OnlineVideos minimum version check failed, please install the latest version.</string>
   <!--P-->
   <string name="Play">Play</string>
   <!--R-->

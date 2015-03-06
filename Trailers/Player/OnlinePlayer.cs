@@ -135,6 +135,11 @@ namespace Trailers.Player
                 GUIUtils.ShowNotifyDialog(Localisation.Translation.Trailers, Localisation.Translation.OnlineVideosNotInstalled);
                 return;
             }
+            else if (Utility.FileVersion(OnlineVideosHandler.PluginFilename) < new Version(2,0,0,0))
+            {
+                GUIUtils.ShowNotifyDialog(Localisation.Translation.Trailers, Localisation.Translation.OnlineVideosMinVersionNotInstalled);
+                return;
+            }
 
             CurrentMedia = mediaItem;
 
