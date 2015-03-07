@@ -304,12 +304,11 @@ namespace Trailers.Downloader
         /// </summary>
         static KeyValuePair<string, string> GetPreferredQualityOption(Dictionary<string, string> downloadOptions, string preferredQuality)
         {
-            // available options are:
-            // 1. 320x240 | flv
-            // 2. 320x240 | mp4
-            // 3. 640x360 | mp4
-            // 4. 640x360 | webm
-            // 5. 1280x720 | mp4
+            // available mp4 options are:
+            // 1. 320x240
+            // 2. 426x240
+            // 3. 640x360
+            // 4. 1280x720
 
             if (preferredQuality == "HD")
             {
@@ -342,10 +341,18 @@ namespace Trailers.Downloader
             }
             else if (preferredQuality == "LQ")
             {
-                var options = downloadOptions.Where(o => o.Key.Contains("320x240 | mp4"));
+                var options = downloadOptions.Where(o => o.Key.Contains("426x240 | mp4"));
                 if (options.Count() > 0)
                 {
                     return new KeyValuePair<string, string>(options.First().Value, "LQ");
+                }
+                else
+                {
+                    options = downloadOptions.Where(o => o.Key.Contains("320x240 | mp4"));
+                    if (options.Count() > 0)
+                    {
+                        return new KeyValuePair<string, string>(options.First().Value, "LQ");
+                    }
                 }
             }
 
