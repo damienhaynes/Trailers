@@ -130,12 +130,12 @@ namespace Trailers.Player
         {
             if (string.IsNullOrEmpty(url)) return;
 
-            if (!OnlineVideosHandler.IsAvailable)
+            if (!Utility.IsPluginAvailable("OnlineVideos"))
             {
                 GUIUtils.ShowNotifyDialog(Localisation.Translation.Trailers, Localisation.Translation.OnlineVideosNotInstalled);
                 return;
             }
-            else if (Utility.FileVersion(OnlineVideosHandler.PluginFilename) < new Version(2,0,0,0))
+            else if (Utility.FileVersion(Utility.OnlineVideosPlugin) < new Version(2, 0, 0, 0))
             {
                 GUIUtils.ShowNotifyDialog(Localisation.Translation.Trailers, Localisation.Translation.OnlineVideosMinVersionNotInstalled);
                 return;

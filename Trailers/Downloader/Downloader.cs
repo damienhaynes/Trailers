@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.IO;
+using System.Linq;
+using System.Threading;
 using MediaPortal.Configuration;
+using Trailers.Downloader.DataStructures;
 using Trailers.Extensions;
 using Trailers.PluginHandlers;
 using Trailers.Providers;
 using Trailers.Providers.TMDb.API;
-using Trailers.Downloader.DataStructures;
 using Trailers.Web;
 
 namespace Trailers.Downloader
@@ -29,12 +28,12 @@ namespace Trailers.Downloader
 
         internal static void Init()
         {
-            if (!OnlineVideosHandler.IsAvailable)
+            if (!Utility.IsPluginAvailable("OnlineVideos"))
             {
                 FileLog.Info("Aborting trailer auto-downloads as OnlineVideos is not available or minimum version not installed.");
                 return;
             }
-            else if (Utility.FileVersion(OnlineVideosHandler.PluginFilename) < new Version(2, 0, 0, 0))
+            else if (Utility.FileVersion(Utility.OnlineVideosPlugin) < new Version(2, 0, 0, 0))
             {
                 FileLog.Info("Aborting trailer auto-downloads as OnlineVideos minimum version is not installed.");
                 return;

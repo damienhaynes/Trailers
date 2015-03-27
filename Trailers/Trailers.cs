@@ -185,7 +185,7 @@ namespace Trailers
 
             if (!TrailerProviders.Exists(t => t.Name == "OnlineVideos Trailer Search Provider"))
             {
-                TrailerProviders.Add(new OnlineVideoSearchProvider(PluginSettings.ProviderOnlineVideoSearch && OnlineVideosHandler.IsAvailable));
+                TrailerProviders.Add(new OnlineVideoSearchProvider(PluginSettings.ProviderOnlineVideoSearch && Utility.IsPluginAvailable("OnlineVideos")));
             }
         }
 

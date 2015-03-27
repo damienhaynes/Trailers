@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using MediaPortal.Configuration;
 using OnlineVideos;
 using OnlineVideos.Hoster;
 using OnlineVideos.Sites;
@@ -11,19 +9,6 @@ namespace Trailers.PluginHandlers
 {
     class OnlineVideosHandler
     {
-        internal static string PluginFilename = Path.Combine(Config.GetSubFolder(Config.Dir.Plugins, "Windows"), "OnlineVideos.MediaPortal1.dll");
-
-        internal static bool IsAvailable
-        {
-            get
-            {
-                if (!File.Exists(PluginFilename))
-                    return false;
-
-                return Utility.IsPluginEnabled("Online Videos") || Utility.IsPluginEnabled("OnlineVideos");
-            }
-        }
-
         internal static SiteUtilBase YouTubeSiteUtil
         {
             get
