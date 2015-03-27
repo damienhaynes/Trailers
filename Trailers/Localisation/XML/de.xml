@@ -31,6 +31,8 @@
   <string name="On">An</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">Das OnlineVideos Plugin wir benötigt. Stellen Sie sicher dass es installiert und aktiviert ist.</string>
+  <string name="OnlineVideosMinVersionNotInstalled">Der Test auf die minimale OnlineVideos-Version ist fehlgeschlagen. 
+Bitte installiere die neueste Version.</string>
   <!--P-->
   <string name="Play">Abspielen</string>
   <!--R-->

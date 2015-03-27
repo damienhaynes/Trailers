@@ -31,6 +31,7 @@
   <string name="On">Aan</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">OnlineVideos plugin is nodig om trailers af te spelen, zorg dat de plugin geinstalleerd en ingeschakeld is.</string>
+  <string name="OnlineVideosMinVersionNotInstalled">OnlineVideos minimum versie controle mislukt, installeer de laatste versie.</string>
   <!--P-->
   <string name="Play">Afspelen</string>
   <!--R-->

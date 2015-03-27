@@ -31,6 +31,7 @@
   <string name="On">Zap.</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">Pro přehrávání upoutávek je třeba mít nainstalovaný modul OnlineVideos. Ujistěte se, že je nainstalovaný a povolený.</string>
+  <string name="OnlineVideosMinVersionNotInstalled">Kontrola, zda je nainstalován modul OnlineVideos v minimální podporované verzi, byla neúspěšná.</string>
   <!--P-->
   <string name="Play">Spustit</string>
   <!--R-->

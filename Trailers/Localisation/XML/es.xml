@@ -33,6 +33,7 @@
   <string name="On">Encendido</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">Para reproducir trailers es necesario el plugin OnlineVideos, asegúrate de tener el plugin instalado y habilitado.</string>
+  <string name="OnlineVideosMinVersionNotInstalled">Análisis de versión mínima de OnlineVideos, por favor instala la nueva versión.</string>
   <!--P-->
   <string name="Play">Reproducir</string>
   <!--R-->
