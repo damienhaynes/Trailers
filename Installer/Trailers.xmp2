@@ -276,6 +276,20 @@
               <ZipFileName>Installer{CopyFile}\{87e40873-5d4f-44eb-8905-70a2e613e89d}-ro.xml</ZipFileName>
               <DestinationFilename>%Language%\Trailers\ro.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\ar.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{47f37562-9144-4339-981a-bb8b516245ad}-ar.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\ar.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\Trailers\Localisation\XML\sq.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{5689321c-2186-4157-8f8d-efbb1505e1c6}-sq.xml</ZipFileName>
+              <DestinationFilename>%Language%\Trailers\sq.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -498,7 +512,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>27644</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>Trailers requires MediaPortal version 1.3 or higher.</Message>
+        <Message>Trailers requires MediaPortal version 1.8 or higher.</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -515,22 +529,26 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <UpdateUrl>https://raw.github.com/damienhaynes/Trailers/master/Installer/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>1</Minor>
-      <Build>5</Build>
+      <Minor>2</Minor>
+      <Build>0</Build>
       <Revision>0</Revision>
     </Version>
-    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
-
+    <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
+
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>* Added a setting to re-show the menu after trailer playback if there is more than a single local/online trailer available. Defaults to off.
-* Added a custom dialog for trailer selection. Skinner can optionally add 'Trailers.Selection.Menu.xml' (ID 11898) to show a custom dialog. See skin designers guide for details. If custom skin file does not exist then it will use the standard dialog menu.
-* Added a simple cache for online requests for trailers (currently only applicable to the TMDb provider). Default is set to 60mins and can be changed from advanced settings in Extensions GUI.
-* Updated translations from Transifex.
-
+    <VersionDescription>* Support for OnlineVideos v2.0, this is the minimum requirement now for Trailer streaming and download.
+* Fixed plugin not operating correctly when OnlineVideos is not installed.
+* Fixed error log message about translation andwhen invoking custom Trailers dialog.
+* Fixed hard-coded 'Menu' label to read 'Trailers' in Trailers dialog.
+* Added the current media title to the Trailers dialog heading.
+* Added support 426x240 resolution trailers when LQ is preferred or when no HD/HQ trailers are available.
+* Fixed a few translations being incorrect or not mapped internally.
+* Updated translations from Transifex.
+
 Note: Remember to start contributing to themoviedb.org, this is where all the online searches are coming from.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=296&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2014-05-03T21:11:07</ReleaseDate>
+    <ReleaseDate>2015-03-27T21:11:07</ReleaseDate>
     <Tags>trailers</Tags>
     <Location>C:\Development\Trailers\Installer\Trailers.mpe1</Location>
     <Params>
@@ -833,6 +851,20 @@ Note: Remember to start contributing to themoviedb.org, this is where all the on
         <ZipFileName>Installer{CopyFile}\{87e40873-5d4f-44eb-8905-70a2e613e89d}-ro.xml</ZipFileName>
         <DestinationFilename>%Language%\Trailers\ro.xml</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\ar.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{47f37562-9144-4339-981a-bb8b516245ad}-ar.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\ar.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="false">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\Trailers\Localisation\XML\sq.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{5689321c-2186-4157-8f8d-efbb1505e1c6}-sq.xml</ZipFileName>
+        <DestinationFilename>%Language%\Trailers\sq.xml</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
@@ -844,7 +876,7 @@ Note: Remember to start contributing to themoviedb.org, this is where all the on
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Resources\Trailers.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{03e02cb4-90d7-4307-afa9-b5ffb17530b1}-Trailers.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{90af89aa-18a9-43a3-8521-53713cb91330}-Trailers.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
