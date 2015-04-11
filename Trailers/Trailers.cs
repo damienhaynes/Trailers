@@ -339,15 +339,15 @@ namespace Trailers
                         break;
 
                     case MediaItemType.Show:
-                        FileLog.Info("Searching for tv show trailers on: Title='{0}', Year='{1}', FirstAired='{2}', IMDb='{3}', TVDb='{4}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>");
+                        FileLog.Info("Searching for tv show trailers on: Title='{0}', Year='{1}', FirstAired='{2}', IMDb='{3}', TVDb='{4}', TMDb='{5}'", currentMediaItem.Title, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>");
                         break;
 
                     case MediaItemType.Season:
-                        FileLog.Info("Searching for tv season trailers on: Title='{0}', Season='{1}', Year='{2}', FirstAired='{3}', IMDb='{4}', TVDb='{5}'", currentMediaItem.Title, currentMediaItem.Season, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>");
+                        FileLog.Info("Searching for tv season trailers on: Title='{0}', Season='{1}', Year='{2}', FirstAired='{3}', IMDb='{4}', TVDb='{5}', TMDb='{6}'", currentMediaItem.Title, currentMediaItem.Season, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>");
                         break;
 
                     case MediaItemType.Episode:
-                        FileLog.Info("Searching for tv episode trailers on: Title='{0}', Season='{1}', Episode='{2}', Year='{3}', FirstAired='{4}', IMDb='{5}', TVDb='{6}', Filename='{7}'", currentMediaItem.Title, currentMediaItem.Season, currentMediaItem.Episode, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
+                        FileLog.Info("Searching for tv episode trailers on: Title='{0}', Season='{1}', Episode='{2}', Year='{3}', FirstAired='{4}', IMDb='{5}', TVDb='{6}', TMDb='{7}', Filename='{8}'", currentMediaItem.Title, currentMediaItem.Season, currentMediaItem.Episode, currentMediaItem.Year.ToString(), currentMediaItem.AirDate ?? "<empty>", currentMediaItem.IMDb ?? "<empty>", currentMediaItem.TVDb ?? "<empty>", currentMediaItem.TMDb ?? "<empty>", currentMediaItem.FilenameWOExtension ?? "<empty>");
                         break;
                 }
                 

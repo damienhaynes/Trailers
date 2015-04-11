@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using MediaPortal.GUI.Library;
-using Trailers.GUI;
+﻿using MediaPortal.GUI.Library;
 using Trailers.Providers;
 
 namespace Trailers.PluginHandlers
@@ -79,28 +73,28 @@ namespace Trailers.PluginHandlers
             currentMediaItem.MediaType = MediaItemType.Movie;
 
             // get title
-            currentMediaItem.Title = GUIPropertyManager.GetProperty("#Trakt.Movie.Title").Trim();
+            currentMediaItem.Title = GUIPropertyManager.GetProperty("#Trakt.Movie.Title");
 
             // get year
             int year;
-            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Movie.Year").Trim(), out year))
+            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Movie.Year"), out year))
                 currentMediaItem.Year = year;
 
             // get IMDb ID
-            string imdbid = GUIPropertyManager.GetProperty("#Trakt.Movie.Imdb").Trim();
+            string imdbid = GUIPropertyManager.GetProperty("#Trakt.Movie.ImdbId");
             if (!string.IsNullOrEmpty(imdbid) && imdbid.Length == 9)
                 currentMediaItem.IMDb = imdbid;
 
             // get TMDb ID
             int iTMDbID;
-            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Movie.Tmdb").Trim(), out iTMDbID))
+            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Movie.TmdbId"), out iTMDbID))
                 currentMediaItem.TMDb = iTMDbID.ToString();
 
             // get poster
-            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Movie.PosterImageFilename").Trim();
+            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Movie.PosterImageFilename");
 
             // get overview
-            currentMediaItem.Plot = GUIPropertyManager.GetProperty("#Trakt.Movie.Overview").Trim();
+            currentMediaItem.Plot = GUIPropertyManager.GetProperty("#Trakt.Movie.Overview");
 
             return true;
         }
@@ -112,36 +106,41 @@ namespace Trailers.PluginHandlers
             currentMediaItem.MediaType = MediaItemType.Show;
 
             // get title
-            currentMediaItem.Title = GUIPropertyManager.GetProperty("#Trakt.Show.Title").Trim();
+            currentMediaItem.Title = GUIPropertyManager.GetProperty("#Trakt.Show.Title");
 
             // get year
             int year;
-            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.Year").Trim(), out year))
+            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.Year"), out year))
                 currentMediaItem.Year = year;
 
             // get air date
-            currentMediaItem.AirDate = GUIPropertyManager.GetProperty("#Trakt.Show.FirstAired").Trim();
+            currentMediaItem.AirDate = GUIPropertyManager.GetProperty("#Trakt.Show.FirstAired");
 
             // get IMDb ID
-            string imdbid = GUIPropertyManager.GetProperty("#Trakt.Show.Imdb").Trim();
+            string imdbid = GUIPropertyManager.GetProperty("#Trakt.Show.Imdb");
             if (!string.IsNullOrEmpty(imdbid) && imdbid.Length == 9)
                 currentMediaItem.IMDb = imdbid;
 
+            // get TMDb ID
+            int iTMDbId;
+            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.TmdbId"), out iTMDbId))
+                currentMediaItem.TMDb = iTMDbId.ToString();
+
             // get TVDb ID
             int iTVDbID;
-            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.Tvdb").Trim(), out iTVDbID))
+            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.TvdbId"), out iTVDbID))
                 currentMediaItem.TVDb = iTVDbID.ToString();
 
             // get TVRage ID
             int iTVRageID;
-            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.TvRage").Trim(), out iTVRageID))
+            if (int.TryParse(GUIPropertyManager.GetProperty("#Trakt.Show.TvRageId"), out iTVRageID))
                 currentMediaItem.TVRage = iTVRageID.ToString();
 
             // get poster
-            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Show.PosterImageFilename").Trim();
+            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Show.PosterImageFilename");
 
             // get overview
-            currentMediaItem.Plot = GUIPropertyManager.GetProperty("#Trakt.Show.Overview").Trim();
+            currentMediaItem.Plot = GUIPropertyManager.GetProperty("#Trakt.Show.Overview");
 
             return true;
         }
@@ -156,10 +155,10 @@ namespace Trailers.PluginHandlers
             currentMediaItem.MediaType = MediaItemType.Season;
 
             // get season
-            currentMediaItem.Season = int.Parse(GUIPropertyManager.GetProperty("#Trakt.Season.Number").Trim());
+            currentMediaItem.Season = int.Parse(GUIPropertyManager.GetProperty("#Trakt.Season.Number"));
 
             // get poster
-            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Season.PosterImageFilename").Trim();
+            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Season.PosterImageFilename");
 
             return true;
         }
@@ -174,16 +173,16 @@ namespace Trailers.PluginHandlers
             currentMediaItem.MediaType = MediaItemType.Episode;
 
             // get season
-            currentMediaItem.Season = int.Parse(GUIPropertyManager.GetProperty("#Trakt.Episode.Season").Trim());
+            currentMediaItem.Season = int.Parse(GUIPropertyManager.GetProperty("#Trakt.Episode.Season"));
 
             // get episode
-            currentMediaItem.Episode = int.Parse(GUIPropertyManager.GetProperty("#Trakt.Episode.Number").Trim());
+            currentMediaItem.Episode = int.Parse(GUIPropertyManager.GetProperty("#Trakt.Episode.Number"));
 
             // get episode name
-            currentMediaItem.EpisodeName = GUIPropertyManager.GetProperty("#Trakt.Episode.Title").Trim();
+            currentMediaItem.EpisodeName = GUIPropertyManager.GetProperty("#Trakt.Episode.Title");
 
             // get thumb
-            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Episode.EpisodeImageFilename").Trim();
+            currentMediaItem.Poster = GUIPropertyManager.GetProperty("#Trakt.Episode.EpisodeImageFilename");
 
             return true;
         }
