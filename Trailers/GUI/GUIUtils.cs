@@ -40,6 +40,13 @@ namespace Trailers.GUI
         TraktListItems = 87276,
         TraktShowSeasons = 87281,
         TraktSeasonEpisodes = 87282,
+        TraktPopularMovies = 87101,
+        TraktPopularShows = 87102,
+        TraktAnticipatedMovies = 87605,
+        TraktAnticipatedShows = 87606,
+        TraktBoxOffice = 87607,
+        TraktPersonCreditMovies = 87601,
+        TraktPersonCreditShows = 87602,
         NetflixAlpha = 18764,
         MPEISettings = 803
     }

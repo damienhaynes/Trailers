@@ -289,6 +289,10 @@ namespace Trailers
                         case (int)ExternalPluginWindows.TraktSearchMovies:
                         case (int)ExternalPluginWindows.TraktTrendingMovies:
                         case (int)ExternalPluginWindows.TraktWatchedListMovies:
+                        case (int)ExternalPluginWindows.TraktPopularMovies:
+                        case (int)ExternalPluginWindows.TraktAnticipatedMovies:
+                        case (int)ExternalPluginWindows.TraktBoxOffice:
+                        case (int)ExternalPluginWindows.TraktPersonCreditMovies:
                             TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Movie);
                             GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
@@ -299,12 +303,17 @@ namespace Trailers
                         case (int)ExternalPluginWindows.TraktTrendingShows:
                         case (int)ExternalPluginWindows.TraktWatchedListShows:
                         case (int)ExternalPluginWindows.TraktSearchShows:
+                        case (int)ExternalPluginWindows.TraktPopularShows:
+                        case (int)ExternalPluginWindows.TraktAnticipatedShows:
+                        case (int)ExternalPluginWindows.TraktPersonCreditShows:
                             TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Show);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
                         // trakt season windows
                         case (int)ExternalPluginWindows.TraktShowSeasons:
                             TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Season);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
                         // trakt episode windows
@@ -315,11 +324,13 @@ namespace Trailers
                         case (int)ExternalPluginWindows.TraktSeasonEpisodes:
                         case (int)ExternalPluginWindows.TraktWatchedListEpisodes:
                             TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.Episode);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
                         // trakt list window
                         case (int)ExternalPluginWindows.TraktListItems:
                             TraktHandler.GetCurrentMediaItem(out currentMediaItem, TraktHandler.WindowType.List);
+                            GUIControl.FocusControl(GUIWindowManager.ActiveWindow, 50);
                             break;
 
                         case (int)ExternalPluginWindows.NetflixAlpha:
