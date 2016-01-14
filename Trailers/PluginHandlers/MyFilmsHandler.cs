@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
+using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MyFilmsPlugin.MyFilms;
 using MyFilmsPlugin.MyFilms.MyFilmsGUI;
@@ -50,6 +50,11 @@ namespace Trailers.PluginHandlers
         public MyFilmsHandler(bool enabled)
         {
             FileLog.Info("Loading Auto-Downloader: '{0}', Enabled: '{1}'", MoviePluginSource.MyFilms, enabled);
+
+            // check if plugin exists otherwise plugin could accidently get added to list
+            string pluginFilename = Path.Combine(Config.GetSubFolder(Config.Dir.Plugins, "Windows"), "MyFilms.dll");
+            if (!File.Exists(pluginFilename))
+                return;
 
             this.Enabled = enabled;
         }

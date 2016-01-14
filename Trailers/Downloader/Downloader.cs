@@ -69,7 +69,7 @@ namespace Trailers.Downloader
             // check if downloader is enabled and add to list of downloaders
             PluginsForTrailerDownloads.Add(new MovingPicturesHandler(PluginSettings.AutoDownloadTrailersMovingPictures));
             PluginsForTrailerDownloads.Add(new MyFilmsHandler(PluginSettings.AutoDownloadTrailersMyFilms));
-            PluginsForTrailerDownloads.Add(new VideoInfoHandler(PluginSettings.AutoDownloadTrailersMyVideos));
+            PluginsForTrailerDownloads.Add(new VideoInfoHandler(PluginSettings.AutoDownloadTrailersMyVideos));         
         }
 
         static void Cleanup()

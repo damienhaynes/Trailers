@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
+using MediaPortal.Configuration;
 using MediaPortal.Plugins.MovingPictures;
 using MediaPortal.Plugins.MovingPictures.Database;
 using MediaPortal.Plugins.MovingPictures.MainUI;
@@ -71,6 +71,11 @@ namespace Trailers.PluginHandlers
         public MovingPicturesHandler(bool enabled)
         {
             FileLog.Info("Loading Auto-Downloader: '{0}', Enabled: '{1}'", MoviePluginSource.MovingPictures, enabled);
+
+            // check if plugin exists otherwise plugin could accidently get added to list
+            string pluginFilename = Path.Combine(Config.GetSubFolder(Config.Dir.Plugins, "Windows"), "MovingPictures.dll");
+            if (!File.Exists(pluginFilename))
+                return;
 
             this.Enabled = enabled;
         }
