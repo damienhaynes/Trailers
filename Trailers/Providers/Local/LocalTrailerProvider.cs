@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Trailers.Extensions;
 using Trailers.GUI;
 using Trailers.Localisation;
@@ -162,6 +161,12 @@ namespace Trailers.Providers
             if (!PluginSettings.SearchLocalInCurrentMediaFolder) return listItems;
             FileLog.Debug("Searching for trailers from local media folder...");
 
+            if (string.IsNullOrEmpty(searchItem.Directory))
+            {
+                FileLog.Info("No associated directory for search item, cancelling search from current media folder");
+                return listItems;
+            }
+
             foreach (var pattern in PluginSettings.SearchLocalCurrentMediaFolderSearchPatterns.Split('|').ToList())
             {
                 if (listItems.Count > 0 && !PluginSettings.SearchLocalAggressiveSearch) continue;
@@ -222,6 +227,12 @@ namespace Trailers.Providers
             if (!PluginSettings.SearchLocalInSubFolder) return listItems;
 
             FileLog.Debug("Searching for trailers from local media sub-folder(s)...");
+
+            if (string.IsNullOrEmpty(searchItem.Directory))
+            {
+                FileLog.Info("No associated directory for search item, cancelling search from current media sub-folder");
+                return listItems;
+            }
 
             // Get list of sub-folder names to search in from the base path of the media's filename
             // First get list of common names from the Trailer and Trailers translation string

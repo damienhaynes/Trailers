@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using MediaPortal.Video.Database;
 using MediaPortal.GUI.Library;
+using MediaPortal.Video.Database;
 using Trailers.Downloader;
 using Trailers.Downloader.DataStructures;
 using Trailers.Providers;
@@ -17,7 +14,7 @@ namespace Trailers.PluginHandlers
     {
         public static bool GetCurrentMediaItem(out MediaItem currentMediaItem)
         {
-            FileLog.Info("Getting selected movie information from MyVideos.");
+            FileLog.Info("Getting selected movie information from MyVideos");
 
             currentMediaItem = new MediaItem();
             currentMediaItem.Title = GUIPropertyManager.GetProperty("#title").Trim();
@@ -45,10 +42,6 @@ namespace Trailers.PluginHandlers
                 if (SelectedItem != null && !SelectedItem.IsFolder)
                 {
                     currentMediaItem.FullPath = SelectedItem.Path;
-                }
-                else
-                {
-                    currentMediaItem = null;
                 }
             }
 
