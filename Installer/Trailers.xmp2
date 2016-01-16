@@ -530,19 +530,21 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Version>
       <Major>1</Major>
       <Minor>2</Minor>
-      <Build>1</Build>
+      <Build>2</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>Trailers is a plugin which helps users play movie and tvshow trailers from all the media plugins available in MediaPortal.
 
 It searches local trailers and online sources, it also has the capability to stream trailers with the help of the OnlineVideos plugin.</ExtensionDescription>
-    <VersionDescription>* Fixed trailers skin button not working in Trakt windows.
+    <VersionDescription>* Added support for Trailers skin button in new Trakt windows (Anticipated, Credits, BoxOffice).
+* Added check to the trailer auto-downloader if the corresponding plugin is enabled in settings but not installed.
+* Allow trailer search for My Videos plugin when there is no local file reference.
 * Updated translations from Transifex.
 
 Note: Remember to start contributing to themoviedb.org, this is where all the online searches are coming from.</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=296&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2015-04-11T21:11:07</ReleaseDate>
+    <ReleaseDate>2016-01-16T21:11:07</ReleaseDate>
     <Tags>trailers</Tags>
     <Location>C:\Development\Trailers\Installer\Trailers.mpe1</Location>
     <Params>
