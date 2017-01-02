@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using MediaPortal.Configuration;
+﻿using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Player;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Trailers.Downloader;
 using Trailers.GUI;
 using Trailers.Localisation;

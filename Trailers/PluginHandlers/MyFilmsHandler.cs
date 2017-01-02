@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
+using MyFilmsPlugin;
+using MyFilmsPlugin.DataBase;
+using MyFilmsPlugin.MyFilmsGUI;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using MediaPortal.Configuration;
-using MediaPortal.GUI.Library;
-using MyFilmsPlugin.MyFilms;
-using MyFilmsPlugin.MyFilms.MyFilmsGUI;
 using Trailers.Downloader;
 using Trailers.Downloader.DataStructures;
 using Trailers.Providers;
@@ -51,10 +54,17 @@ namespace Trailers.PluginHandlers
         {
             FileLog.Info("Loading Auto-Downloader: '{0}', Enabled: '{1}'", MoviePluginSource.MyFilms, enabled);
 
-            // check if plugin exists otherwise plugin could accidently get added to list
+            // check if plugin exists and correct version otherwise plugin could accidently get added to list
             string pluginFilename = Path.Combine(Config.GetSubFolder(Config.Dir.Plugins, "Windows"), "MyFilms.dll");
             if (!File.Exists(pluginFilename))
                 return;
+            else
+            {
+                FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(pluginFilename);
+                string version = fvi.ProductVersion;
+                if (new Version(version) < new Version(6, 1, 2, 1469))
+                    return;
+            }
 
             this.Enabled = enabled;
         }
@@ -97,7 +107,7 @@ namespace Trailers.PluginHandlers
                         Year = movie.Year.ToString(),
                         Title = movie.Title,
                         Poster = movie.Picture,
-                        Fanart = movie.Fanart                        
+                        Fanart = movie.Fanart,                  
                     });
                 }
             }
