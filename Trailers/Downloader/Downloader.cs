@@ -308,10 +308,11 @@ namespace Trailers.Downloader
             // 2. 426x240
             // 3. 640x360
             // 4. 1280x720
+            // NB: the height is not always the same so just check width
 
             if (preferredQuality == "HD")
             {
-                var options = downloadOptions.Where(o => o.Key.Contains("1280x720 | mp4"));
+                var options = downloadOptions.Where(o => o.Key.Contains("1280x"));
                 if (options.Count() > 0)
                 {
                     // get the low audio bitrate version as the high bit rate seems to fail
@@ -326,7 +327,7 @@ namespace Trailers.Downloader
             else if (preferredQuality == "HQ")
             {
                 // get the next highest quality
-                var options = downloadOptions.Where(o => o.Key.Contains("640x360 | mp4"));
+                var options = downloadOptions.Where(o => o.Key.Contains("640x"));
                 if (options.Count() > 0)
                 {
                     // get the low audio bitrate version as the high bit rate seems to fail
@@ -340,14 +341,14 @@ namespace Trailers.Downloader
             }
             else if (preferredQuality == "LQ")
             {
-                var options = downloadOptions.Where(o => o.Key.Contains("426x240 | mp4"));
+                var options = downloadOptions.Where(o => o.Key.Contains("426x"));
                 if (options.Count() > 0)
                 {
                     return new KeyValuePair<string, string>(options.First().Value, "LQ");
                 }
                 else
                 {
-                    options = downloadOptions.Where(o => o.Key.Contains("320x240 | mp4"));
+                    options = downloadOptions.Where(o => o.Key.Contains("320x"));
                     if (options.Count() > 0)
                     {
                         return new KeyValuePair<string, string>(options.First().Value, "LQ");

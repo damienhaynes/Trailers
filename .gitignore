@@ -107,3 +107,7 @@ _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
 /Installer/*.mpe1
+/.vs/Trailers/v16/Server/sqlite3/db.lock
+/.vs/Trailers/v16/Server/sqlite3/storage.ide
+/.vs/Trailers/v16/Server/sqlite3/storage.ide-shm
+/.vs/Trailers/v16/Server/sqlite3/storage.ide-wal
